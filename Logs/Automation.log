@@ -1,0 +1,423 @@
+16:44:29.850 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
+16:44:29.929 [main] INFO  com.jkl.pageObject.PO_HomePage - Logout Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//button//div[text()='Yes']"}
+  (Session info: chrome=125.0.6422.142)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4afecf0d7ce326a29e9d1b2ea46c32c2, findElement {using=xpath, value=//button//div[text()='Yes']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.142, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4afecf0d7ce326a29e9d1b2ea46c32c2
+16:45:09.454 [main] INFO  com.jkl.testCases.TC_Customers - Base class started...
+16:45:09.492 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
+16:45:09.492 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into incognito mode
+16:45:09.492 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
+16:45:11.623 [main] INFO  com.jkl.testCases.TC_Customers - Chrome driver selected
+16:45:11.664 [main] INFO  com.jkl.testCases.TC_Customers - Login page started
+16:45:11.733 [main] INFO  com.jkl.testCases.TC_Customers - Maximize the window
+16:45:11.846 [main] INFO  com.jkl.testCases.TC_Customers - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
+16:45:11.846 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
+16:45:13.961 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:45:16.022 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:45:20.031 [main] INFO  com.jkl.testCases.TC_Customers - 1
+16:45:20.031 [main] INFO  com.jkl.testCases.TC_Customers - 2
+16:45:20.032 [main] INFO  com.jkl.testCases.TC_Customers - 5
+16:45:20.379 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD READY 3
+16:45:22.436 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:45:22.437 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:45:22.439 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:45:23.026 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: WESTWOOD READY 3
+16:45:23.026 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: WESTWOOD READY 3
+16:45:23.027 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:45:23.071 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: WESTWOOD READY 3
+16:45:23.105 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:45:23.307 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:45:23.327 [main] INFO  com.jkl.actions.Action_Archive - Action_Archive caller method name: archiveCustomer
+16:45:23.386 [main] INFO  com.jkl.actions.Action_Archive - Is Archive button displayed and enabled: true
+16:45:23.386 [main] INFO  com.jkl.actions.Action_Archive - btnArchive_address:- (//*[normalize-space(text())='Archive'])[1]
+16:45:23.387 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+16:45:23.863 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Archive action button present under three dot
+16:45:24.956 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+16:45:25.297 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+16:45:25.298 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:45:25.315 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer archived successfully.
+16:45:25.316 [main] INFO  com.jkl.actions.Action_Archive - ===>>> Customer archived successfully.
+16:45:27.404 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:45:29.512 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:45:33.517 [main] INFO  com.jkl.testCases.TC_Customers - 1
+16:45:33.517 [main] INFO  com.jkl.testCases.TC_Customers - 2
+16:45:33.518 [main] INFO  com.jkl.testCases.TC_Customers - 3
+16:45:33.520 [main] INFO  com.jkl.testCases.TC_Customers - callerMethodName: test_RestoreCustomer
+16:45:33.923 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - tooltip_completeAddress: //div[contains(@class,'py-1 px-2 text-center tooltip')][text()='Show Archived']
+16:45:34.501 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the btnTooptip_RU
+16:45:34.502 [main] INFO  com.jkl.testCases.TC_Customers - 4
+16:45:34.503 [main] INFO  com.jkl.testCases.TC_Customers - 5
+16:45:34.927 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: WESTWOOD READY 3
+16:45:36.944 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:45:36.945 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:45:36.949 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:45:37.509 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: WESTWOOD READY 3
+16:45:37.510 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: WESTWOOD READY 3
+16:45:37.511 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:45:37.530 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: WESTWOOD READY 3
+16:45:37.557 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:45:37.773 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:45:37.791 [main] INFO  com.jkl.actions.Action_Restore - Action_Restore caller method name: restoreCustomer
+16:45:37.865 [main] INFO  com.jkl.actions.Action_Restore - Is Restore button displayed and enabled: true
+16:45:37.866 [main] INFO  com.jkl.actions.Action_Restore - btnRestore_address:- (//*[normalize-space(text())='Restore'])[1]
+16:45:37.866 [main] INFO  com.jkl.actions.Action_Restore - rowListCount: 1
+16:45:38.347 [main] INFO  com.jkl.actions.Action_Restore - Clicked on Restore action button present under three dot
+16:45:39.457 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+16:45:39.818 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 4
+16:45:39.818 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:45:39.827 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer restored successfully.
+16:45:39.828 [main] INFO  com.jkl.actions.Action_Restore - ===>>> Customer restored successfully.
+16:45:39.835 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
+16:45:41.883 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
+16:45:43.969 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
+16:45:46.087 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
+16:45:46.686 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
+16:45:46.746 [main] INFO  com.jkl.testCases.TC_Customers - Driver shutdown
+16:50:41.466 [main] INFO  com.jkl.testCases.TC_Customers - Base class started...
+16:50:41.505 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
+16:50:41.505 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into incognito mode
+16:50:41.507 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
+16:50:43.597 [main] INFO  com.jkl.testCases.TC_Customers - Chrome driver selected
+16:50:43.731 [main] INFO  com.jkl.testCases.TC_Customers - Login page started
+16:50:43.739 [main] INFO  com.jkl.testCases.TC_Customers - Maximize the window
+16:50:43.853 [main] INFO  com.jkl.testCases.TC_Customers - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
+16:50:43.854 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
+16:50:45.998 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:50:48.115 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:50:52.136 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Caller methods name: test_AddCustomer
+16:50:52.275 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
+16:50:55.431 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Entered customerName
+16:50:55.557 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+16:50:55.969 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 1
+16:50:55.970 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:50:55.984 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer created successfully.
+16:50:55.985 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Alert Message: Customer created successfully.
+16:50:58.066 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:51:00.145 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:51:04.171 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Caller methods name: test_EditCustomer
+16:51:04.573 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Laxmi Stoves Updated
+16:51:06.633 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:51:06.635 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:51:06.636 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:51:07.190 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Laxmi Stoves Updated
+16:51:07.392 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: -1
+16:51:07.394 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Item found in row number: -1
+16:51:09.891 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:51:11.986 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:53:21.728 [main] INFO  com.jkl.testCases.TC_Customers - Base class started...
+16:53:21.766 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
+16:53:21.767 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into incognito mode
+16:53:21.767 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
+16:53:23.781 [main] INFO  com.jkl.testCases.TC_Customers - Chrome driver selected
+16:53:23.992 [main] INFO  com.jkl.testCases.TC_Customers - Login page started
+16:53:24.004 [main] INFO  com.jkl.testCases.TC_Customers - Maximize the window
+16:53:24.119 [main] INFO  com.jkl.testCases.TC_Customers - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
+16:53:24.119 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
+16:53:26.230 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:53:28.349 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:53:32.373 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Caller methods name: test_AddCustomer
+16:53:32.510 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
+16:53:35.679 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Entered customerName
+16:53:35.779 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+16:53:36.183 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 1
+16:53:36.183 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:53:36.194 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer created successfully.
+16:53:36.195 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Alert Message: Customer created successfully.
+16:53:38.297 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:53:40.390 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:53:44.408 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Caller methods name: test_EditCustomer
+16:53:44.840 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Laxmi Stoves 2
+16:53:46.900 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:53:46.902 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:53:46.903 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:53:47.498 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Laxmi Stoves 2
+16:53:47.500 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Laxmi Stoves 2
+16:53:47.502 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:53:47.553 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Laxmi Stoves 2
+16:53:47.592 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:53:47.799 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:53:47.800 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Item found in row number: 1
+16:53:47.827 [main] INFO  com.jkl.actions.Action_Archive - Action_Edit caller method name: addOrEditCustomer
+16:53:48.440 [main] INFO  com.jkl.actions.Action_Archive - Is edit button displayed and enabled: true
+16:53:48.440 [main] INFO  com.jkl.actions.Action_Archive - btnEdit_address:- (//*[contains(normalize-space(text()),'Edit')])[1]
+16:53:48.601 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+16:53:48.980 [main] INFO  com.jkl.actions.Action_Archive - Clicked on the Edit action button present under three dots
+16:53:53.226 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Entered customerName
+16:53:53.343 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+16:53:53.731 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 1
+16:53:53.731 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:53:53.742 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer updated successfully.
+16:53:53.743 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Alert Message: Customer updated successfully.
+16:53:55.819 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:53:57.924 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:54:02.434 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Laxmi Stoves Updated
+16:54:04.459 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:54:04.460 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:54:04.461 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:54:05.029 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Laxmi Stoves Updated
+16:54:05.029 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Laxmi Stoves Updated
+16:54:05.030 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:54:05.061 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Laxmi Stoves Updated
+16:54:05.102 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:54:05.313 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:54:05.331 [main] INFO  com.jkl.actions.Action_Deactivate - Action_Deactivate caller method name: deactivateCustomer
+16:54:05.407 [main] INFO  com.jkl.actions.Action_Deactivate - Is Deactivate button displayed and enabled: true
+16:54:05.407 [main] INFO  com.jkl.actions.Action_Deactivate - btnDeactivate_address:- (//*[normalize-space(text())='Deactivate'])[1]
+16:54:05.407 [main] INFO  com.jkl.actions.Action_Deactivate - rowListCount: 1
+16:54:05.862 [main] INFO  com.jkl.actions.Action_Deactivate - Clicked on Deactivate action button present under three dot
+16:54:06.995 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+16:54:07.348 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+16:54:07.349 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:54:07.367 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer deactivated successfully.
+16:54:07.368 [main] INFO  com.jkl.actions.Action_Deactivate - ===>>> Customer deactivated successfully.
+16:54:09.446 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:54:11.568 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:54:16.009 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Laxmi Stoves Updated
+16:54:18.033 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:54:18.034 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:54:18.035 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:54:18.621 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Laxmi Stoves Updated
+16:54:18.622 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Laxmi Stoves Updated
+16:54:18.623 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:54:18.670 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Laxmi Stoves Updated
+16:54:18.712 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:54:18.921 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:54:18.938 [main] INFO  com.jkl.actions.Action_Activate - Action_Activate caller method name: activateCustomer
+16:54:19.025 [main] INFO  com.jkl.actions.Action_Activate - Is Activate button displayed and enabled: true
+16:54:19.026 [main] INFO  com.jkl.actions.Action_Activate - btnActivate_address:- (//*[normalize-space(text())='Activate'])[1]
+16:54:19.027 [main] INFO  com.jkl.actions.Action_Activate - rowListCount: 1
+16:54:19.506 [main] INFO  com.jkl.actions.Action_Activate - Clicked on Activate action button present under three dot
+16:54:20.680 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+16:54:21.001 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+16:54:21.001 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:54:21.012 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer activated successfully.
+16:54:21.014 [main] INFO  com.jkl.actions.Action_Activate - ===>>> Customer activated successfully.
+16:54:23.087 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:54:25.178 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:54:29.605 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Laxmi Stoves Updated
+16:54:31.630 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:54:31.631 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:54:31.632 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:54:32.210 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Laxmi Stoves Updated
+16:54:32.212 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Laxmi Stoves Updated
+16:54:32.213 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:54:32.258 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Laxmi Stoves Updated
+16:54:32.313 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:54:32.528 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:54:32.531 [main] INFO  com.jkl.actions.Action_Archive - Action_Archive caller method name: archiveCustomer
+16:54:32.620 [main] INFO  com.jkl.actions.Action_Archive - Is Archive button displayed and enabled: true
+16:54:32.621 [main] INFO  com.jkl.actions.Action_Archive - btnArchive_address:- (//*[normalize-space(text())='Archive'])[1]
+16:54:32.621 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+16:54:33.096 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Archive action button present under three dot
+16:54:34.211 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+16:54:34.594 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 10
+16:54:34.595 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:54:34.607 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer archived successfully.
+16:54:34.607 [main] INFO  com.jkl.actions.Action_Archive - ===>>> Customer archived successfully.
+16:54:36.682 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:54:38.811 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:54:43.254 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - tooltip_completeAddress: //div[contains(@class,'py-1 px-2 text-center tooltip')][text()='Show Archived']
+16:54:43.868 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the btnTooptip_RU
+16:54:44.380 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Laxmi Stoves Updated
+16:54:46.409 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:54:46.410 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:54:46.411 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:54:46.978 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Laxmi Stoves Updated
+16:54:46.979 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Laxmi Stoves Updated
+16:54:46.979 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:54:47.017 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Laxmi Stoves Updated
+16:54:47.071 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:54:47.285 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:54:47.303 [main] INFO  com.jkl.actions.Action_Restore - Action_Restore caller method name: restoreCustomer
+16:54:47.377 [main] INFO  com.jkl.actions.Action_Restore - Is Restore button displayed and enabled: true
+16:54:47.377 [main] INFO  com.jkl.actions.Action_Restore - btnRestore_address:- (//*[normalize-space(text())='Restore'])[1]
+16:54:47.378 [main] INFO  com.jkl.actions.Action_Restore - rowListCount: 1
+16:54:47.845 [main] INFO  com.jkl.actions.Action_Restore - Clicked on Restore action button present under three dot
+16:54:48.963 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+16:54:49.331 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 4
+16:54:49.332 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+16:54:49.355 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer restored successfully.
+16:54:49.356 [main] INFO  com.jkl.actions.Action_Restore - ===>>> Customer restored successfully.
+16:54:51.439 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+16:54:53.558 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+16:54:58.001 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Laxmi Stoves Updated
+16:55:00.019 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+16:55:00.022 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+16:55:00.023 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+16:55:00.579 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Laxmi Stoves Updated
+16:55:00.580 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Laxmi Stoves Updated
+16:55:00.580 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+16:55:00.601 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Laxmi Stoves Updated
+16:55:00.628 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+16:55:00.841 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+16:55:00.881 [main] INFO  com.jkl.actions.Action_Archive - Is Restore button displayed and enabled: true
+16:55:00.882 [main] INFO  com.jkl.actions.Action_Archive - btnView_address:- (//*[normalize-space(text())='View'])[1]
+16:55:00.882 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+16:55:01.366 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Restore action button present under three dot
+16:55:02.385 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
+16:55:04.479 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
+16:55:06.620 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
+16:55:08.708 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
+16:55:09.298 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
+16:55:09.361 [main] INFO  com.jkl.testCases.TC_Customers - Driver shutdown
+17:26:26.893 [main] INFO  com.jkl.testCases.TC_Customers - Base class started...
+17:26:26.942 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
+17:26:26.943 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into incognito mode
+17:26:26.943 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
+17:26:29.490 [main] INFO  com.jkl.testCases.TC_Customers - Chrome driver selected
+17:26:29.873 [main] INFO  com.jkl.testCases.TC_Customers - Login page started
+17:26:29.894 [main] INFO  com.jkl.testCases.TC_Customers - Maximize the window
+17:26:30.033 [main] INFO  com.jkl.testCases.TC_Customers - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
+17:26:30.035 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
+17:26:32.163 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:26:34.245 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:26:38.270 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Caller methods name: test_AddCustomer
+17:26:38.414 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
+17:26:41.592 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Entered customerName
+17:26:41.668 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+17:26:42.070 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 1
+17:26:42.071 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:26:42.087 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer created successfully.
+17:26:42.088 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Alert Message: Customer created successfully.
+17:26:44.191 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:26:46.295 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:26:50.310 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Caller methods name: test_EditCustomer
+17:26:50.670 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Sri Ram Industries
+17:26:52.713 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:26:52.714 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:26:52.715 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:26:53.308 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Sri Ram Industries
+17:26:53.309 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Sri Ram Industries
+17:26:53.310 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:26:53.358 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Sri Ram Industries
+17:26:53.396 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:26:53.610 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:26:53.611 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Item found in row number: 1
+17:26:53.634 [main] INFO  com.jkl.actions.Action_Archive - Action_Edit caller method name: addOrEditCustomer
+17:26:54.244 [main] INFO  com.jkl.actions.Action_Archive - Is edit button displayed and enabled: true
+17:26:54.246 [main] INFO  com.jkl.actions.Action_Archive - btnEdit_address:- (//*[contains(normalize-space(text()),'Edit')])[1]
+17:26:54.419 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:26:54.746 [main] INFO  com.jkl.actions.Action_Archive - Clicked on the Edit action button present under three dots
+17:26:58.929 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Entered customerName
+17:26:59.011 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+17:26:59.420 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 1
+17:26:59.421 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:26:59.440 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer updated successfully.
+17:26:59.441 [main] INFO  com.jkl.pageObject.PO_CustomersPage - Alert Message: Customer updated successfully.
+17:27:01.513 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:27:03.642 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:27:08.075 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Sri Ram Industries Updated
+17:27:10.090 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:27:10.091 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:27:10.091 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:27:10.653 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Sri Ram Industries Updated
+17:27:10.653 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Sri Ram Industries Updated
+17:27:10.654 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:27:10.689 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Sri Ram Industries Updated
+17:27:10.729 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:27:10.931 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:27:10.937 [main] INFO  com.jkl.actions.Action_Deactivate - Action_Deactivate caller method name: deactivateCustomer
+17:27:10.978 [main] INFO  com.jkl.actions.Action_Deactivate - Is Deactivate button displayed and enabled: true
+17:27:10.978 [main] INFO  com.jkl.actions.Action_Deactivate - btnDeactivate_address:- (//*[normalize-space(text())='Deactivate'])[1]
+17:27:10.978 [main] INFO  com.jkl.actions.Action_Deactivate - rowListCount: 1
+17:27:11.469 [main] INFO  com.jkl.actions.Action_Deactivate - Clicked on Deactivate action button present under three dot
+17:27:12.577 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:27:12.951 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+17:27:12.952 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:27:12.971 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer deactivated successfully.
+17:27:12.972 [main] INFO  com.jkl.actions.Action_Deactivate - ===>>> Customer deactivated successfully.
+17:27:15.070 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:27:17.165 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:27:21.646 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Sri Ram Industries Updated
+17:27:23.687 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:27:23.687 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:27:23.687 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:27:24.242 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Sri Ram Industries Updated
+17:27:24.243 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Sri Ram Industries Updated
+17:27:24.244 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:27:24.292 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Sri Ram Industries Updated
+17:27:24.336 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:27:24.543 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:27:24.562 [main] INFO  com.jkl.actions.Action_Activate - Action_Activate caller method name: activateCustomer
+17:27:24.629 [main] INFO  com.jkl.actions.Action_Activate - Is Activate button displayed and enabled: true
+17:27:24.629 [main] INFO  com.jkl.actions.Action_Activate - btnActivate_address:- (//*[normalize-space(text())='Activate'])[1]
+17:27:24.629 [main] INFO  com.jkl.actions.Action_Activate - rowListCount: 1
+17:27:25.098 [main] INFO  com.jkl.actions.Action_Activate - Clicked on Activate action button present under three dot
+17:27:26.234 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:27:26.584 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 4
+17:27:26.584 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:27:26.596 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer activated successfully.
+17:27:26.596 [main] INFO  com.jkl.actions.Action_Activate - ===>>> Customer activated successfully.
+17:27:28.662 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:27:30.793 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:27:35.233 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Sri Ram Industries Updated
+17:27:37.253 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:27:37.254 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:27:37.256 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:27:37.835 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Sri Ram Industries Updated
+17:27:37.836 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Sri Ram Industries Updated
+17:27:37.837 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:27:37.866 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Sri Ram Industries Updated
+17:27:37.898 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:27:38.108 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:27:38.111 [main] INFO  com.jkl.actions.Action_Archive - Action_Archive caller method name: archiveCustomer
+17:27:38.224 [main] INFO  com.jkl.actions.Action_Archive - Is Archive button displayed and enabled: true
+17:27:38.224 [main] INFO  com.jkl.actions.Action_Archive - btnArchive_address:- (//*[normalize-space(text())='Archive'])[1]
+17:27:38.225 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:27:38.713 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Archive action button present under three dot
+17:27:39.860 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:27:40.178 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 4
+17:27:40.179 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:27:40.201 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer archived successfully.
+17:27:40.202 [main] INFO  com.jkl.actions.Action_Archive - ===>>> Customer archived successfully.
+17:27:42.279 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:27:44.432 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:27:48.861 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - tooltip_completeAddress: //div[contains(@class,'py-1 px-2 text-center tooltip')][text()='Show Archived']
+17:27:49.489 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the btnTooptip_RU
+17:27:49.853 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Sri Ram Industries Updated
+17:27:51.870 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:27:51.870 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:27:51.871 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:27:52.439 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Sri Ram Industries Updated
+17:27:52.440 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Sri Ram Industries Updated
+17:27:52.440 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:27:52.477 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Sri Ram Industries Updated
+17:27:52.542 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:27:52.755 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:27:52.763 [main] INFO  com.jkl.actions.Action_Restore - Action_Restore caller method name: restoreCustomer
+17:27:52.834 [main] INFO  com.jkl.actions.Action_Restore - Is Restore button displayed and enabled: true
+17:27:52.835 [main] INFO  com.jkl.actions.Action_Restore - btnRestore_address:- (//*[normalize-space(text())='Restore'])[1]
+17:27:52.837 [main] INFO  com.jkl.actions.Action_Restore - rowListCount: 1
+17:27:53.311 [main] INFO  com.jkl.actions.Action_Restore - Clicked on Restore action button present under three dot
+17:27:54.452 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:27:54.845 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+17:27:54.846 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:27:54.869 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Customer restored successfully.
+17:27:54.870 [main] INFO  com.jkl.actions.Action_Restore - ===>>> Customer restored successfully.
+17:27:56.968 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:27:59.098 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:28:03.581 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Sri Ram Industries Updated
+17:28:05.613 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:28:05.614 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:28:05.615 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:28:06.195 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Sri Ram Industries Updated
+17:28:06.196 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Sri Ram Industries Updated
+17:28:06.197 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:28:06.242 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Sri Ram Industries Updated
+17:28:06.298 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:28:06.500 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:28:06.594 [main] INFO  com.jkl.actions.Action_Archive - Is Restore button displayed and enabled: true
+17:28:06.594 [main] INFO  com.jkl.actions.Action_Archive - btnView_address:- (//*[normalize-space(text())='View'])[1]
+17:28:06.594 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:28:07.081 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Restore action button present under three dot
+17:28:08.096 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
+17:28:10.224 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
+17:28:12.305 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
+17:28:14.427 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
+17:28:15.005 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
+17:28:15.065 [main] INFO  com.jkl.testCases.TC_Customers - Driver shutdown
