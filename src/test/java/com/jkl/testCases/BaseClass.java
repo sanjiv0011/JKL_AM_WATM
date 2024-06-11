@@ -68,7 +68,7 @@ public class BaseClass {
 			// logger.info("2");
 
 			// TO INITIALIZE CHROME DRIVER
-			driver = new ChromeDriver(cco.customizedChromeOptions(true, false, true, true, 9222));
+			driver = new ChromeDriver(cco.customizedChromeOptions(true, false, false, true, 9222));
 
 			logger.info("Chrome driver selected");
 		} else if (br.equalsIgnoreCase("firefox")) {

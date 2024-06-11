@@ -46,7 +46,7 @@ public class PO_CustomersPage extends ReUseAbleElement {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		lp = new PO_LoginPage(driver);
 		action = new Actions(driver);
-		
+
 	}
 
 	// ALERT MESSAGES
@@ -95,8 +95,9 @@ public class PO_CustomersPage extends ReUseAbleElement {
 			int listRowCount = 0;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(PL_CustomersPage.ADD_CUSTOMERS_LIST, listCustomers,
-						driver, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(PL_CustomersPage.ADD_CUSTOMERS_LIST,
+						listCustomers, driver, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
+						wantToclickOnFindSearckKey);
 
 			} catch (Exception e) {
 				logger.info("Exception from findCustomersFromRowListAndClickOnThreeDot: " + e.getMessage());
@@ -159,16 +160,20 @@ public class PO_CustomersPage extends ReUseAbleElement {
 		return new PO_HomePage(driver);
 	}
 
-	
-	//TO VIEW/VISIT COSTOMER
+	// TO VIEW/VISIT COSTOMER
 	public PO_HomePage viewCustomer() throws InterruptedException {
 		Action_View.view(driver);
 		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
-	
-	
-	
+
+	// TO VIEW/VISIT COSTOMER[TO RETURN ON TENANT PAGE OBJECT]
+	public PO_TenantsPage viewCustomerAndTenantPageOjbect() throws InterruptedException {
+		Action_View.view(driver);
+		softAssert.assertAll();
+		return new PO_TenantsPage(driver);
+	}
+
 	// TO DEACTIVATE THE CUSTOMERS
 	public PO_HomePage deactivateCustomer() throws InterruptedException {
 		Action_Deactivate.deactivate(driver, customerDeactivate);

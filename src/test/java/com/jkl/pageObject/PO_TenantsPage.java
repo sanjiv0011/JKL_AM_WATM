@@ -1,10 +1,12 @@
 package com.jkl.pageObject;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -46,7 +48,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		lp = new PO_LoginPage(driver);
 		action = new Actions(driver);
-		
+
 	}
 
 	// ALERT MESSAGES
@@ -59,6 +61,44 @@ public class PO_TenantsPage extends ReUseAbleElement {
 	public String tenantNotFound = "No tenants found";
 
 	// ======START======PAGE OBJECT AND ACTOIN METHODS==========//
+
+	//ADMIN TAB, JKL
+	@FindBy(xpath = PL_TenantsPage.ADD_ADMIN_TAB)
+	@CacheLookup
+	public WebElement menuAdmin;
+
+	public boolean clickOnMenuAdmin() throws InterruptedException {
+		boolean flag = false;
+		try {
+			menuAdmin.click();
+			Thread.sleep(1000);
+			flag = true;
+			logger.info("Clicked on the menuAdmin");
+		} catch (Exception e) {
+			logger.info("Exceptino from clickOnMenuAdmin: " + e.getMessage());
+		}
+		return flag;
+	}
+
+	//TENANT TAB, JKL
+	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_TAB)
+	@CacheLookup
+	public WebElement menuTenants;
+
+	public boolean clickOnMenuTenants() throws InterruptedException {
+		boolean flag = false;
+		try {
+			menuTenants.click();
+			Thread.sleep(1000);
+			flag = true;
+			logger.info("Clicked on the menuTenants");
+		} catch (Exception e) {
+			logger.info("Exceptino from clickOnMenuTenant: " + e.getMessage());
+		}
+		return flag;
+	}
+
+	
 	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_NAME)
 	@CacheLookup
 	public WebElement field_tenantName;
@@ -67,11 +107,11 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		field_tenantName.sendKeys(Keys.CONTROL, "a");
 		field_tenantName.sendKeys(Keys.DELETE);
 		field_tenantName.sendKeys(tenantName);
-		Thread.sleep(3000);
+		Thread.sleep(500);
 		logger.info("Entered tenantName");
 
 	}
-	
+
 	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_ASSET_CODE)
 	@CacheLookup
 	public WebElement field_tenantAssetCode;
@@ -80,12 +120,11 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		field_tenantAssetCode.sendKeys(Keys.CONTROL, "a");
 		field_tenantAssetCode.sendKeys(Keys.DELETE);
 		field_tenantAssetCode.sendKeys(tenantAssetCode);
-		Thread.sleep(3000);
+		Thread.sleep(500);
 		logger.info("Entered field_tenantAssetCode");
 
 	}
-	
-	
+
 	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_DESCRIPTION)
 	@CacheLookup
 	public WebElement field_tenantDescription;
@@ -94,22 +133,32 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		field_tenantDescription.sendKeys(Keys.CONTROL, "a");
 		field_tenantDescription.sendKeys(Keys.DELETE);
 		field_tenantDescription.sendKeys(tenantDescription);
-		Thread.sleep(3000);
+		Thread.sleep(500);
 		logger.info("Entered field_tenantDescription");
 
 	}
-	
-	
+
 	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_IMAGE)
 	@CacheLookup
 	public WebElement field_tenantImage;
-
 	public void setTenantImage(String tenantImage) throws InterruptedException {
-		field_tenantImage.click();
-		//add here auto_It code for the file upload
-		Thread.sleep(3000);
-		logger.info("Entered field_tenantImage");
-
+	    // Click on the tenant image upload button
+	    //driver.findElement(By.xpath(PL_TenantsPage.ADD_TENANT_IMAGE));
+	    logger.info("Waiting for the 15 seconds pls check add the image");
+		Thread.sleep(8000);
+	    
+	  // jsExecutor.executeScript("arguments[0].click();", field_tenantImage);
+	    
+//	    // Run the AutoIt script
+//	    try {
+//	        //String[] command = {"."+"//autoIt.exe", "C:\\Users\\User\\Downloads\\logo.png"};
+//	        Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\autoIt.exe");
+//	        Thread.sleep(2000);
+//	        logger.info("Entered field_tenantImage");
+//	    } catch (IOException e) {
+//	        e.printStackTrace();
+//	        logger.error("Failed to execute AutoIt script", e);
+//	    }
 	}
 
 	// TENANTS LIST
@@ -117,16 +166,16 @@ public class PO_TenantsPage extends ReUseAbleElement {
 	@CacheLookup
 	List<WebElement> listTenants;
 
-	public int findTenantFromRowListAndClickOnThreeDot(String tenantsName, String searchKey,
-			int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey)
-			throws InterruptedException {
+	public int findTenantFromRowListAndClickOnThreeDot(String tenantsName, String searchKey, int searchKeyColumnIndex,
+			boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
 		searchBox_1_RU(driver, searchKey);
 		if (!driver.getPageSource().contains("tenantNotFound")) {
 			int listRowCount = 0;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(PL_TenantsPage.ADD_TENANT_LIST, listTenants,
-						driver, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(PL_TenantsPage.ADD_TENANT_LIST,
+						listTenants, driver, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
+						wantToclickOnFindSearckKey);
 
 			} catch (Exception e) {
 				logger.info("Exception from findTenantsFromRowListAndClickOnThreeDot: " + e.getMessage());
@@ -141,32 +190,43 @@ public class PO_TenantsPage extends ReUseAbleElement {
 	}
 	// ======END======PAGE OBJECT AND ACTOIN METHODS==========//
 
-	
 	// TO ADD AND UPDATE THE TENANT
-	public PO_TenantsPage addOrEditTenant(String tenantsName,String tenantAssetCode, String tenantDescription,  String searchKey, int searchKeyColumnIndex,
-			boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws Throwable {
+	public PO_TenantsPage addOrEditTenant(String tenantsName, String tenantAssetCode, String tenantDescription, String tenantImage
+			,String searchKey, int searchKeyColumnIndex, boolean wantToClickOnThreeDot,
+			boolean wantToclickOnFindSearckKey) throws Throwable {
+		
 		StackTraceElement stackTrace[] = Thread.currentThread().getStackTrace();
 		String callerMethodName = stackTrace[2].getMethodName();
 		logger.info("Caller methods name: " + callerMethodName);
+		
 		boolean flag = false;
 		if (callerMethodName.equals("test_AddTenant")) {
 			ruae.clickOnAdd_RU();
+			
+			Thread.sleep(1000);
 		} else if (callerMethodName.equals("test_EditTenant")) {
-
-			int isItemfindInList = findTenantFromRowListAndClickOnThreeDot(tenantsName, searchKey,
-					searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+			
+			int isItemfindInList = findTenantFromRowListAndClickOnThreeDot(tenantsName, searchKey, searchKeyColumnIndex,
+					wantToClickOnThreeDot, wantToclickOnFindSearckKey);
 			logger.info("Item found in row number: " + isItemfindInList);
 			if (isItemfindInList != -1) {
 				Action_Edit.edit(driver);
 			}
 		}
 
+		
 		setTenantName(tenantsName);
 		setTenantAssetCode(tenantAssetCode);
 		setTenantDescription(tenantDescription);
-
-		flag = clickOnBtnSave_1_RU();
-
+		setTenantImage(tenantImage);
+		
+		if(callerMethodName.equals("test_EditTenant")) {
+			clickOnBtnUpdate_1_RU();
+		}else {
+			flag = clickOnBtnSave_1_RU();
+		}
+		
+		
 		if (flag) {
 			if (driver.getPageSource().contains("Please add tenant name.") || driver.getPageSource()
 					.contains("Tenant names should allow only alphabets, with spaces and numbers optional.")) {
@@ -192,19 +252,16 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		return new PO_TenantsPage(driver);
 	}
 
-	
-	//TO VIEW/VISIT TENANTS
+	// TO VIEW/VISIT TENANTS
 	public PO_TenantsPage viewTenant() throws InterruptedException {
 		Action_View.view(driver);
 		softAssert.assertAll();
 		return new PO_TenantsPage(driver);
 	}
-	
-	
-	
+
 	// TO DEACTIVATE THE TENANTS
 	public PO_TenantsPage deactivateTenant() throws InterruptedException {
-		Action_Deactivate.deactivate(driver, tenantDeactivate);
+		Action_Deactivate.clickOnDeactivateAction_RU(driver);
 		softAssert.assertAll();
 		return new PO_TenantsPage(driver);
 	}

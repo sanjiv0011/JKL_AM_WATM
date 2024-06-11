@@ -21,8 +21,8 @@ public class TC_Customers extends BaseClass {
 	public PO_CustomersPage cp; // MAIN USER LABLES PAGE
 
 	// VARIABLES TO ADD PAYEMNTS
-	String customerName = "Sri Ram Industries"; // "WESTWOOD_"+faker.name().firstName();
-	String edit_customerName = "Sri Ram Industries Updated";
+	String customerName = "Sri Ram Industries 2"; // "WESTWOOD_"+faker.name().firstName();
+	String edit_customerName = customerName+" Updated";
 	String searchKey = customerName; // "WESTWOOD READY 2";
 	boolean wantToClickOnThreeDot = true;
 	int searchKeyColumnIndex = 1;

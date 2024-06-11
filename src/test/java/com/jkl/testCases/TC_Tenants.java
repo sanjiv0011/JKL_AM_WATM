@@ -1,5 +1,6 @@
 package com.jkl.testCases;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -7,6 +8,7 @@ import com.jkl.ReUseAble.PageObject.ReUseAbleElement;
 import com.jkl.pageObject.PO_CustomersPage;
 import com.jkl.pageObject.PO_HomePage;
 import com.jkl.pageObject.PO_LoginPage;
+import com.jkl.pageObject.PO_TenantsPage;
 
 public class TC_Tenants extends BaseClass {
 	// HOME PAGE CONSTRUCTOR
@@ -18,96 +20,119 @@ public class TC_Tenants extends BaseClass {
 	public PO_LoginPage lp; // lp = LOGIN PAGE
 	public PO_HomePage hp; // hp = HOME PAGE
 	public Faker faker = new Faker();
-	public PO_CustomersPage cp; // MAIN USER LABLES PAGE
+	public PO_CustomersPage cp;
+	public PO_TenantsPage tp;
 
-	// VARIABLES TO ADD PAYEMNTS
-	String customerName = "Sri Ram Industries"; // "WESTWOOD_"+faker.name().firstName();
-	String edit_customerName = "Sri Ram Industries Updated";
-	String searchKey = customerName; // "WESTWOOD READY 2";
+	// VARIABLES
+	String tenantName = "Tata Steel 3"; // "WESTWOOD_"+faker.name().firstName();
+	String tenantAssetCode = faker.random().hex(3).toString()+"AB";
+	String tenantDescription = faker.lorem().sentence();
+	String tenantImage = "C:\\Users\\User\\Downloads\\download (2).jpeg";
+
+	String edit_tenantName = tenantName +"Updated";
+	String customerName = "Tata Groups";
+	
+	String searchKey = tenantName; // "WESTWOOD READY 2";
 	boolean wantToClickOnThreeDot = true;
 	int searchKeyColumnIndex = 1;
 	boolean wantToClickOnSearchKey = false;
 
-	// TO ADD CUSTOMERS
-	@Test(priority = 1)
-	public void test_AddCustomer() throws Throwable {
-		cp = callMeBeforePerformAnyAction();
-		cp.addOrEditCustomer(customerName, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
-				wantToClickOnSearchKey);
-	}
-
-	// TO EDIT CUSTOMERS
-	@Test(priority = 2)
-	public void test_EditCustomer() throws Throwable {
-		cp = callMeBeforePerformAnyAction();
-		cp.addOrEditCustomer(edit_customerName, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
-				wantToClickOnSearchKey);
-		searchKey = edit_customerName;
-	}
-
-	// TO DEACTIVATE CUSTOMERS
-	@Test(priority = 3)
-	public void test_DeactivateCustomer() throws Throwable {
-		test_FindCustomerFromListAndClickOnThreeDotButton();
-		cp.deactivateCustomer();
-	}
-
-	// TO ACTIVATE CUSTOMERS
-	@Test(priority = 4)
-	public void test_ActivateCustomer() throws Throwable {
-		test_FindCustomerFromListAndClickOnThreeDotButton();
-		cp.activateCustomer();
-	}
-
-	// TO ARCHIVE CUSTOMERS
-	@Test(priority = 5)
-	public void test_ArchiveCustomer() throws Throwable {
-		test_FindCustomerFromListAndClickOnThreeDotButton();
-		cp.archiveCustomer();
-	}
-
-	// TO RESTORE CUSTOMERS
-	@Test(priority = 6)
-	public void test_RestoreCustomer() throws Throwable {
-		test_FindCustomerFromListAndClickOnThreeDotButton();
-		cp.restoreCustomer();
-	}
-
-	// TO VIEW CUSTOMERS
-	@Test(priority = 7)
-	public void test_ViewCustomer() throws Throwable {
-		test_FindCustomerFromListAndClickOnThreeDotButton();
-		cp.viewCustomer();
-	}
-
-	// TO FIND THE CUSTOMERS FROM THE LIST AND CLICK ON THE THREE DOT ACTION BUTTON
-	// @Test(priority = 10)
-	public void test_FindCustomerFromListAndClickOnThreeDotButton() throws Throwable {
-		cp = callMeBeforePerformAnyAction();
-		// logger.info("1");
-		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
-		String callerMethodName = stackTraceElement[2].getMethodName();
-		// logger.info("2");
-		if (callerMethodName.contains("test_Restore")) {
-			// logger.info("3");
-			ReUseAbleElement ruae = new ReUseAbleElement(driver);
-			// logger.info("callerMethodName: "+callerMethodName);
-			ruae.clickONBtnTooltip_RU("Show Archived", driver);
-			// logger.info("4");
-		}
-		// logger.info("5");
-		cp.findCustomerFromRowListAndClickOnThreeDot(customerName, searchKey, searchKeyColumnIndex,
-				wantToClickOnThreeDot, wantToClickOnSearchKey);
-	}
-
-	// CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT
-	public PO_CustomersPage callMeBeforePerformAnyAction() throws InterruptedException {
+	//TO ACCESS CUSTOMERS PAGE OBJECTS
+	public PO_CustomersPage customerPageAccess() throws InterruptedException {
 		// TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
 		hp = new PO_HomePage(driver);
 		hp.clickOnMenuDashboard();
 		hp.clickOnMenuCustomer();
 		Thread.sleep(4000);
 		return new PO_CustomersPage(driver);
+	}
+
+	// TO VIEW SPECIFIC CUSTOMERS
+	@Test(priority = 1)
+	public void test_ViewCustomers() throws Throwable {
+		cp = customerPageAccess();
+		logger.info("driver handle: "+Thread.currentThread().getName());
+		test_FindDataFromListAndClickOnThreeDotButton();
+		tp = cp.viewCustomerAndTenantPageOjbect();
+	}
+
+
+	// TO ADD
+	//@Test(priority = 4)
+	public void test_AddTenant() throws Throwable {
+
+		tp.addOrEditTenant(tenantName, tenantAssetCode, tenantDescription,tenantImage, searchKey, searchKeyColumnIndex,
+				wantToClickOnThreeDot, wantToClickOnSearchKey);
+	}
+
+
+	// TO EDIT
+	//@Test(priority = 5)
+	public void test_EditTenant() throws Throwable {
+		tp.addOrEditTenant(edit_tenantName, tenantAssetCode, tenantDescription,tenantImage, searchKey, searchKeyColumnIndex,
+				wantToClickOnThreeDot, wantToClickOnSearchKey);
+		searchKey = edit_tenantName;
+	}
+
+	// TO DEACTIVATE
+	@Test(priority = 6)
+	public void test_DeactivateTenant() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		tp.deactivateTenant();
+	}
+
+	// TO ACTIVATE
+	@Test(priority = 7)
+	public void test_ActivateTenant() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		tp.activateTenant();
+	}
+
+	// TO ARCHIVE
+	@Test(priority = 8)
+	public void test_ArchiveTenant() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		tp.archiveTenant();
+	}
+
+	// TO RESTORE
+	@Test(priority = 9)
+	public void test_RestoreTenant() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		tp.restoreTenant();
+	}
+
+	
+	
+	// TO FIND FROM THE LIST AND CLICK ON THE THREE DOT ACTION BUTTON
+	// @Test(priority = 10)
+	public void test_FindDataFromListAndClickOnThreeDotButton() throws Throwable {
+		//logger.info("1");
+		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+		String callerMethodName = stackTraceElement[2].getMethodName();
+//		if(!callerMethodName.equals("test_ViewCustomers")) {
+//			//logger.info("2");
+//			//callMeBeforePerformAnyAction();
+//		}
+		if (callerMethodName.contains("test_Restore")) {
+			//logger.info("4");
+			ReUseAbleElement ruae = new ReUseAbleElement(driver);
+			logger.info("callerMethodName: "+callerMethodName);
+			ruae.clickONBtnTooltip_RU("Show Archived", driver);
+			//logger.info("5");
+		}
+		
+		if(callerMethodName.equals("test_ViewCustomers")) {
+			//logger.info("6: "+cp);
+			cp.findCustomerFromRowListAndClickOnThreeDot(customerName, customerName, searchKeyColumnIndex, wantToClickOnThreeDot,
+					wantToClickOnSearchKey);
+			//logger.info("7");
+		}else {
+			//logger.info("8");
+			tp.findTenantFromRowListAndClickOnThreeDot(tenantName, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
+					wantToClickOnSearchKey);
+		}
+		
 	}
 
 }

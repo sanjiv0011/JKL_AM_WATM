@@ -8,15 +8,18 @@
   </listeners>
   <test thread-count="1" name="JKL Assets Managemant(failed)">
     <classes>
-      <class name="com.jkl.testCases.TC_Customers">
+      <class name="com.jkl.testCases.TC_Tenants">
         <methods>
           <include name="Setup"/>
+          <include name="test_ActivateTenant"/>
           <include name="Logout"/>
           <include name="Login"/>
-          <include name="test_RestoreCustomer"/>
+          <include name="test_DeactivateTenant"/>
+          <include name="test_ArchiveTenant"/>
           <include name="Teardown"/>
+          <include name="test_RestoreTenant"/>
         </methods>
-      </class> <!-- com.jkl.testCases.TC_Customers -->
+      </class> <!-- com.jkl.testCases.TC_Tenants -->
     </classes>
   </test> <!-- JKL Assets Managemant(failed) -->
 </suite> <!-- Failed suite [Suite] -->

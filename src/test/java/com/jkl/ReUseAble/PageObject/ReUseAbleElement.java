@@ -26,7 +26,7 @@ public class ReUseAbleElement {
 	public static WebDriverWait wait, waitAlert = null;
 	protected static Actions action;
 	public static SoftAssert softAssert = new SoftAssert();
-	public  JavascriptExecutor js;
+	public JavascriptExecutor js;
 
 	// CREATE PAGE FACTORY METHODS WITH DRIVERS
 	public ReUseAbleElement(WebDriver driver) {
@@ -43,13 +43,13 @@ public class ReUseAbleElement {
 	// P360 PAGE NUMBER BASE ADDRESS
 	public boolean clickOnBtnPageNumber_RU(WebDriver dirver) throws InterruptedException {
 		boolean flag = false;
-		
+
 		String baseAddress_PageNumber = "//span[contains(@class,'MuiTouchRipple-root')]";
 		List<WebElement> btnPageNumber_RU = driver.findElements(By.xpath(baseAddress_PageNumber));
-		
+
 		try {
-			
-			for(WebElement pageNumber : btnPageNumber_RU) {
+
+			for (WebElement pageNumber : btnPageNumber_RU) {
 				btnContinue_RU.click();
 				Thread.sleep(1000);
 				flag = true;
@@ -61,8 +61,6 @@ public class ReUseAbleElement {
 		return flag;
 	}
 
-	
-	
 	// CONTINUE BUTTON P360
 	@FindBy(xpath = "(//span[normalize-space()='Continue'])[1]")
 	@CacheLookup
@@ -80,33 +78,31 @@ public class ReUseAbleElement {
 		}
 		return flag;
 	}
-	
-	
-	//TO VERIFY ELEMENT TOOLTIP AND CLICK ON IT, JKL
+
+	// TO VERIFY ELEMENT TOOLTIP AND CLICK ON IT, JKL
 	public boolean clickONBtnTooltip_RU(String tooltipName, WebDriver driver) throws InterruptedException {
-		String add_ShowArchived  = "//div[@class='px-3 py-2 flex cursor-pointer text-green hover:text-green']";
+		String add_ShowArchived = "//div[@class='px-3 py-2 flex cursor-pointer text-green hover:text-green']";
 		WebElement showArhived = driver.findElement(By.xpath(add_ShowArchived));
 		action.moveToElement(showArhived).build().perform();
 		Thread.sleep(200);
-	 
-		 // Mark the element as visited using JavaScript
-	    js.executeScript("arguments[0].setAttribute('data-visited', 'true');", showArhived);
 
-		
+		// Mark the element as visited using JavaScript
+		js.executeScript("arguments[0].setAttribute('data-visited', 'true');", showArhived);
+
 		boolean flag = false;
 		String tooltip_add = "//div[contains(@class,'py-1 px-2 text-center tooltip')]";
-		String tooltip_completeAddress = tooltip_add+"[text()='"+tooltipName+"']";
-		logger.info("tooltip_completeAddress: "+tooltip_completeAddress);
+		String tooltip_completeAddress = tooltip_add + "[text()='" + tooltipName + "']";
+		logger.info("tooltip_completeAddress: " + tooltip_completeAddress);
 		WebElement btnTooptip_RU = driver.findElement(By.xpath(tooltip_completeAddress));
 		String tooptipValues = btnTooptip_RU.getText().toString();
 		try {
-			if(tooptipValues.equals(tooltipName)) {
+			if (tooptipValues.equals(tooltipName)) {
 				showArhived.click();
 				Thread.sleep(500);
 				flag = true;
 				logger.info("Clicked on the btnTooptip_RU");
 			}
-			
+
 		} catch (Exception e) {
 			logger.info("Exceptino from clickONBtnTooltip_RU: " + e.getMessage());
 		}
@@ -143,6 +139,8 @@ public class ReUseAbleElement {
 	public void searchBox_1_RU(WebDriver driver, String SearchKey) throws InterruptedException {
 		Thread.sleep(200);
 		WebElement searchBox_1_RU = driver.findElement(By.xpath(searchBox_1_RU_address));
+		searchBox_1_RU.sendKeys(Keys.CONTROL, "a");
+		searchBox_1_RU.sendKeys(Keys.DELETE);
 		searchBox_1_RU.sendKeys(SearchKey, Keys.ENTER);
 		logger.info("Searched the search keys in the search box: " + SearchKey);
 	}
@@ -650,8 +648,8 @@ public class ReUseAbleElement {
 			flag = btnAdd_RU.isDisplayed();
 			if (flag) {
 				btnAdd_RU.click();
+				logger.info("Is Displeyed and Clicked on the button add : " + flag);
 			}
-			logger.info("Is Displeyed and Clicked on the button add : " + flag);
 
 		} catch (Exception e) {
 			logger.info("Exception from clickOnAdd_RU : " + e.getMessage());
@@ -981,23 +979,23 @@ public class ReUseAbleElement {
 		return flag;
 	}
 
-	// UPDATE BUTTON, P360
-	@FindBy(xpath = "//span[normalize-space()='Update']")
-	@CacheLookup
-	public WebElement btnUpdate_1_RU;
-
-	public boolean clickOnBtnUpdate_1_RU() throws InterruptedException {
-		boolean flag = false;
-		try {
-			btnUpdate_1_RU.click();
-			flag = true;
-			logger.info("Clicked on the nextbutton");
-			Thread.sleep(300);
-		} catch (Exception e) {
-			logger.info("Excepton from : " + e.getMessage());
-		}
-		return flag;
-	}
+//	// UPDATE BUTTON, P360
+//	@FindBy(xpath = "//span[normalize-space()='Update']")
+//	@CacheLookup
+//	public WebElement btnUpdate_1_RU;
+//
+//	public boolean clickOnBtnUpdate_1_RU() throws InterruptedException {
+//		boolean flag = false;
+//		try {
+//			btnUpdate_1_RU.click();
+//			flag = true;
+//			logger.info("Clicked on the nextbutton");
+//			Thread.sleep(300);
+//		} catch (Exception e) {
+//			logger.info("Excepton from : " + e.getMessage());
+//		}
+//		return flag;
+//	}
 
 	// DROPDOWN BOX ADDRESS 1, P360
 	@FindBy(xpath = "(//div[@role='button'])[1]")
@@ -1112,6 +1110,24 @@ public class ReUseAbleElement {
 			flag = true;
 		} catch (Exception e) {
 			logger.info("Exception from clickOnBtnRemove_1_RU: " + e.getMessage());
+		}
+		return flag;
+	}
+
+	// UPDATE BUTTON 1, JKL
+	@FindBy(xpath = "(//button[normalize-space()='Update'])[1]")
+	@CacheLookup
+	public WebElement btnUpdate_1_RU;
+
+	public boolean clickOnBtnUpdate_1_RU() throws InterruptedException {
+		boolean flag = false;
+		try {
+			btnUpdate_1_RU.click();
+			logger.info("Clicked on the button Update");
+			flag = true;
+			Thread.sleep(300);
+		} catch (Exception e) {
+			logger.info("Exception from clickOnBtnUpdate_1_RU: " + e.getMessage());
 		}
 		return flag;
 	}

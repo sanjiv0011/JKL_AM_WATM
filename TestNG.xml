@@ -20,9 +20,9 @@
 
 			<!--<class name="com.jkl.testCases.TC_Home"/>-->
 
-			<!--	<class name="com.jkl.testCases.TC_Customers"/>-->
+				<class name="com.jkl.testCases.TC_Customers"/>
 
-			<class name="com.jkl.testCases.TC_Tenants" />
+			<!--<class name="com.jkl.testCases.TC_Tenants" />-->
 
 			<!--<class name="com.p360.testCases.TC_Membership"/>-->
 
