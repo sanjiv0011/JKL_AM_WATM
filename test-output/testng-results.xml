@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-11T18:26:49 IST" name="Suite" finished-at="2024-06-11T18:28:39 IST" duration-ms="109856">
+  <suite started-at="2024-06-12T16:37:09 IST" name="Suite" finished-at="2024-06-12T16:38:06 IST" duration-ms="57114">
     <groups>
     </groups>
-    <test started-at="2024-06-11T18:26:49 IST" name="JKL Assets Managemant" finished-at="2024-06-11T18:28:39 IST" duration-ms="109856">
-      <class name="com.jkl.testCases.TC_Customers">
-        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:26:50 IST" name="Setup" finished-at="2024-06-11T18:26:54 IST" duration-ms="4007" status="PASS">
+    <test started-at="2024-06-12T16:37:09 IST" name="JKL Assets Managemant" finished-at="2024-06-12T16:38:06 IST" duration-ms="57114">
+      <class name="com.jkl.testCases.TC_Inner_Dashboard">
+        <test-method is-config="true" signature="Setup(java.lang.String)[pri:0, instance:com.jkl.testCases.TC_Inner_Dashboard@42e3ede4]" started-at="2024-06-12T16:37:09 IST" name="Setup" finished-at="2024-06-12T16:37:12 IST" duration-ms="2635" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:26:54 IST" name="Login" finished-at="2024-06-11T18:26:54 IST" duration-ms="109" status="PASS">
+        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:com.jkl.testCases.TC_Inner_Dashboard@42e3ede4]" started-at="2024-06-12T16:37:12 IST" name="Login" finished-at="2024-06-12T16:37:12 IST" duration-ms="135" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,35 +29,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="test_AddCustomer()[pri:1, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:26:54 IST" name="test_AddCustomer" finished-at="2024-06-11T18:27:06 IST" duration-ms="12062" status="PASS">
+        <test-method signature="test_CheckDashboardCount()[pri:1, instance:com.jkl.testCases.TC_Inner_Dashboard@42e3ede4]" started-at="2024-06-12T16:37:12 IST" name="test_CheckDashboardCount" finished-at="2024-06-12T16:37:34 IST" duration-ms="21827" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_AddCustomer -->
-        <test-method signature="test_EditCustomer()[pri:2, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:27:06 IST" name="test_EditCustomer" finished-at="2024-06-11T18:27:23 IST" duration-ms="17378" status="PASS">
+        </test-method> <!-- test_CheckDashboardCount -->
+        <test-method signature="test_CheckDashboardMenus()[pri:2, instance:com.jkl.testCases.TC_Inner_Dashboard@42e3ede4]" started-at="2024-06-12T16:37:34 IST" name="test_CheckDashboardMenus" finished-at="2024-06-12T16:37:57 IST" duration-ms="23114" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_EditCustomer -->
-        <test-method signature="test_DeactivateCustomer()[pri:3, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:27:23 IST" name="test_DeactivateCustomer" finished-at="2024-06-11T18:27:37 IST" duration-ms="13721" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_DeactivateCustomer -->
-        <test-method signature="test_ActivateCustomer()[pri:4, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:27:37 IST" name="test_ActivateCustomer" finished-at="2024-06-11T18:27:51 IST" duration-ms="13573" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_ActivateCustomer -->
-        <test-method signature="test_ArchiveCustomer()[pri:5, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:27:51 IST" name="test_ArchiveCustomer" finished-at="2024-06-11T18:28:04 IST" duration-ms="13614" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_ArchiveCustomer -->
-        <test-method signature="test_RestoreCustomer()[pri:6, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:28:04 IST" name="test_RestoreCustomer" finished-at="2024-06-11T18:28:19 IST" duration-ms="14772" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_RestoreCustomer -->
-        <test-method signature="test_ViewCustomer()[pri:7, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:28:19 IST" name="test_ViewCustomer" finished-at="2024-06-11T18:28:32 IST" duration-ms="13103" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_ViewCustomer -->
-        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:28:32 IST" name="Logout" finished-at="2024-06-11T18:28:39 IST" duration-ms="6961" status="PASS">
+        </test-method> <!-- test_CheckDashboardMenus -->
+        <test-method is-config="true" signature="Logout(java.lang.String)[pri:0, instance:com.jkl.testCases.TC_Inner_Dashboard@42e3ede4]" started-at="2024-06-12T16:37:57 IST" name="Logout" finished-at="2024-06-12T16:38:06 IST" duration-ms="8961" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -68,11 +48,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Logout -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.jkl.testCases.TC_Customers@45efc20d]" started-at="2024-06-11T18:28:39 IST" name="Teardown" finished-at="2024-06-11T18:28:39 IST" depends-on-methods="com.jkl.testCases.BaseClass.Logout" duration-ms="63" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.jkl.testCases.TC_Inner_Dashboard@42e3ede4]" started-at="2024-06-12T16:38:06 IST" name="Teardown" finished-at="2024-06-12T16:38:06 IST" depends-on-methods="com.jkl.testCases.BaseClass.Logout" duration-ms="67" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
-      </class> <!-- com.jkl.testCases.TC_Customers -->
+      </class> <!-- com.jkl.testCases.TC_Inner_Dashboard -->
     </test> <!-- JKL Assets Managemant -->
   </suite> <!-- Suite -->
 </testng-results>

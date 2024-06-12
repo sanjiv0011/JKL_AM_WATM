@@ -149,6 +149,7 @@ public class PO_HomePage extends ReUseAbleElement{
 	public PO_LoginPage UserLogout() throws InterruptedException
 	{	logger.info("Method called: Logout");
 		try {
+			Thread.sleep(2000);
 			clickOnUserProfile();
 			clickOnLogout();
 			clickOnYes();

@@ -20,9 +20,12 @@
 
 			<!--<class name="com.jkl.testCases.TC_Home"/>-->
 
-				<class name="com.jkl.testCases.TC_Customers"/>
+			<!--	<class name="com.jkl.testCases.TC_Customers"/>-->
 
 			<!--<class name="com.jkl.testCases.TC_Tenants" />-->
+			
+			
+			<class name="com.jkl.testCases.TC_Inner_Dashboard" />
 
 			<!--<class name="com.p360.testCases.TC_Membership"/>-->
 
@@ -33,7 +36,7 @@
 
 			<!-- =========MAIN P360  WEBSITE TESTING========== -->
 
-
+	
 			<!--<class name="com.p360.Main.testCases.TC_Main_Dashboard"/>-->
 
 			<!--<class name="com.p360.Main.testCases.TC_Main_Home"/>-->

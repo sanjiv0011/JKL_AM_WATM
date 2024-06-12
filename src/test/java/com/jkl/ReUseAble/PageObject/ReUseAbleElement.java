@@ -615,10 +615,10 @@ public class ReUseAbleElement {
 
 	}
 
-	// SELECT ANY CHECK BOX BY PASSING CHECKBOX NUMBER ,P360
+	// SELECT ANY CHECK BOX BY PASSING CHECKBOX NUMBER ,JKL
 	public boolean selectCheckbox_RU(WebDriver driver, int checkboxNumber) throws InterruptedException {
 		boolean flag = false;
-		String checkbox_address = "(//input[@type='checkbox'])[" + checkboxNumber + "]";
+		String checkbox_address = "(//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[" + checkboxNumber + "]";
 		WebElement btnCheckbox_RU = driver.findElement(By.xpath(checkbox_address));
 		try {
 			if (!btnCheckbox_RU.isSelected()) {

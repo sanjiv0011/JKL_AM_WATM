@@ -24,10 +24,11 @@ import com.jkl.actions.Action_ClickOnAnyColumnElementBasedOnSelectedRowItem;
 import com.jkl.actions.Action_Edit;
 import com.jkl.actions.Action_Deactivate;
 import com.jkl.actions.Action_Restore;
+import com.jkl.pageObject.pageLocators.PL_AssetCategoriesPage;
 import com.jkl.pageObject.pageLocators.PL_TenantsPage;
 import com.jkl.projectUtility.FindThreeDotAndClick;
 
-public class PO_TenantsPage extends ReUseAbleElement {
+public class PO_AssetCategoriesPage extends ReUseAbleElement {
 
 	// CONSTRUCTOR DECLARATION
 	public WebDriver driver;
@@ -40,7 +41,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 	public SoftAssert softAssert = new SoftAssert();
 
 	// CONSTRUCTOR CREATION
-	public PO_TenantsPage(WebDriver driver) {
+	public PO_AssetCategoriesPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		jsExecutor = (JavascriptExecutor) driver;
@@ -48,100 +49,68 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		lp = new PO_LoginPage(driver);
 		action = new Actions(driver);
+		
 
 	}
-
-	// ALERT MESSAGES
-	public String tenantsAdded = "Tenant created successfully.";
-	public String tenantsUpdated = "Tenant updated successfully.";
-	public String tenantDeactivated = "Tenant deactivated successfully.";
-	public String tenantArchived = "Tenant archived successfully.";
-	public String tenantRestored = "Tenant restored successfully.";
-	public String tenantActivated = "Tenant activated successfully.";
-	public String tenantNotFound = "No tenants found";
 
 	// ======START======PAGE OBJECT AND ACTOIN METHODS==========//
 
-	//ADMIN TAB, JKL
-	@FindBy(xpath = PL_TenantsPage.ADD_ADMIN_TAB)
+	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_NAME)
 	@CacheLookup
-	public WebElement menuAdmin;
+	public WebElement field_assetCategoryName;
 
-	public boolean clickOnMenuAdmin() throws InterruptedException {
-		boolean flag = false;
-		try {
-			menuAdmin.click();
-			Thread.sleep(1000);
-			flag = true;
-			logger.info("Clicked on the menuAdmin");
-		} catch (Exception e) {
-			logger.info("Exceptino from clickOnMenuAdmin: " + e.getMessage());
-		}
-		return flag;
+	public void setAssetCategoryName(String assetCategoryName) throws InterruptedException {
+		field_assetCategoryName.sendKeys(Keys.CONTROL, "a");
+		field_assetCategoryName.sendKeys(Keys.DELETE);
+		field_assetCategoryName.sendKeys(assetCategoryName);
+		Thread.sleep(500);
+		logger.info("Entered assetCategoryName");
+
 	}
-
-	//TENANT TAB, JKL
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_TAB)
+	
+	
+	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_CODE)
 	@CacheLookup
-	public WebElement menuTenants;
+	public WebElement field_assetCategoryCode;
 
-	public boolean clickOnMenuTenants() throws InterruptedException {
-		boolean flag = false;
-		try {
-			menuTenants.click();
-			Thread.sleep(1000);
-			flag = true;
-			logger.info("Clicked on the menuTenants");
-		} catch (Exception e) {
-			logger.info("Exceptino from clickOnMenuTenant: " + e.getMessage());
-		}
-		return flag;
+	public void setAssetCategoryCode(String assetCategoryCode) throws InterruptedException {
+		field_assetCategoryCode.sendKeys(Keys.CONTROL, "a");
+		field_assetCategoryCode.sendKeys(Keys.DELETE);
+		field_assetCategoryCode.sendKeys(assetCategoryCode);
+		Thread.sleep(500);
+		logger.info("Entered assetCategoryCode");
+
 	}
 
 	
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_NAME)
-	@CacheLookup
-	public WebElement field_tenantName;
 
-	public void setTenantName(String tenantName) throws InterruptedException {
-		field_tenantName.sendKeys(Keys.CONTROL, "a");
-		field_tenantName.sendKeys(Keys.DELETE);
-		field_tenantName.sendKeys(tenantName);
+	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_DESCRIPTION)
+	@CacheLookup
+	public WebElement field_assetCategoryDescription;
+
+	public void setAssetCategoryDescription(String assetCategoryDescription) throws InterruptedException {
+		field_assetCategoryDescription.sendKeys(Keys.CONTROL, "a");
+		field_assetCategoryDescription.sendKeys(Keys.DELETE);
+		field_assetCategoryDescription.sendKeys(assetCategoryDescription);
 		Thread.sleep(500);
-		logger.info("Entered tenantName");
+		logger.info("Entered assetCategoryDescription");
 
 	}
-
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_ASSET_CODE)
-	@CacheLookup
-	public WebElement field_tenantAssetCode;
-
-	public void setTenantAssetCode(String tenantAssetCode) throws InterruptedException {
-		field_tenantAssetCode.sendKeys(Keys.CONTROL, "a");
-		field_tenantAssetCode.sendKeys(Keys.DELETE);
-		field_tenantAssetCode.sendKeys(tenantAssetCode);
-		Thread.sleep(500);
-		logger.info("Entered field_tenantAssetCode");
-
+	
+	public void selectAssignmentTypes(int[] assingmentTypesNumber) throws InterruptedException {
+		int checkboxNumber = 0;
+		if(assingmentTypesNumber.length <= 3) {
+			for(int assingmentType : assingmentTypesNumber) {
+				checkboxNumber = assingmentType;
+				ruae.selectCheckbox_RU(driver, checkboxNumber);
+			}
+		}
 	}
 
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_DESCRIPTION)
+	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_IMAGE)
 	@CacheLookup
-	public WebElement field_tenantDescription;
-
-	public void setTenantDescription(String tenantDescription) throws InterruptedException {
-		field_tenantDescription.sendKeys(Keys.CONTROL, "a");
-		field_tenantDescription.sendKeys(Keys.DELETE);
-		field_tenantDescription.sendKeys(tenantDescription);
-		Thread.sleep(500);
-		logger.info("Entered field_tenantDescription");
-
-	}
-
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_IMAGE)
-	@CacheLookup
-	public WebElement field_tenantImage;
-	public void setTenantImage(String tenantImage) throws InterruptedException {
+	public WebElement field_assetCategoryImage;
+	public void setTenantImage(String assetCategoryImage) throws InterruptedException {
 	    // Click on the tenant image upload button
 	    //driver.findElement(By.xpath(PL_TenantsPage.ADD_TENANT_IMAGE));
 	    logger.info("Waiting for the 15 seconds pls check add the image");
@@ -191,7 +160,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 	// ======END======PAGE OBJECT AND ACTOIN METHODS==========//
 
 	// TO ADD AND UPDATE THE TENANT
-	public PO_TenantsPage addOrEditTenant(String tenantsName, String tenantAssetCode, String tenantDescription, String tenantImage
+	public PO_AssetCategoriesPage addOrEditTenant(String tenantsName, String tenantAssetCode, String tenantDescription, String tenantImage
 			,String searchKey, int searchKeyColumnIndex, boolean wantToClickOnThreeDot,
 			boolean wantToclickOnFindSearckKey) throws Throwable {
 		
@@ -233,7 +202,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 				clickOnCancelButton_1_RU();
 				logger.info("Tenant not added");
 				softAssert.assertTrue(false, "Tenant is emplty");
-				return new PO_TenantsPage(driver);
+				return new PO_AssetCategoriesPage(driver);
 			} else {
 
 				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
@@ -249,7 +218,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		}
 
 		softAssert.assertAll();
-		return new PO_TenantsPage(driver);
+		return new PO_AssetCategoriesPage(driver);
 	}
 
 	// TO ASSUME A ROLE [ITEW/VISIT] TENANTS
@@ -264,32 +233,32 @@ public class PO_TenantsPage extends ReUseAbleElement {
 		return new PO_Inner_DashboardPage(driver);
 	}
 
-	// TO DEACTIVATE THE TENANTS
-	public PO_TenantsPage deactivateTenant() throws InterruptedException {
+	// TO DEACTIVATE
+	public PO_AssetCategoriesPage deactivateTenant() throws InterruptedException {
 		Action_Deactivate.deactivate(driver,tenantDeactivated);
 		softAssert.assertAll();
-		return new PO_TenantsPage(driver);
+		return new PO_AssetCategoriesPage(driver);
 	}
 
-	// TO ACTIVATE THE TENANTS
-	public PO_TenantsPage activateTenant() throws InterruptedException {
+	// TO ACTIVATE
+	public PO_AssetCategoriesPage activateTenant() throws InterruptedException {
 		Action_Activate.activate(driver, tenantActivated);
 		softAssert.assertAll();
-		return new PO_TenantsPage(driver);
+		return new PO_AssetCategoriesPage(driver);
 	}
 
-	// TO ARCHIVE THE TENANTS
-	public PO_TenantsPage archiveTenant() throws InterruptedException {
+	// TO ARCHIVE
+	public PO_AssetCategoriesPage archiveTenant() throws InterruptedException {
 		Action_Archive.archive(driver, tenantArchived);
 		softAssert.assertAll();
-		return new PO_TenantsPage(driver);
+		return new PO_AssetCategoriesPage(driver);
 	}
 
-	// TO RESTORE THE TENANTS
-	public PO_TenantsPage restoreTenant() throws InterruptedException {
+	// TO RESTORE
+	public PO_AssetCategoriesPage restoreTenant() throws InterruptedException {
 		Action_Restore.restore(driver, tenantRestored);
 		softAssert.assertAll();
-		return new PO_TenantsPage(driver);
+		return new PO_AssetCategoriesPage(driver);
 	}
 
 }

@@ -3,16 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.p360.Main.testCases.TC_Main_Users">
+      <class name="com.jkl.testCases.TC_Tenants">
         <methods>
           <include name="Setup"/>
-          <include name="test_Main_ResumeMembership"/>
-          <include name="test_Main_PauseMembership"/>
-          <include name="Login"/>
-          <include name="Teardown"/>
+          <include name="test_ActivateTenant"/>
           <include name="Logout"/>
+          <include name="Login"/>
+          <include name="test_DeactivateTenant"/>
+          <include name="test_ViewCustomers"/>
+          <include name="test_ArchiveTenant"/>
+          <include name="Teardown"/>
+          <include name="test_RestoreTenant"/>
         </methods>
-      </class> <!-- com.p360.Main.testCases.TC_Main_Users -->
+      </class> <!-- com.jkl.testCases.TC_Tenants -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
