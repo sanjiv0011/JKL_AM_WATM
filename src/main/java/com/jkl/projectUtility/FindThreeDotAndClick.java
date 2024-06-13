@@ -90,6 +90,7 @@ public class FindThreeDotAndClick {
 					String btnActionAddress = null;
 					if (formatText.equalsIgnoreCase(searchKey)) {
 						isSearchKeyMatched = true;
+						logger.info("isSearchKeyMatched: "+isSearchKeyMatched);
 						if (wantToClickOnThreeDot == false && wantToclickOnFindSearckKey == false) {
 							return listRowCount;
 						}

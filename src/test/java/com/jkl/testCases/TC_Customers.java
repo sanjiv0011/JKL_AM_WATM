@@ -45,35 +45,35 @@ public class TC_Customers extends BaseClass {
 		searchKey = edit_customerName;
 	}
 
-	// TO DEACTIVATE CUSTOMERS
+	// TO DEACTIVATE
 	@Test(priority = 3)
 	public void test_DeactivateCustomer() throws Throwable {
 		test_FindCustomerFromListAndClickOnThreeDotButton();
 		cp.deactivateCustomer();
 	}
 
-	// TO ACTIVATE CUSTOMERS
+	// TO ACTIVATE
 	@Test(priority = 4)
 	public void test_ActivateCustomer() throws Throwable {
 		test_FindCustomerFromListAndClickOnThreeDotButton();
 		cp.activateCustomer();
 	}
 
-	// TO ARCHIVE CUSTOMERS
+	// TO ARCHIVE
 	@Test(priority = 5)
 	public void test_ArchiveCustomer() throws Throwable {
 		test_FindCustomerFromListAndClickOnThreeDotButton();
 		cp.archiveCustomer();
 	}
 
-	// TO RESTORE CUSTOMERS
+	// TO RESTORE
 	@Test(priority = 6)
 	public void test_RestoreCustomer() throws Throwable {
 		test_FindCustomerFromListAndClickOnThreeDotButton();
 		cp.restoreCustomer();
 	}
 
-	// TO VIEW CUSTOMERS
+	// TO VIEW 
 	@Test(priority = 7)
 	public void test_ViewCustomer() throws Throwable {
 		test_FindCustomerFromListAndClickOnThreeDotButton();

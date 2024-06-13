@@ -1,5 +1,7 @@
 package com.jkl.testCases;
 
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -24,7 +26,7 @@ public class TC_Inner_Dashboard extends BaseClass {
 	public TC_AssumeRole tc_assumeRole = new TC_AssumeRole();
 	public PO_Inner_DashboardPage i_dp;
 
-	// VARIABLES
+	//VARIABLES TO ASSUME A ROLE
 	String tenantName = "Tata Steel 4"; // "WESTWOOD_"+faker.name().firstName();
 	String customerName = "Tata Groups";
 	String searchKey = customerName;
@@ -33,7 +35,8 @@ public class TC_Inner_Dashboard extends BaseClass {
 	int searchKeyColumnIndex = 1;
 	boolean wantToClickOnSearchKey = false;
 
- 
+	//TO ASSUME A ROLE AS TENANTS
+	@BeforeClass
 	public void assumeRole() throws Throwable {
 		tc_assumeRole.viewCustomers(customerName, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
 				wantToClickOnSearchKey, tenantName);
@@ -51,7 +54,6 @@ public class TC_Inner_Dashboard extends BaseClass {
 	// TO CHECK DASHBOARD COUNT
 	@Test(priority = 1)
 	public void test_CheckDashboardCount() throws Throwable {
-		assumeRole();
 		i_dp.checkDashboardCounts();
 	}
 

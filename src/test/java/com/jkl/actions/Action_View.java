@@ -40,7 +40,7 @@ public class Action_View {
 				//logger.info("btnView_address:- "+btnView_address);
 	  			btnView = driver.findElement(By.xpath(btnView_address));
 			}catch(Exception e) {
-				if(loopcount >20) {
+				if(loopcount >25) {
 					logger.info("Exception from clickOnThreeDotActionbtnView: "+e.getMessage());
 					softAssert.assertTrue(false,"Action button View address not present");
 					ruae.clickOnP360Logo_RU();

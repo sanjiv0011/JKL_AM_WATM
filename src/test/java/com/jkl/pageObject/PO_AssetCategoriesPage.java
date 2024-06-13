@@ -24,6 +24,7 @@ import com.jkl.actions.Action_ClickOnAnyColumnElementBasedOnSelectedRowItem;
 import com.jkl.actions.Action_Edit;
 import com.jkl.actions.Action_Deactivate;
 import com.jkl.actions.Action_Restore;
+import com.jkl.actions.Action_View;
 import com.jkl.pageObject.pageLocators.PL_AssetCategoriesPage;
 import com.jkl.pageObject.pageLocators.PL_TenantsPage;
 import com.jkl.projectUtility.FindThreeDotAndClick;
@@ -49,7 +50,6 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		lp = new PO_LoginPage(driver);
 		action = new Actions(driver);
-		
 
 	}
 
@@ -67,8 +67,7 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 		logger.info("Entered assetCategoryName");
 
 	}
-	
-	
+
 	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_CODE)
 	@CacheLookup
 	public WebElement field_assetCategoryCode;
@@ -82,8 +81,6 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 
 	}
 
-	
-
 	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_DESCRIPTION)
 	@CacheLookup
 	public WebElement field_assetCategoryDescription;
@@ -96,28 +93,33 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 		logger.info("Entered assetCategoryDescription");
 
 	}
-	
+
 	public void selectAssignmentTypes(int[] assingmentTypesNumber) throws InterruptedException {
 		int checkboxNumber = 0;
-		if(assingmentTypesNumber.length <= 3) {
-			for(int assingmentType : assingmentTypesNumber) {
+		logger.info("assingmentTypesNumber: " + assingmentTypesNumber);
+		if (assingmentTypesNumber.length <= 4) {
+			for (int assingmentType : assingmentTypesNumber) {
+				logger.info("assingmentType: " + assingmentType);
 				checkboxNumber = assingmentType;
 				ruae.selectCheckbox_RU(driver, checkboxNumber);
 			}
+		} else {
+			logger.warn("Assignment Type array length should not be greather then 4");
 		}
 	}
 
 	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_IMAGE)
 	@CacheLookup
 	public WebElement field_assetCategoryImage;
-	public void setTenantImage(String assetCategoryImage) throws InterruptedException {
-	    // Click on the tenant image upload button
-	    //driver.findElement(By.xpath(PL_TenantsPage.ADD_TENANT_IMAGE));
-	    logger.info("Waiting for the 15 seconds pls check add the image");
+
+	public void setAssetCategoryImage(String assetCategoryImage) throws InterruptedException {
+		// Click on the tenant image upload button
+		// driver.findElement(By.xpath(PL_TenantsPage.ADD_TENANT_IMAGE));
+		logger.info("Waiting for the 15 seconds pls check add the image");
 		Thread.sleep(8000);
-	    
-	  // jsExecutor.executeScript("arguments[0].click();", field_tenantImage);
-	    
+
+		// jsExecutor.executeScript("arguments[0].click();", field_tenantImage);
+
 //	    // Run the AutoIt script
 //	    try {
 //	        //String[] command = {"."+"//autoIt.exe", "C:\\Users\\User\\Downloads\\logo.png"};
@@ -130,90 +132,114 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 //	    }
 	}
 
-	// TENANTS LIST
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_LIST)
+	// ASSET CATEGORY LIST
+	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_LIST)
 	@CacheLookup
-	List<WebElement> listTenants;
+	List<WebElement> listAssetCategory;
 
-	public int findTenantFromRowListAndClickOnThreeDot(String tenantsName, String searchKey, int searchKeyColumnIndex,
-			boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey) throws InterruptedException {
+	public int findAssetCategoryFromRowListAndClickOnThreeDot(String assetCategoryName, String searchKey,
+			int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey)
+			throws InterruptedException {
 		searchBox_1_RU(driver, searchKey);
-		if (!driver.getPageSource().contains("tenantNotFound")) {
+		if (!driver.getPageSource().contains("assetCategoryNotFound")) {
 			int listRowCount = 0;
 			try {
 				Thread.sleep(2000);
-				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(PL_TenantsPage.ADD_TENANT_LIST,
-						listTenants, driver, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
-						wantToclickOnFindSearckKey);
+				listRowCount = FindThreeDotAndClick.findThreedActionButtonAndClick(
+						PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_LIST, listAssetCategory, driver, searchKey,
+						searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
 
 			} catch (Exception e) {
-				logger.info("Exception from findTenantsFromRowListAndClickOnThreeDot: " + e.getMessage());
+				logger.info("Exception from findAssetCategoryFromRowListAndClickOnThreeDot: " + e.getMessage());
 			}
 			logger.info("listRowCount: " + listRowCount);
 			return listRowCount;
 		} else {
-			logger.info(tenantNotFound);
+			logger.info("AssetCategoryNotFound");
 			return -1;
 		}
 
 	}
 	// ======END======PAGE OBJECT AND ACTOIN METHODS==========//
 
-	// TO ADD AND UPDATE THE TENANT
-	public PO_AssetCategoriesPage addOrEditTenant(String tenantsName, String tenantAssetCode, String tenantDescription, String tenantImage
-			,String searchKey, int searchKeyColumnIndex, boolean wantToClickOnThreeDot,
-			boolean wantToclickOnFindSearckKey) throws Throwable {
-		
+	// TO ASSUME A ROLE AS TENANTS
+	public PO_AssetCategoriesPage assumeRoleAsTenant(String tenantName, int rowListCount, int columnCount,
+			boolean wantToclickColumnELement, WebDriver driver) throws InterruptedException {
+		Action_ClickOnAnyColumnElementBasedOnSelectedRowItem.clickOnSelectedColumnElementBasedOnGivenRowCount(
+				PL_TenantsPage.ADD_TENANT_LIST, rowListCount, columnCount, true, driver);
+		String address_selectedTenant = "//*[text()='" + tenantName + "']";
+
+		String selectedTenant = driver.findElement(By.xpath(address_selectedTenant)).getText();
+		logger.info("Role Assumed for: " + selectedTenant);
+		softAssert.assertEquals(tenantName, selectedTenant);
+		softAssert.assertAll();
+		return new PO_AssetCategoriesPage(driver);
+	}
+
+	// TO ADD AND UPDATE
+	public PO_AssetCategoriesPage addOrEditAssetCategory(String assetCategoryName, String assetCategoryCode,
+			String assetCategoryDescription, int[] assingmentTypesNumber, String assetCategoryImage, String searchKey,
+			int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey)
+			throws Throwable {
+
 		StackTraceElement stackTrace[] = Thread.currentThread().getStackTrace();
 		String callerMethodName = stackTrace[2].getMethodName();
 		logger.info("Caller methods name: " + callerMethodName);
-		
+
 		boolean flag = false;
-		if (callerMethodName.equals("test_AddTenant")) {
-			ruae.clickOnAdd_RU();
-			
+		boolean isClickedOnAddOrEditButton = false;
+		if (callerMethodName.contains("test_Add")) {
+			isClickedOnAddOrEditButton = ruae.clickOnAdd_RU();
+
 			Thread.sleep(1000);
-		} else if (callerMethodName.equals("test_EditTenant")) {
-			
-			int isItemfindInList = findTenantFromRowListAndClickOnThreeDot(tenantsName, searchKey, searchKeyColumnIndex,
-					wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+		} else if (callerMethodName.contains("test_Edit")) {
+
+			int isItemfindInList = findAssetCategoryFromRowListAndClickOnThreeDot(assetCategoryName, searchKey,
+					searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
 			logger.info("Item found in row number: " + isItemfindInList);
 			if (isItemfindInList != -1) {
-				Action_Edit.edit(driver);
+				isClickedOnAddOrEditButton = Action_Edit.edit(driver);
 			}
 		}
 
-		
-		setTenantName(tenantsName);
-		setTenantAssetCode(tenantAssetCode);
-		setTenantDescription(tenantDescription);
-		setTenantImage(tenantImage);
-		
-		if(callerMethodName.equals("test_EditTenant")) {
-			clickOnBtnUpdate_1_RU();
-		}else {
-			flag = clickOnBtnSave_1_RU();
-		}
-		
-		
-		if (flag) {
-			if (driver.getPageSource().contains("Please add tenant name.") || driver.getPageSource()
-					.contains("Tenant names should allow only alphabets, with spaces and numbers optional.")) {
-				clickOnCancelButton_1_RU();
-				logger.info("Tenant not added");
-				softAssert.assertTrue(false, "Tenant is emplty");
-				return new PO_AssetCategoriesPage(driver);
+		logger.info("isClickedOnAddOrEditButton: " + isClickedOnAddOrEditButton);
+		if (isClickedOnAddOrEditButton) {
+			setAssetCategoryName(assetCategoryName);
+			setAssetCategoryCode(assetCategoryCode);
+			setAssetCategoryDescription(assetCategoryDescription);
+			selectAssignmentTypes(assingmentTypesNumber);
+			setAssetCategoryImage(assetCategoryImage);
+
+			if (callerMethodName.contains("test_Edit")) {
+				flag = clickOnBtnUpdate_1_RU();
 			} else {
+				flag = clickOnBtnSave_1_RU();
+			}
 
-				String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-				logger.info("Alert Message: " + alertMsg);
+			if (flag) {
+				if (driver.getPageSource().contains("Please")
+						|| driver.getPageSource().contains("allow only alphabets")) {
+					clickOnCancelButton_1_RU();
+					logger.info("Asset Category not added");
+					softAssert.assertTrue(false, "Asset Category is emplty");
+					return new PO_AssetCategoriesPage(driver);
+				} else {
 
-				if (callerMethodName.equals("test_AddTenant")) {
-					softAssert.assertEquals(alertMsg, tenantsAdded, "Check user tenants added or not");
-				} else if (callerMethodName.equals("test_EditTenant")) {
-					softAssert.assertEquals(alertMsg, tenantsUpdated, "Check user tenants updated or not");
+					String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+					logger.info("Alert Message: " + alertMsg);
+					if (alertMsg.contains("already exists") || alertMsg.contains("error")) {
+						clickOnCancelButton_1_RU();
+					} else {
+						if (callerMethodName.contains("test_Add")) {
+							softAssert.assertEquals(alertMsg, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_CREATEDED,
+									"Check user Asset Category added or not");
+						} else if (callerMethodName.contains("test_Edit")) {
+							softAssert.assertEquals(alertMsg, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_UPDATED,
+									"Check user Asset Category updated or not");
+						}
+					}
+
 				}
-
 			}
 		}
 
@@ -221,42 +247,37 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 		return new PO_AssetCategoriesPage(driver);
 	}
 
-	// TO ASSUME A ROLE [ITEW/VISIT] TENANTS
-	public PO_Inner_DashboardPage assumeRoleAsTenant(String tenantName, int rowListCount, int columnCount, boolean wantToclickColumnELement, WebDriver driver) throws InterruptedException {
-		Action_ClickOnAnyColumnElementBasedOnSelectedRowItem.clickOnSelectedColumnElementBasedOnGivenRowCount(PL_TenantsPage.ADD_TENANT_LIST, rowListCount, columnCount, true, driver);
-		String address_selectedTenant = "//*[text()='"+tenantName+"']";
-		
-		String selectedTenant = driver.findElement(By.xpath(address_selectedTenant)).getText();
-		logger.info("Role Assumed for: "+selectedTenant);
-		softAssert.assertEquals(tenantName, selectedTenant);
+	// TO VIEW/VISIT
+	public PO_HomePage viewAssetCategory() throws InterruptedException {
+		Action_View.view(driver);
 		softAssert.assertAll();
-		return new PO_Inner_DashboardPage(driver);
+		return new PO_HomePage(driver);
 	}
 
 	// TO DEACTIVATE
-	public PO_AssetCategoriesPage deactivateTenant() throws InterruptedException {
-		Action_Deactivate.deactivate(driver,tenantDeactivated);
+	public PO_AssetCategoriesPage deactivateAssetCategroy() throws InterruptedException {
+		Action_Deactivate.deactivate(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_DEACTIVATED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);
 	}
 
 	// TO ACTIVATE
-	public PO_AssetCategoriesPage activateTenant() throws InterruptedException {
-		Action_Activate.activate(driver, tenantActivated);
+	public PO_AssetCategoriesPage activateAssetCategroy() throws InterruptedException {
+		Action_Activate.activate(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_ACTIVATED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);
 	}
 
 	// TO ARCHIVE
-	public PO_AssetCategoriesPage archiveTenant() throws InterruptedException {
-		Action_Archive.archive(driver, tenantArchived);
+	public PO_AssetCategoriesPage archiveAssetCategroy() throws InterruptedException {
+		Action_Archive.archive(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_ARCHIVED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);
 	}
 
 	// TO RESTORE
-	public PO_AssetCategoriesPage restoreTenant() throws InterruptedException {
-		Action_Restore.restore(driver, tenantRestored);
+	public PO_AssetCategoriesPage restoreAssetCategroy() throws InterruptedException {
+		Action_Restore.restore(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_RESTORED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);
 	}

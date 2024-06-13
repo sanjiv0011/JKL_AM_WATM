@@ -619,16 +619,23 @@ public class ReUseAbleElement {
 	public boolean selectCheckbox_RU(WebDriver driver, int checkboxNumber) throws InterruptedException {
 		boolean flag = false;
 		String checkbox_address = "(//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[" + checkboxNumber + "]";
+		logger.info("Checkbox_address: "+checkbox_address);
 		WebElement btnCheckbox_RU = driver.findElement(By.xpath(checkbox_address));
 		try {
-			if (!btnCheckbox_RU.isSelected()) {
+			
+			// Assuming that the SVG element has an attribute or class that changes when selected
+	        String classAttribute = btnCheckbox_RU.getAttribute("class");
+	        boolean isSelected = classAttribute != null && classAttribute.contains("text-orangeLight");
+	        
+			if (!isSelected) {
 				btnCheckbox_RU.click();
+				logger.info("Clicked on the Checkbox : " + checkboxNumber);
 			} else {
-				logger.info("Check box already selected");
+				logger.info("Check box already selected: "+checkboxNumber);
 			}
 			Thread.sleep(400);
 			flag = true;
-			logger.info("Clicked on the Checkbox : " + checkboxNumber);
+			
 		} catch (Exception e) {
 			logger.info("Exception from selectCheckbox_RU : " + e.getMessage());
 		}
