@@ -8,16 +8,22 @@
   </listeners>
   <test thread-count="1" name="JKL Assets Managemant(failed)">
     <classes>
-      <class name="com.jkl.testCases.TC_Inner_AssetCategory">
+      <class name="com.jkl.testCases.TC_AssetCategory">
         <methods>
           <include name="Setup"/>
-          <include name="test_EditAssetCategory"/>
           <include name="Logout"/>
-          <include name="Login"/>
-          <include name="Teardown"/>
           <include name="test_AddAssetCategory"/>
+          <include name="test_EditAssetCategory"/>
+          <include name="Login"/>
+          <include name="assumeRole"/>
+          <include name="Teardown"/>
+          <include name="test_ActivateAssetCategory"/>
+          <include name="test_RestoreAssetCategory"/>
+          <include name="test_DeactivateAssetCategory"/>
+          <include name="test_ArchiveAssetCategory"/>
+          <include name="test_ViewAssetCategory"/>
         </methods>
-      </class> <!-- com.jkl.testCases.TC_Inner_AssetCategory -->
+      </class> <!-- com.jkl.testCases.TC_AssetCategory -->
     </classes>
   </test> <!-- JKL Assets Managemant(failed) -->
 </suite> <!-- Failed suite [Suite] -->

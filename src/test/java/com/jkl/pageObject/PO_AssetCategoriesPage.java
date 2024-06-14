@@ -94,6 +94,7 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 
 	}
 
+
 	public void selectAssignmentTypes(int[] assingmentTypesNumber) throws InterruptedException {
 		int checkboxNumber = 0;
 		logger.info("assingmentTypesNumber: " + assingmentTypesNumber);
@@ -140,7 +141,11 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 	public int findAssetCategoryFromRowListAndClickOnThreeDot(String assetCategoryName, String searchKey,
 			int searchKeyColumnIndex, boolean wantToClickOnThreeDot, boolean wantToclickOnFindSearckKey)
 			throws InterruptedException {
+		
+		ruae.clickOnIconListViewGridViewShowArhciveRestored(driver,PL_AssetCategoriesPage.IOCN_LIST_VIEW);
+		
 		searchBox_1_RU(driver, searchKey);
+		
 		if (!driver.getPageSource().contains("assetCategoryNotFound")) {
 			int listRowCount = 0;
 			try {
@@ -250,33 +255,34 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 	// TO VIEW/VISIT
 	public PO_HomePage viewAssetCategory() throws InterruptedException {
 		Action_View.view(driver);
+		ruae.clickOnCancelButton_1_RU();
 		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
 
 	// TO DEACTIVATE
-	public PO_AssetCategoriesPage deactivateAssetCategroy() throws InterruptedException {
+	public PO_AssetCategoriesPage deactivateAssetCategory() throws InterruptedException {
 		Action_Deactivate.deactivate(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_DEACTIVATED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);
 	}
 
 	// TO ACTIVATE
-	public PO_AssetCategoriesPage activateAssetCategroy() throws InterruptedException {
+	public PO_AssetCategoriesPage activateAssetCategory() throws InterruptedException {
 		Action_Activate.activate(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_ACTIVATED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);
 	}
 
 	// TO ARCHIVE
-	public PO_AssetCategoriesPage archiveAssetCategroy() throws InterruptedException {
+	public PO_AssetCategoriesPage archiveAssetCategory() throws InterruptedException {
 		Action_Archive.archive(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_ARCHIVED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);
 	}
 
 	// TO RESTORE
-	public PO_AssetCategoriesPage restoreAssetCategroy() throws InterruptedException {
+	public PO_AssetCategoriesPage restoreAssetCategory() throws InterruptedException {
 		Action_Restore.restore(driver, PL_AssetCategoriesPage.MESSAGE_ASSET_CATEGORY_RESTORED);
 		softAssert.assertAll();
 		return new PO_AssetCategoriesPage(driver);

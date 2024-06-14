@@ -26,7 +26,7 @@
 
 			<!--	<class name="com.jkl.testCases.TC_Inner_Dashboard" />-->
 
-			<class name="com.jkl.testCases.TC_Inner_AssetCategory" />
+			<class name="com.jkl.testCases.TC_AssetCategory" />
 			
 			
 			<!--<class name="com.p360.testCases.TC_Membership"/>-->

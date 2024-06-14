@@ -29,8 +29,8 @@ public class TC_AssetCategory extends BaseClass {
 	public PO_Inner_DashboardPage innerDashboard;
 
 	// VARIABLE
-	String assetCategoryName = "Monitor";
-	String assetCategoryCode = "MTR";
+	String assetCategoryName = "Hard Disc 2";
+	String assetCategoryCode = "HDD2";
 	String assetCategoryDescription = faker.lorem().sentence();
 	int[] assingmentTypesNumber = { 1, 2, 3 };
 	String assetCategoryImage = "";
@@ -42,7 +42,7 @@ public class TC_AssetCategory extends BaseClass {
 	boolean wantToClickOnThreeDot_assetCategroy = true;
 
 	// TO ADD
-	// @Test(priority = 1)
+	@Test(priority = 1)
 	public void test_AddAssetCategory() throws Throwable {
 		assetCategory = callMeBeforePerformAnyAction();
 		assetCategory.addOrEditAssetCategory(assetCategoryName, assetCategoryCode, assetCategoryDescription,
@@ -51,11 +51,11 @@ public class TC_AssetCategory extends BaseClass {
 	}
 
 	// TO EDIT
-	// @Test(priority = 2)
+	@Test(priority = 2)
 	public void test_EditAssetCategory() throws Throwable {
 		assetCategory = callMeBeforePerformAnyAction();
 		assetCategory.addOrEditAssetCategory(AssetCategoryName_Update, assetCategoryCode, assetCategoryDescription,
-				assingmentTypesNumber, assetCategoryImage, "Monitor Updated", searchKeyColumnIndex_assetCategory,
+				assingmentTypesNumber, assetCategoryImage, searchKey_assetCategory, searchKeyColumnIndex_assetCategory,
 				wantToClickOnThreeDot_assetCategroy, wantToclickOnFindSearckKey_assetCategory);
 		searchKey_assetCategory = AssetCategoryName_Update;
 	}
@@ -71,28 +71,28 @@ public class TC_AssetCategory extends BaseClass {
 	@Test(priority = 4)
 	public void test_DeactivateAssetCategory() throws Throwable {
 		test_FindAssetCategoryFromListAndClickOnThreeDotButton();
-		cp.deactivateCustomer();
+		assetCategory.deactivateAssetCategory();
 	}
 
 	// TO ACTIVATE
 	@Test(priority = 5)
 	public void test_ActivateAssetCategory() throws Throwable {
 		test_FindAssetCategoryFromListAndClickOnThreeDotButton();
-		cp.activateCustomer();
+		assetCategory.activateAssetCategory();
 	}
 
 	// TO ARCHIVE
 	@Test(priority = 6)
 	public void test_ArchiveAssetCategory() throws Throwable {
 		test_FindAssetCategoryFromListAndClickOnThreeDotButton();
-		cp.archiveCustomer();
+		assetCategory.archiveAssetCategory();
 	}
 
 	// TO RESTORE
 	@Test(priority = 7)
 	public void test_RestoreAssetCategory() throws Throwable {
 		test_FindAssetCategoryFromListAndClickOnThreeDotButton();
-		cp.restoreCustomer();
+		assetCategory.restoreAssetCategory();
 	}
 	
 	
@@ -114,8 +114,8 @@ public class TC_AssetCategory extends BaseClass {
 			// logger.info("4");
 		}
 		// logger.info("5");
-		assetCategory.findAssetCategoryFromRowListAndClickOnThreeDot(customerName, searchKey, searchKeyColumnIndex,
-				wantToClickOnThreeDot, wantToClickOnSearchKey);
+		assetCategory.findAssetCategoryFromRowListAndClickOnThreeDot(assetCategoryName, searchKey_assetCategory, searchKeyColumnIndex_assetCategory,
+				wantToClickOnThreeDot_assetCategroy, wantToclickOnFindSearckKey_assetCategory);
 	}
 
 	// CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT AND ASSUME_ROLE
@@ -139,7 +139,7 @@ public class TC_AssetCategory extends BaseClass {
 	boolean wantToClickOnSearchKey = false;
 
 	// TO ASSUME A ROLE AS TENANTS
-	// @BeforeClass
+	@BeforeClass
 	public PO_Inner_DashboardPage assumeRole() throws Throwable {
 		assumeRole.viewCustomers(customerName, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
 				wantToClickOnSearchKey, tenantName);

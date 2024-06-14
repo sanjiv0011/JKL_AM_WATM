@@ -1,255 +1,352 @@
-12:48:43.502 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Base class started...
-12:48:43.580 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-12:48:43.581 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-12:48:45.700 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Chrome driver selected
-12:48:46.466 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login page started
-12:48:46.499 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Maximize the window
-12:48:46.699 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-12:48:46.700 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-12:48:49.939 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
-12:48:52.956 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_AddAssetCategory
-12:48:53.076 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
-12:48:54.085 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
-12:48:54.737 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
-12:48:55.408 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
-12:48:56.750 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
-12:48:56.751 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@58f2466c
-12:48:56.752 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
-12:48:56.753 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
-12:48:56.853 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 1
-12:48:57.262 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
-12:48:57.266 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
-12:48:57.337 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 2
-12:48:57.751 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
-12:48:57.760 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
-12:48:57.819 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 3
-12:48:58.223 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
-12:49:06.342 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-12:49:07.862 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 82
-12:49:07.863 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-12:49:07.894 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: AssetCategory already exists.
-12:49:07.894 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: AssetCategory already exists.
-12:49:10.548 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-12:49:13.696 [main] INFO  com.jkl.pageObject.PO_HomePage - Logout Exception: element click intercepted: Element <div class="flex items-center gap-2">...</div> is not clickable at point (1813, 34). Other element would receive the click: <div class="max-w-[90%] heading-22">...</div>
-  (Session info: chrome=125.0.6422.142)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5835f5afc19f21c51866a423e3c1e959, clickElement {id=f.546379E84CEE61DE9FDB9ED65A9F1499.d.D223AAA289C5CAF93C23B039001D8E31.e.13355}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.142, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on any (5835f5afc19f21c51866a423e3c1e959)] -> xpath: //div[@class='flex items-center gap-2']]
-Session ID: 5835f5afc19f21c51866a423e3c1e959
-12:52:10.450 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Base class started...
-12:52:10.498 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-12:52:10.498 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-12:52:12.764 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Chrome driver selected
-12:52:13.526 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login page started
-12:52:13.580 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Maximize the window
-12:52:13.787 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-12:52:13.787 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-12:52:17.027 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
-12:52:20.043 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_AddAssetCategory
-12:52:20.202 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
-12:52:21.207 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
-12:52:21.910 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
-12:52:22.547 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
-12:52:23.682 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
-12:52:23.683 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@11d2dd2d
-12:52:23.685 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
-12:52:23.686 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
-12:52:23.940 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 1
-12:52:24.355 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
-12:52:24.355 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
-12:52:24.413 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 2
-12:52:24.820 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
-12:52:24.820 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
-12:52:24.878 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 3
-12:52:25.280 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
-12:52:33.407 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-12:52:34.818 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 86
-12:52:34.819 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-12:52:34.840 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: AssetCategory already exists.
-12:52:34.840 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: AssetCategory already exists.
-12:52:34.934 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button 1
-12:52:38.077 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
-12:52:41.092 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_EditAssetCategory
-12:52:41.501 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Monitor
-12:52:43.541 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
-12:52:43.542 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-12:52:43.543 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-12:52:44.132 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: M
-12:52:44.133 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Monitor
-12:52:44.135 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Monitor
-12:52:44.347 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: -1
-12:52:44.348 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Item found in row number: -1
-12:52:44.349 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: false
-12:52:44.361 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-12:52:48.469 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
-12:52:50.632 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
-12:52:52.754 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
-12:52:53.337 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
-12:52:53.407 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Driver shutdown
-12:57:17.769 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Base class started...
-12:57:17.806 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-12:57:17.807 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-12:57:20.040 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Chrome driver selected
-12:57:21.000 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login page started
-12:57:21.110 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Maximize the window
-12:57:21.454 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-12:57:21.455 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-12:57:24.748 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
-12:57:27.778 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_AddAssetCategory
-12:57:27.924 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
-12:57:28.940 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
-12:57:29.642 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
-12:57:30.315 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
-12:57:31.539 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
-12:57:31.539 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@11d2dd2d
-12:57:31.540 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
-12:57:31.540 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
-12:57:31.608 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 1
-12:57:32.018 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
-12:57:32.019 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
-12:57:32.115 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 2
-12:57:32.517 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
-12:57:32.517 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
-12:57:32.575 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 3
-12:57:32.982 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
-12:57:41.101 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-12:57:42.508 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 84
-12:57:42.510 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-12:57:42.530 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: AssetCategory already exists.
-12:57:42.530 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: AssetCategory already exists.
-12:57:42.615 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button 1
-12:57:45.753 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
-12:57:48.770 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_EditAssetCategory
-12:57:49.218 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Monitor
-12:57:51.262 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
-12:57:51.264 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-12:57:51.268 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-12:57:51.865 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Monitor
-12:57:51.866 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Monitor
-12:57:51.868 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
-12:57:51.869 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
-12:57:51.914 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Monitor
-12:57:51.960 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
-12:57:52.171 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
-12:57:52.171 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Item found in row number: 1
-12:57:52.179 [main] INFO  com.jkl.actions.Action_Archive - Action_Edit caller method name: addOrEditAssetCategory
-12:57:52.770 [main] INFO  com.jkl.actions.Action_Archive - Is edit button displayed and enabled: true
-12:57:52.771 [main] INFO  com.jkl.actions.Action_Archive - btnEdit_address:- (//*[contains(normalize-space(text()),'Edit')])[1]
-12:57:52.906 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
-12:57:53.242 [main] INFO  com.jkl.actions.Action_Archive - Clicked on the Edit action button present under three dots
-12:57:54.251 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
-12:57:54.902 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
-12:57:55.593 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
-12:57:56.399 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
-12:57:56.400 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@11d2dd2d
-12:57:56.401 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
-12:57:56.402 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
-12:57:56.459 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected1
-12:57:56.868 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
-12:57:56.869 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
-12:57:56.974 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 2
-12:57:57.376 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
-12:57:57.377 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
-12:57:57.457 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 3
-12:57:57.860 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
-12:58:06.003 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Update
-12:58:06.330 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-12:58:10.482 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
-12:58:12.610 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
-12:58:14.758 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
-12:58:15.322 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
-12:58:15.385 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Driver shutdown
-13:00:24.059 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Base class started...
-13:00:24.101 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-13:00:24.102 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-13:00:26.323 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Chrome driver selected
-13:00:26.946 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login page started
-13:00:27.002 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Maximize the window
-13:00:27.214 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-13:00:27.216 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-13:00:30.415 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
-13:00:33.422 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_EditAssetCategory
-13:00:33.782 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Monitor
-13:00:35.830 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
-13:00:35.833 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-13:00:35.834 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-13:00:36.460 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Monitor Updated
-13:00:36.460 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Monitor
-13:00:36.461 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Monitor
-13:00:36.669 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: -1
-13:00:36.670 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Item found in row number: -1
-13:00:36.670 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: false
-13:00:36.694 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-13:00:40.778 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
-13:00:42.924 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
-13:00:42.948 [main] INFO  com.jkl.pageObject.PO_HomePage - Logout Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//button//div[text()='Yes']"}
-  (Session info: chrome=125.0.6422.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fc95b4e4afcbc6c40ef69760758246b5, findElement {using=xpath, value=//button//div[text()='Yes']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.142, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fc95b4e4afcbc6c40ef69760758246b5
-13:01:52.476 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Base class started...
-13:01:52.531 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-13:01:52.532 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-13:01:54.705 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Chrome driver selected
-13:01:55.106 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login page started
-13:01:55.230 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Maximize the window
-13:01:55.492 [main] INFO  com.jkl.testCases.TC_Inner_AssetCategory - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-13:01:55.494 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-13:01:58.743 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
-13:02:01.770 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_EditAssetCategory
-13:02:02.230 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Monitor Updated
-13:02:04.276 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
-13:02:04.277 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-13:02:04.278 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-13:02:04.834 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Monitor Updated
-13:02:04.835 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Monitor Updated
-13:02:04.835 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
-13:02:04.835 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
-13:02:04.878 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Monitor Updated
-13:02:04.917 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
-13:02:05.130 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
-13:02:05.131 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Item found in row number: 1
-13:02:05.162 [main] INFO  com.jkl.actions.Action_Archive - Action_Edit caller method name: addOrEditAssetCategory
-13:02:05.751 [main] INFO  com.jkl.actions.Action_Archive - Is edit button displayed and enabled: true
-13:02:05.752 [main] INFO  com.jkl.actions.Action_Archive - btnEdit_address:- (//*[contains(normalize-space(text()),'Edit')])[1]
-13:02:05.909 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
-13:02:06.303 [main] INFO  com.jkl.actions.Action_Archive - Clicked on the Edit action button present under three dots
-13:02:07.305 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
-13:02:07.991 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
-13:02:08.613 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
-13:02:09.903 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
-13:02:09.904 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@45292ec1
-13:02:09.905 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
-13:02:09.906 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
-13:02:09.966 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected1
-13:02:10.368 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
-13:02:10.368 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
-13:02:10.433 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected2
-13:02:10.836 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
-13:02:10.837 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
-13:02:10.901 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected3
-13:02:11.312 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
-13:02:19.415 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Update
-13:02:19.864 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 1
-13:02:19.865 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-13:02:19.875 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category updated successfully.
-13:02:19.875 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: Asset category updated successfully.
-13:02:19.904 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-13:02:24.086 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
-13:02:26.161 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
-13:02:26.182 [main] INFO  com.jkl.pageObject.PO_HomePage - Logout Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//button//div[text()='Yes']"}
-  (Session info: chrome=125.0.6422.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9e2ded71a86904ab3ac90be40687e7e7, findElement {using=xpath, value=//button//div[text()='Yes']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.142, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9e2ded71a86904ab3ac90be40687e7e7
+17:19:39.487 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
+17:19:39.518 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
+17:19:41.756 [main] INFO  com.jkl.testCases.TC_AssetCategory - Chrome driver selected
+17:19:42.042 [main] INFO  com.jkl.testCases.TC_AssetCategory - Login page started
+17:19:42.059 [main] INFO  com.jkl.testCases.TC_AssetCategory - Maximize the window
+17:19:42.165 [main] INFO  com.jkl.testCases.TC_AssetCategory - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
+17:19:42.165 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
+17:19:44.273 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:19:46.330 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:19:50.349 [main] INFO  com.jkl.testCases.TC_AssumeRole - driver handle: main
+17:19:50.739 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Groups
+17:19:52.775 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:19:52.775 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:19:52.776 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:19:53.321 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Tata Groups
+17:19:53.321 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Tata Groups
+17:19:53.322 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:19:53.322 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:19:53.358 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Tata Groups
+17:19:53.403 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:19:53.605 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:19:53.659 [main] INFO  com.jkl.actions.Action_Archive - Is Restore button displayed and enabled: true
+17:19:53.660 [main] INFO  com.jkl.actions.Action_Archive - btnView_address:- (//*[normalize-space(text())='View'])[1]
+17:19:53.661 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:19:54.139 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Restore action button present under three dot
+17:19:56.538 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Steel 4
+17:19:58.562 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findTenantFromRowListAndClickOnThreeDot
+17:19:58.562 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: false
+17:19:58.562 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:19:59.103 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Tata Steel 4
+17:19:59.103 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Tata Steel 4
+17:19:59.103 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:19:59.104 [main] INFO  com.jkl.pageObject.PO_TenantsPage - listRowCount: 1
+17:19:59.108 [main] INFO  com.jkl.actions.Action_Archive - clickOnSelectedColumnElementBasedOnGivenRowCount called and caller method name: assumeRoleAsTenant
+17:19:59.110 [main] INFO  com.jkl.actions.Action_Archive - columnElementAddress that you want to clck: (//div[contains(@class,'flex flex-col gap-2 items-center')])[1]//div[5]
+17:19:59.511 [main] INFO  com.jkl.actions.Action_Archive - Click on the given row and column matched element: Rowcount: 1 ColumnCount: 5
+17:20:00.571 [main] INFO  com.jkl.pageObject.PO_TenantsPage - Role Assumed for: Tata Steel 4
+17:20:02.601 [main] INFO  com.jkl.testCases.TC_AssetCategory - Role Assumed Successfully... & Hand over driver to InnerDashboard
+17:20:05.684 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:20:08.695 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_AddAssetCategory
+17:20:08.806 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
+17:20:09.807 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
+17:20:10.436 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
+17:20:11.076 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
+17:20:12.418 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
+17:20:12.419 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@4e424582
+17:20:12.420 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
+17:20:12.420 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
+17:20:12.514 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 1
+17:20:12.926 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
+17:20:12.926 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
+17:20:12.986 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 2
+17:20:13.400 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
+17:20:13.400 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
+17:20:13.463 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 3
+17:20:13.867 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
+17:20:21.934 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+17:20:24.415 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 226
+17:20:24.416 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:20:24.430 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category added successfully.
+17:20:24.431 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: Asset category added successfully.
+17:20:27.521 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:20:30.534 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_EditAssetCategory
+17:20:30.534 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:20:31.094 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:20:31.510 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Monitor Updated
+17:20:33.547 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:20:33.547 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:20:33.547 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:20:34.081 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Monitor Updated
+17:20:34.082 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Monitor Updated
+17:20:34.082 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:20:34.082 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:20:34.128 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Monitor Updated
+17:20:34.166 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:20:34.367 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
+17:20:34.367 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Item found in row number: 1
+17:20:34.372 [main] INFO  com.jkl.actions.Action_Archive - Action_Edit caller method name: addOrEditAssetCategory
+17:20:34.914 [main] INFO  com.jkl.actions.Action_Archive - Is edit button displayed and enabled: true
+17:20:34.915 [main] INFO  com.jkl.actions.Action_Archive - btnEdit_address:- (//*[contains(normalize-space(text()),'Edit')])[1]
+17:20:35.045 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:20:35.385 [main] INFO  com.jkl.actions.Action_Archive - Clicked on the Edit action button present under three dots
+17:20:36.392 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
+17:20:37.050 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
+17:20:37.663 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
+17:20:38.604 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
+17:20:38.604 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@4e424582
+17:20:38.604 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
+17:20:38.604 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
+17:20:38.631 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected: 1
+17:20:39.042 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
+17:20:39.042 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
+17:20:39.066 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected: 2
+17:20:39.473 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
+17:20:39.473 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
+17:20:39.494 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected: 3
+17:20:39.896 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
+17:20:47.952 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Update
+17:20:48.450 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 2
+17:20:48.451 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:20:48.460 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: AssetCategory already exists.
+17:20:48.461 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: AssetCategory already exists.
+17:20:48.524 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button 1
+17:20:51.603 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:20:54.619 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:20:55.171 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:20:55.594 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc Updated
+17:20:57.621 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:20:57.621 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:20:57.621 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:20:58.141 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Hard Disc Updated
+17:20:58.343 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: -1
+17:21:01.830 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:21:04.839 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:21:05.393 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:21:05.889 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc Updated
+17:21:07.916 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:21:07.916 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:21:07.916 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:21:08.438 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Hard Disc Updated
+17:21:08.644 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: -1
+17:21:08.650 [main] INFO  com.jkl.actions.Action_Deactivate - Action_Deactivate caller method name: deactivateAssetCategory
+17:21:08.664 [main] INFO  com.jkl.actions.Action_Deactivate - Exception from Action_Deactivate: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "btnDeactivate" is null
+17:21:12.096 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:21:15.101 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:21:15.658 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:26:30.361 [main] INFO  com.jkl.testCases.TC_AssetCategory - Base class started...
+17:26:30.405 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
+17:26:30.406 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
+17:26:32.682 [main] INFO  com.jkl.testCases.TC_AssetCategory - Chrome driver selected
+17:26:33.232 [main] INFO  com.jkl.testCases.TC_AssetCategory - Login page started
+17:26:33.244 [main] INFO  com.jkl.testCases.TC_AssetCategory - Maximize the window
+17:26:33.354 [main] INFO  com.jkl.testCases.TC_AssetCategory - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
+17:26:33.354 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
+17:26:35.494 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuDashboard
+17:26:37.559 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the menuCustomer
+17:26:41.570 [main] INFO  com.jkl.testCases.TC_AssumeRole - driver handle: main
+17:26:41.971 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Groups
+17:26:44.005 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findCustomerFromRowListAndClickOnThreeDot
+17:26:44.005 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:26:44.006 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:26:44.550 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Tata Groups
+17:26:44.550 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Tata Groups
+17:26:44.551 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:26:44.551 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:26:44.587 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Tata Groups
+17:26:44.623 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:26:44.832 [main] INFO  com.jkl.pageObject.PO_CustomersPage - listRowCount: 1
+17:26:44.887 [main] INFO  com.jkl.actions.Action_Archive - Is Restore button displayed and enabled: true
+17:26:44.887 [main] INFO  com.jkl.actions.Action_Archive - btnView_address:- (//*[normalize-space(text())='View'])[1]
+17:26:44.888 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:26:45.343 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Restore action button present under three dot
+17:26:47.735 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Steel 4
+17:26:49.764 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findTenantFromRowListAndClickOnThreeDot
+17:26:49.764 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: false
+17:26:49.765 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:26:50.291 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Tata Steel 4
+17:26:50.292 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Tata Steel 4
+17:26:50.292 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:26:50.292 [main] INFO  com.jkl.pageObject.PO_TenantsPage - listRowCount: 1
+17:26:50.298 [main] INFO  com.jkl.actions.Action_Archive - clickOnSelectedColumnElementBasedOnGivenRowCount called and caller method name: assumeRoleAsTenant
+17:26:50.301 [main] INFO  com.jkl.actions.Action_Archive - columnElementAddress that you want to clck: (//div[contains(@class,'flex flex-col gap-2 items-center')])[1]//div[5]
+17:26:50.690 [main] INFO  com.jkl.actions.Action_Archive - Click on the given row and column matched element: Rowcount: 1 ColumnCount: 5
+17:26:51.734 [main] INFO  com.jkl.pageObject.PO_TenantsPage - Role Assumed for: Tata Steel 4
+17:26:53.746 [main] INFO  com.jkl.testCases.TC_AssetCategory - Role Assumed Successfully... & Hand over driver to InnerDashboard
+17:26:56.843 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:26:59.851 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_AddAssetCategory
+17:26:59.969 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
+17:27:00.981 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
+17:27:01.609 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
+17:27:02.223 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
+17:27:03.434 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
+17:27:03.434 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@5e002356
+17:27:03.434 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
+17:27:03.435 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
+17:27:03.503 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 1
+17:27:03.904 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
+17:27:03.904 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
+17:27:03.975 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 2
+17:27:04.388 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
+17:27:04.388 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
+17:27:04.445 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Checkbox : 3
+17:27:04.858 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
+17:27:12.921 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
+17:27:15.384 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 237
+17:27:15.385 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:27:15.417 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category added successfully.
+17:27:15.417 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: Asset category added successfully.
+17:27:18.516 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:27:21.522 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Caller methods name: test_EditAssetCategory
+17:27:21.523 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:27:22.084 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:27:22.463 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc 2
+17:27:24.484 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:27:24.484 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:27:24.484 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:27:25.017 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Hard Disc 2
+17:27:25.017 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Hard Disc 2
+17:27:25.018 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:27:25.018 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:27:25.043 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Hard Disc 2
+17:27:25.081 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:27:25.288 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
+17:27:25.289 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Item found in row number: 1
+17:27:25.294 [main] INFO  com.jkl.actions.Action_Archive - Action_Edit caller method name: addOrEditAssetCategory
+17:27:25.833 [main] INFO  com.jkl.actions.Action_Archive - Is edit button displayed and enabled: true
+17:27:25.833 [main] INFO  com.jkl.actions.Action_Archive - btnEdit_address:- (//*[contains(normalize-space(text()),'Edit')])[1]
+17:27:25.970 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:27:26.303 [main] INFO  com.jkl.actions.Action_Archive - Clicked on the Edit action button present under three dots
+17:27:27.309 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - isClickedOnAddOrEditButton: true
+17:27:27.967 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryName
+17:27:28.579 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryCode
+17:27:29.377 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Entered assetCategoryDescription
+17:27:29.377 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentTypesNumber: [I@5e002356
+17:27:29.377 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 1
+17:27:29.378 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[1]
+17:27:29.404 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected: 1
+17:27:29.811 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 2
+17:27:29.811 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[2]
+17:27:29.833 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected: 2
+17:27:30.235 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - assingmentType: 3
+17:27:30.235 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checkbox_address: (//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[3]
+17:27:30.259 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Check box already selected: 3
+17:27:30.674 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Waiting for the 15 seconds pls check add the image
+17:27:38.724 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button Update
+17:27:39.207 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 2
+17:27:39.208 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:27:39.218 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category updated successfully.
+17:27:39.218 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - Alert Message: Asset category updated successfully.
+17:27:42.299 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:27:45.312 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:27:45.866 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:27:46.340 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc 2 Updated
+17:27:48.373 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:27:48.373 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:27:48.374 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:27:48.919 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Hard Disc 2 Updated
+17:27:48.920 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Hard Disc 2 Updated
+17:27:48.920 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:27:48.921 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:27:48.947 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Hard Disc 2 Updated
+17:27:48.975 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:27:49.185 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
+17:27:49.219 [main] INFO  com.jkl.actions.Action_Archive - Is Restore button displayed and enabled: true
+17:27:49.219 [main] INFO  com.jkl.actions.Action_Archive - btnView_address:- (//*[normalize-space(text())='View'])[1]
+17:27:49.219 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:27:49.673 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Restore action button present under three dot
+17:27:50.743 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the cancel button 1
+17:27:53.817 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:27:56.833 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:27:57.384 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:27:57.880 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc 2 Updated
+17:27:59.909 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:27:59.909 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:27:59.910 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:28:00.444 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Hard Disc 2 Updated
+17:28:00.445 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Hard Disc 2 Updated
+17:28:00.445 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:28:00.445 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:28:00.463 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Hard Disc 2 Updated
+17:28:00.493 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:28:00.694 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
+17:28:00.700 [main] INFO  com.jkl.actions.Action_Deactivate - Action_Deactivate caller method name: deactivateAssetCategory
+17:28:00.756 [main] INFO  com.jkl.actions.Action_Deactivate - Is Deactivate button displayed and enabled: true
+17:28:00.757 [main] INFO  com.jkl.actions.Action_Deactivate - btnDeactivate_address:- (//*[normalize-space(text())='Deactivate'])[1]
+17:28:00.757 [main] INFO  com.jkl.actions.Action_Deactivate - rowListCount: 1
+17:28:01.221 [main] INFO  com.jkl.actions.Action_Deactivate - Clicked on Deactivate action button present under three dot
+17:28:02.307 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:28:02.603 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+17:28:02.604 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:28:02.612 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category deactivated successfully.
+17:28:02.612 [main] INFO  com.jkl.actions.Action_Deactivate - ===>>> Asset category deactivated successfully.
+17:28:05.686 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:28:08.700 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:28:09.247 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:28:09.744 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc 2 Updated
+17:28:11.793 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:28:11.793 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:28:11.793 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:28:12.316 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Hard Disc 2 Updated
+17:28:12.316 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Hard Disc 2 Updated
+17:28:12.316 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:28:12.317 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:28:12.334 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Hard Disc 2 Updated
+17:28:12.361 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:28:12.569 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
+17:28:12.587 [main] INFO  com.jkl.actions.Action_Activate - Action_Activate caller method name: activateAssetCategory
+17:28:12.627 [main] INFO  com.jkl.actions.Action_Activate - Is Activate button displayed and enabled: true
+17:28:12.627 [main] INFO  com.jkl.actions.Action_Activate - btnActivate_address:- (//*[normalize-space(text())='Activate'])[1]
+17:28:12.628 [main] INFO  com.jkl.actions.Action_Activate - rowListCount: 1
+17:28:13.091 [main] INFO  com.jkl.actions.Action_Activate - Clicked on Activate action button present under three dot
+17:28:14.161 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:28:14.460 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+17:28:14.461 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:28:14.470 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category activated successfully.
+17:28:14.470 [main] INFO  com.jkl.actions.Action_Activate - ===>>> Asset category activated successfully.
+17:28:17.539 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:28:20.549 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:28:21.095 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:28:21.581 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc 2 Updated
+17:28:23.612 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:28:23.612 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:28:23.612 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:28:24.145 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Hard Disc 2 Updated
+17:28:24.145 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Hard Disc 2 Updated
+17:28:24.145 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:28:24.146 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:28:24.162 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Hard Disc 2 Updated
+17:28:24.209 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:28:24.414 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
+17:28:24.414 [main] INFO  com.jkl.actions.Action_Archive - Action_Archive caller method name: archiveAssetCategory
+17:28:24.453 [main] INFO  com.jkl.actions.Action_Archive - Is Archive button displayed and enabled: true
+17:28:24.453 [main] INFO  com.jkl.actions.Action_Archive - btnArchive_address:- (//*[normalize-space(text())='Archive'])[1]
+17:28:24.453 [main] INFO  com.jkl.actions.Action_Archive - rowListCount: 1
+17:28:24.921 [main] INFO  com.jkl.actions.Action_Archive - Clicked on Archive action button present under three dot
+17:28:25.995 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:28:26.416 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 7
+17:28:26.416 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:28:26.425 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category archived successfully.
+17:28:26.426 [main] INFO  com.jkl.actions.Action_Archive - ===>>> Asset category archived successfully.
+17:28:29.505 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuAssetCategories
+17:28:32.865 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - tooltip_completeAddress: //div[contains(@class,'py-1 px-2 text-center tooltip')][text()='Show Archived']
+17:28:33.456 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the btnTooptip_RU
+17:28:33.456 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:28:34.016 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the icon: 
+17:28:34.422 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Hard Disc 2 Updated
+17:28:36.454 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findAssetCategoryFromRowListAndClickOnThreeDot
+17:28:36.454 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
+17:28:36.455 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
+17:28:36.985 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Hard Disc 2 Updated
+17:28:36.985 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Hard Disc 2 Updated
+17:28:36.986 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
+17:28:36.986 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
+17:28:37.002 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given value matched with the list value: Hard Disc 2 Updated
+17:28:37.032 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Clicked on the three dot option button
+17:28:37.239 [main] INFO  com.jkl.pageObject.PO_AssetCategoriesPage - listRowCount: 1
+17:28:37.246 [main] INFO  com.jkl.actions.Action_Restore - Action_Restore caller method name: restoreAssetCategory
+17:28:37.285 [main] INFO  com.jkl.actions.Action_Restore - Is Restore button displayed and enabled: true
+17:28:37.285 [main] INFO  com.jkl.actions.Action_Restore - btnRestore_address:- (//*[normalize-space(text())='Restore'])[1]
+17:28:37.286 [main] INFO  com.jkl.actions.Action_Restore - rowListCount: 1
+17:28:37.766 [main] INFO  com.jkl.actions.Action_Restore - Clicked on Restore action button present under three dot
+17:28:38.852 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+17:28:39.253 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 5
+17:28:39.253 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+17:28:39.262 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Asset category restored successfully.
+17:28:39.262 [main] INFO  com.jkl.actions.Action_Restore - ===>>> Asset category restored successfully.
+17:28:39.266 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
+17:28:43.346 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
+17:28:45.412 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
+17:28:47.484 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
+17:28:48.022 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
+17:28:48.085 [main] INFO  com.jkl.testCases.TC_AssetCategory - Driver shutdown

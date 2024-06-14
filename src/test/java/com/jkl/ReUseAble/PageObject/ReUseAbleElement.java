@@ -38,6 +38,35 @@ public class ReUseAbleElement {
 		js = (JavascriptExecutor) driver;
 	}
 
+	// TO VERIFY ELEMENT TOOLTIP AND CLICK ON IT, JKL
+	public void clickOnIconListViewGridViewShowArhciveRestored(WebDriver driver, String tooltip_add)
+			throws InterruptedException {
+		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
+		String callerMethodName = stackTraceElement[2].getMethodName();
+
+		logger.info(
+				"Method Called clickOnIconListViewGridViewShowArhciveRestored and caller name: " + callerMethodName);
+		WebElement btnTooptip = driver.findElement(By.xpath(tooltip_add));
+		btnTooptip.click();
+		Thread.sleep(500);
+		logger.info("Clicked on the icon: "+btnTooptip.getText().toString());
+	
+	}
+
+	// P360 PAGE NUMBER BASE ADDRESS
+	public boolean clickOnIconListView_RU(WebDriver dirver, String baseAddress) throws InterruptedException {
+		boolean flag = false;
+
+		WebElement iconlistView = driver.findElement(By.xpath(baseAddress));
+
+		iconlistView.click();
+		Thread.sleep(1000);
+		flag = true;
+		logger.info("Clicked on the Continue button");
+
+		return flag;
+	}
+
 	// ========START=======Actions Elements===================//
 
 	// P360 PAGE NUMBER BASE ADDRESS
@@ -618,24 +647,26 @@ public class ReUseAbleElement {
 	// SELECT ANY CHECK BOX BY PASSING CHECKBOX NUMBER ,JKL
 	public boolean selectCheckbox_RU(WebDriver driver, int checkboxNumber) throws InterruptedException {
 		boolean flag = false;
-		String checkbox_address = "(//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])[" + checkboxNumber + "]";
-		logger.info("Checkbox_address: "+checkbox_address);
+		String checkbox_address = "(//div[contains(@class,'w-max flex items-center gap-2')]//*[name()='svg'])["
+				+ checkboxNumber + "]";
+		logger.info("Checkbox_address: " + checkbox_address);
 		WebElement btnCheckbox_RU = driver.findElement(By.xpath(checkbox_address));
 		try {
-			
-			// Assuming that the SVG element has an attribute or class that changes when selected
-	        String classAttribute = btnCheckbox_RU.getAttribute("class");
-	        boolean isSelected = classAttribute != null && classAttribute.contains("text-orangeLight");
-	        
+
+			// Assuming that the SVG element has an attribute or class that changes when
+			// selected
+			String classAttribute = btnCheckbox_RU.getAttribute("class");
+			boolean isSelected = classAttribute != null && classAttribute.contains("text-orangeLight");
+
 			if (!isSelected) {
 				btnCheckbox_RU.click();
 				logger.info("Clicked on the Checkbox : " + checkboxNumber);
 			} else {
-				logger.info("Check box already selected: "+checkboxNumber);
+				logger.info("Check box already selected: " + checkboxNumber);
 			}
 			Thread.sleep(400);
 			flag = true;
-			
+
 		} catch (Exception e) {
 			logger.info("Exception from selectCheckbox_RU : " + e.getMessage());
 		}
