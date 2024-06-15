@@ -4,71 +4,32 @@
 <suite name="Suite" parallel="none" thread-count="1">
 
 	<listeners>
-		<listener class-name="com.jkl.utilities.ExtentReport"></listener>
+		<listener class-name="com.leonardoAI.utilities.ExtentReport"></listener>
 	</listeners>
 
 	<parameter name="browser" value="chrome"></parameter><!-- value is only
 	[chrome, firefor, edge]-->
-	<parameter name="loginUserType" value="user"></parameter><!-- value is only
-	[admin, user]-->
+	<parameter name="paramtersfromtestNg" value="user,true"></parameter><!-- value is only
+	[admin, user, true, false] note: true false is used for debuggermode confirmation-->
 
-	<test name="JKL Assets Managemant">
+
+	<test name="LeonardoAI Assets Managemant">
 
 		<classes>
 
-			<!-- =======JKL ASSET MANAGEMENT WEBSITE TESTING========= -->
+			<!-- =======LEONARDOAI ASSET MANAGEMENT WEBSITE TESTING========= -->
 
-			<!--<class name="com.jkl.testCases.TC_Home"/>-->
+			<!--<class name="com.leonardoAI.testCases.TC_Home"/>-->
 
-			<!--	<class name="com.jkl.testCases.TC_Customers"/>-->
+				<class name="com.leonardoAI.testCases.TC_ImageGenerationPage"/>
 
 			<!--<class name="com.jkl.testCases.TC_Tenants" />-->
 			
 			
-			<class name="com.jkl.testCases.TC_Inner_Dashboard" />
+		<!--	<class name="com.jkl.testCases.TC_Inner_Dashboard" />-->
 
-			<!--<class name="com.p360.testCases.TC_Membership"/>-->
-
-			<!--<class name="com.p360.testCases.TC_Classes"/>-->
-
-			<!--<class name="com.p360.testCases.TC_AllInOne_UserModule"/>-->
-
-
-			<!-- =========MAIN P360  WEBSITE TESTING========== -->
-
-	
-			<!--<class name="com.p360.Main.testCases.TC_Main_Dashboard"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Home"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Users"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Packages"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Locations"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Trials"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Classes"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Coaches"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Workouts"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Movements"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_PromoCodes"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Payments"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_UserLabels"/>-->
-
-			<!--<class name="com.p360.Main.testCases.TC_Main_Documents"/>-->
-
-			<!-- <class name="com.p360.Main.testCases.TC_Main_Links"/>-->
-
+			
 		</classes>
-
 	</test> <!--
 	Test -->
 
