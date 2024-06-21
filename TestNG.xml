@@ -26,14 +26,13 @@
 
 			<!--	<class name="com.jkl.testCases.TC_Inner_Dashboard" />-->
 
-			<class name="com.jkl.testCases.TC_AssetCategory" />
+		<!--	<class name="com.jkl.testCases.TC_AssetCategory" />-->
+		
+			<!--<class name="com.jkl.testCases.TC_AssetConfigurations" />-->
 			
 			
-			<!--<class name="com.p360.testCases.TC_Membership"/>-->
+			<class name="com.jkl.testCases.TC_Vendors" />
 
-			<!--<class name="com.p360.testCases.TC_Classes"/>-->
-
-			<!--<class name="com.p360.testCases.TC_AllInOne_UserModule"/>-->
 
 
 			<!-- =========MAIN P360  WEBSITE TESTING========== -->

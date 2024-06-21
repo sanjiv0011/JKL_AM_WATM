@@ -49,8 +49,8 @@ public class ReUseAbleElement {
 		WebElement btnTooptip = driver.findElement(By.xpath(tooltip_add));
 		btnTooptip.click();
 		Thread.sleep(500);
-		logger.info("Clicked on the icon: "+btnTooptip.getText().toString());
-	
+		logger.info("Clicked on the icon: " + btnTooptip.getText().toString());
+
 	}
 
 	// P360 PAGE NUMBER BASE ADDRESS
@@ -323,63 +323,6 @@ public class ReUseAbleElement {
 		return flag;
 	}
 
-	// ===========START=======ACTIVATE AND DEACTIVATE==================//
-
-	// ACTIVATE Action P360 => To use this first search list item so that it comes
-	// at first position
-	@FindBy(xpath = "//*[normalize-space(text())='Activate']")
-	@CacheLookup
-	public WebElement actionActivate;
-
-	public void clickOnActivateAction_RU() throws InterruptedException {
-		int count = 0;
-		while (true) {
-			try {
-				if (actionActivate.isDisplayed() && actionActivate.isEnabled()) {
-					actionActivate.click();
-					logger.info("Clicked on the Action_Activate button");
-					Thread.sleep(300);
-					break;
-				}
-			} catch (Exception e) {
-				count++;
-				logger.info("count: " + count);
-				logger.info("Exception from : " + e.getMessage());
-			}
-			if (count > 10) {
-				logger.info("Search Loop Count: " + count);
-				break;
-			}
-		}
-	}
-
-	// DEACTIVATE Action P360 => To use this first search list item so that it comes
-	// at first position
-	@FindBy(xpath = "//*[normalize-space(text())='Deactivate']")
-	@CacheLookup
-	public WebElement actionDeactivate;
-
-	public void clickOnDeactivateAction_RU() throws InterruptedException {
-		int count = 0;
-		while (true) {
-			try {
-				if (actionDeactivate.isDisplayed() && actionDeactivate.isEnabled()) {
-					actionDeactivate.click();
-					logger.info("Clicked on the Action_Deactivated button");
-					Thread.sleep(300);
-					break;
-				}
-			} catch (Exception e) {
-				count++;
-				logger.info("count: " + count);
-				logger.info("Exception from : " + e.getMessage());
-			}
-			if (count > 10) {
-				logger.info("Search Loop Count: " + count);
-				break;
-			}
-		}
-	}
 
 	// TO CHECK LABLE INACTIVE
 	@FindBy(xpath = "//span[normalize-space()='InActive']")
@@ -415,65 +358,7 @@ public class ReUseAbleElement {
 
 	// ===========START=======ARCHIVE AND RESTORE==================//
 
-	// Archive Action, P360 => To use this first search list item so that it comes
-	// at first position
-	@FindBy(xpath = "//*[normalize-space(text())='Archive']")
-	@CacheLookup
-	public WebElement actionArchive;
-
-	// Action method to click the Archive action
-	public void clickOnArchiveAction_RU() throws InterruptedException {
-		int count = 0;
-		while (true) {
-			try {
-				if (actionArchive.isDisplayed() && actionArchive.isEnabled()) {
-					actionArchive.click();
-					logger.info("Clicked on the Action_Archive button");
-					Thread.sleep(300);
-					break;
-				}
-			} catch (Exception e) {
-				count++;
-				logger.info("count: " + count);
-				logger.info("Exception from : " + e.getMessage());
-			}
-			if (count > 10) {
-
-				logger.info("Search Loop Count: " + count);
-				break;
-			}
-		}
-	}
-
-	// Restore Action, P360 => To use this first search list item so that it comes
-	// at first position
-	@FindBy(xpath = "//*[normalize-space(text())='Restore']")
-	@CacheLookup
-	public WebElement actionRestore;
-
-	// Action method to click the Restore action
-	public void clickOnRestoreAction_RU() throws InterruptedException {
-		int count = 0;
-		while (true) {
-			try {
-				if (actionRestore.isDisplayed() && actionRestore.isEnabled()) {
-					actionRestore.click();
-					logger.info("Clicked on the Action_Restore button");
-					Thread.sleep(300);
-				}
-			} catch (Exception e) {
-				count++;
-				logger.info("count: " + count);
-				logger.info("Exception from : " + e.getMessage());
-			}
-			if (count > 10) {
-
-				logger.info("Search Loop Count: " + count);
-				break;
-			}
-		}
-	}
-
+	
 	// TO CHECK ALLREADY ARCHIVED
 	@FindBy(xpath = "//span[text()='Archived']")
 	@CacheLookup
@@ -494,18 +379,6 @@ public class ReUseAbleElement {
 	}
 	// ===========END=======ARCHIVE AND RESTORE==================//
 
-	// Edit Action => To use this first search list item so that it comes at first
-	// position
-	@FindBy(xpath = "(//div[contains(text(),'Edit')])[1]")
-	@CacheLookup
-	public WebElement actionEdit_RU;
-
-	// Action method to click the Edit action
-	public void clickOnEditAction_RU() throws InterruptedException {
-		actionEdit_RU.click();
-		logger.info("Clicked on the Action_Edit button");
-		Thread.sleep(300);
-	}
 
 	// ===========START=======FOR THE BUTTON YES, NO, SAVE CHANGES, CROSS BUTTON,
 	// SAVE & GO TO HOME, AND DELETE, PROFILE ICON, EYE ICON===================//
@@ -975,14 +848,14 @@ public class ReUseAbleElement {
 		Thread.sleep(300);
 	}
 
-	// NEXT BUTTON WITH * TAG, P360
-	@FindBy(xpath = "//*[normalize-space()='Next']")
+	// NEXT BUTTON WITH * TAG,JKL
+	@FindBy(xpath = "(//*[normalize-space()='Next'])[1]")
 	@CacheLookup
-	public WebElement btnNextStarTag_1_RU;
-	public String address_NextStarTag_1_RU = "//*[normalize-space()='Next']";
+	public WebElement btnNext_1_RU;
+	public String address_Next_1_RU = "(//*[normalize-space()='Next'])[1]";
 
 	public void clickOnBtnNextStartTag_1_RU() throws InterruptedException {
-		btnNextStarTag_1_RU.click();
+		btnNext_1_RU.click();
 		logger.info("Clicked on the  btnNextStarTag_1_RU");
 		Thread.sleep(300);
 	}
@@ -999,17 +872,35 @@ public class ReUseAbleElement {
 		Thread.sleep(300);
 	}
 
-	// NEXT BUTTON 1
-	@FindBy(xpath = "//span[normalize-space()='Next']")
+	// NEXT BUTTON 1, JKL
+	@FindBy(xpath = "//button[normalize-space()='Next']")
 	@CacheLookup
 	public WebElement btnNext_RU;
 
-	public boolean clickOnBtnNext_1_RU() throws InterruptedException {
+	public boolean clickOnBtnNext_RU() throws InterruptedException {
 		boolean flag = false;
 		try {
 			btnNext_RU.click();
 			flag = true;
 			logger.info("Clicked on the nextbutton");
+			Thread.sleep(300);
+		} catch (Exception e) {
+			logger.info("Excepton from : " + e.getMessage());
+		}
+		return flag;
+	}
+
+	// PREVIEW BUTTON 1
+	@FindBy(xpath = "//button[normalize-space()='Preview']")
+	@CacheLookup
+	public WebElement btnPreview_RU;
+
+	public boolean clickOnBtnPreview_RU() throws InterruptedException {
+		boolean flag = false;
+		try {
+			btnPreview_RU.click();
+			flag = true;
+			logger.info("Clicked on the btnPreview_RU");
 			Thread.sleep(300);
 		} catch (Exception e) {
 			logger.info("Excepton from : " + e.getMessage());
@@ -1063,40 +954,40 @@ public class ReUseAbleElement {
 		Thread.sleep(1000);
 	}
 
-//	    //DROPDOWN ICON 1, P360
-//  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[1]")
-//  		@CacheLookup
-//  		public WebElement iconDropdown_1_RU;
-	public String iconDropdown_1_RU_Address = "(//button[@title='Open']//*[name()='svg'])[1]";
+	// DROPDOWN ICON 1,JKL
+	public String iconDropdown_1_RU_Address = "(//div[starts-with(@class,'Input_inputContainer')]//*[name()='svg'])[1]";
 
-	public void clickOnDropdown_1_RU(WebDriver driver) throws InterruptedException {
+	public boolean clickOnDropdown_1_RU(WebDriver driver) throws InterruptedException {
+		boolean isClickedOnDropDwonIcon = false;
 		try {
 			WebElement iconDropdown_1_RU = driver.findElement(By.xpath(iconDropdown_1_RU_Address));
 			iconDropdown_1_RU.click();
 			logger.info("Clicked on the icon dropdown 1");
+			isClickedOnDropDwonIcon = true;
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			logger.info("Exceptin from clickOnDropdown_1_RU: " + e.getMessage());
 
 		}
+		return isClickedOnDropDwonIcon;
 	}
 
-//  		//DROPDOWN ADDRESS 2, P360
-//  		@FindBy(xpath = "(//button[@title='Open']//*[name()='svg'])[2]")
-//  		@CacheLookup
-//  		public WebElement iconDropdown_2_RU;
-	public String iconDropdown_2_RU_Address = "(//button[@title='Open']//*[name()='svg'])[2]";
+	// DROPDOWN ICON 2,JKL
+	public String iconDropdown_2_RU_Address = "(//div[starts-with(@class,'Input_inputContainer')]//*[name()='svg'])[2]";
 
-	public void clickOnDropdown_2_RU(WebDriver driver) throws InterruptedException {
+	public boolean clickOnDropdown_2_RU(WebDriver driver) throws InterruptedException {
+		boolean isClickedOnDropDwonIcon = false;
 		try {
 			WebElement iconDropdown_2_RU = driver.findElement(By.xpath(iconDropdown_2_RU_Address));
 			iconDropdown_2_RU.click();
 			logger.info("Clicked on the icon dropdown 2");
+			isClickedOnDropDwonIcon = true;
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			logger.info("Exceptin from clickOnDropdown_2_RU: " + e.getMessage());
 
 		}
+		return isClickedOnDropDwonIcon;
 	}
 
 //  		//DROPDOWN ADDRESS 3, P360
@@ -1188,12 +1079,31 @@ public class ReUseAbleElement {
 		return flag;
 	}
 
-	// DROPDWON LIST P360
-	@FindBy(xpath = "//ul[@role='listbox']//li")
+	// DROPDWON LIST, JKL
+	@FindBy(xpath = "//div[@role='listbox']//div")
 	@CacheLookup
 	public List<WebElement> listOption_RU;
 	// BELOW LINE IS USED TO AVOID THE STALE ELEMENT REFERENCE
-	public String listOptionAddress_RU = "//ul[@role='listbox']//li";
+	public String listOptionAddress_RU = "//div[@role='listbox']//div";
+	public boolean selectAnyValueFromDropdownList(WebDriver driver, String valuesYouWantToSelectFromDropdownList) throws InterruptedException {
+		boolean isOptionSelected  = false;
+		try {
+			for(WebElement listOption : listOption_RU) {
+				String optionValue = listOption.getText().toString().trim();
+				if(optionValue.equals(valuesYouWantToSelectFromDropdownList.trim())) {
+					action.moveToElement(listOption).build().perform();
+					Thread.sleep(200);
+					action.moveToElement(listOption).click().build().perform();
+					isOptionSelected = true;
+					logger.info("Selected option is: "+optionValue);
+				}
+			}
+		}catch(Exception e) {
+			logger.info("Exception from: selectAnyValueFromDropdownList >> "+e.getMessage());
+		}
+		
+		return isOptionSelected;
+	}
 
 	// CONFIRM BUTTON ADDRESS AND ACTION METHODS
 	@FindBy(xpath = "//span[normalize-space()='Confirm']")
@@ -1455,25 +1365,25 @@ public class ReUseAbleElement {
 	@CacheLookup
 	public List<WebElement> listData_RU;
 
-	// RADIO BUTTON-1,P360
-	@FindBy(xpath = "(//input[@type='radio'])[1]")
+	// RADIO BUTTON-1,JKL
+	@FindBy(xpath = "//div[contains(@class,'w-full flex gap-5')]//div[1]//*[name()='svg']")
 	@CacheLookup
 	WebElement btnRadio_1_RU;
 
 	public void clickOnRadioButton_1_RU() throws InterruptedException {
 		btnRadio_1_RU.click();
-		logger.info("Clicked on the radio button -1");
+		logger.info("Clicked on the radio button 1");
 		Thread.sleep(500);
 	}
 
-	// RADIO BUTTON-2,P360
-	@FindBy(xpath = "(//input[@type='radio'])[2]")
+	// RADIO BUTTON-2,JKL
+	@FindBy(xpath = "//div[contains(@class,'w-full flex gap-5')]//div[2]//*[name()='svg']")
 	@CacheLookup
 	WebElement btnRadio_2_RU;
 
 	public void clickOnRadioButton_2_RU() throws InterruptedException {
 		btnRadio_2_RU.click();
-		logger.info("Clicked on the radio button -2");
+		logger.info("Clicked on the radio button 2");
 		Thread.sleep(500);
 	}
 

@@ -96,6 +96,7 @@ public class BaseClass {
 	@Parameters("loginUserType")
 	@BeforeClass()
 	public void Login(String loginUserType) throws InterruptedException {
+		System.out.println("loginUserType: "+loginUserType);
 		if (loginUserType.equalsIgnoreCase("admin")) {
 			lp = new PO_LoginPage(driver);
 			logger.info("Login user Email: " + adminEmail + " and Password: " + adminPassword);
