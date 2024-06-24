@@ -1,12 +1,10 @@
 package com.jkl.pageObject;
 
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,15 +16,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 import com.jkl.ReUseAble.PageObject.ReUseAbleElement;
-import com.jkl.actions.Action_Activate;
-import com.jkl.actions.Action_Archive;
-import com.jkl.actions.Action_ClickOnAnyColumnElementBasedOnSelectedRowItem;
 import com.jkl.actions.Action_Edit;
-import com.jkl.actions.Action_Deactivate;
-import com.jkl.actions.Action_Restore;
-import com.jkl.actions.Action_View;
 import com.jkl.pageObject.pageLocators.PL_VendorsPage;
-import com.jkl.pageObject.pageLocators.PL_TenantsPage;
 import com.jkl.projectUtility.FindThreeDotAndClick;
 
 public class PO_VendorsPage extends ReUseAbleElement {
@@ -99,7 +90,7 @@ public class PO_VendorsPage extends ReUseAbleElement {
 			selectAnyValueFromDropdownList(driver, assetCategory);
 		}
 	}
-	
+
 	public void selectVendorsTypes(String vendorType) throws InterruptedException {
 		if (ruae.clickOnDropdown_1_RU(driver)) {
 			selectAnyValueFromDropdownList(driver, vendorType);
@@ -129,14 +120,14 @@ public class PO_VendorsPage extends ReUseAbleElement {
 		Thread.sleep(500);
 		logger.info("Entered vendorWebsite");
 	}
-	
+
 	public void selectVendorTypeRadioButton(String vendorType) throws InterruptedException {
-		if(vendorType.equals("Agency")) {
+		if (vendorType.equals("Agency")) {
 			ruae.clickOnRadioButton_1_RU();
-		}else if(vendorType.equals("Individual")){
+		} else if (vendorType.equals("Individual")) {
 			ruae.clickOnRadioButton_2_RU();
-		}else {
-			logger.warn("Wrong vendor type"+vendorType);
+		} else {
+			logger.warn("Wrong vendor type" + vendorType);
 		}
 	}
 
@@ -319,9 +310,9 @@ public class PO_VendorsPage extends ReUseAbleElement {
 
 	// TO ADD AND UPDATE
 	public PO_VendorsPage addOrEditVendor(String vendorName, String vendorEmail, String vendorPhoneNumber,
-			String vendorWhatsAppNumber, String vendorWebsite, String vendorType, String vendorAddress1, String vendorAddress2,
-			String vendorCity, String vendorPostalCode, String vendorState, String vendorCountry, String vendoroverview,
-			String vendorContactName, String vendorContactNumber, String vendorContactEmail,
+			String vendorWhatsAppNumber, String vendorWebsite, String vendorType, String vendorAddress1,
+			String vendorAddress2, String vendorCity, String vendorPostalCode, String vendorState, String vendorCountry,
+			String vendoroverview, String vendorContactName, String vendorContactNumber, String vendorContactEmail,
 			String vendorContactComment, String searchKey, int searchKeyColumnIndex, boolean wantToClickOnThreeDot,
 			boolean wantToclickOnFindSearckKey) throws Throwable {
 
@@ -351,83 +342,91 @@ public class PO_VendorsPage extends ReUseAbleElement {
 
 			if (isClickedOnAddOrEditButton) {
 				Thread.sleep(2000);
-				// for vendor details
-				setVendorName(vendorName);
-				setVendorEmail(vendorEmail);
-				setVendorPhoneNumber(vendorPhoneNumber);
-				setVendorWhatsAppNumber(vendorWhatsAppNumber);
-				setVendorWebsite(vendorWebsite);
-				selectVendorTypeRadioButton(vendorType);
-				ruae.clickOnBtnNext_RU();
-				logger.info("Vendor Details added");
-				Thread.sleep(2000);
+				boolean isClickedOnNextBtn = false;
+				try {
+					// for vendor details
+					setVendorName(vendorName);
+					setVendorEmail(vendorEmail);
+					setVendorPhoneNumber(vendorPhoneNumber);
+					setVendorWhatsAppNumber(vendorWhatsAppNumber);
+					setVendorWebsite(vendorWebsite);
+					selectVendorTypeRadioButton(vendorType);
+					logger.info("Vendor Details added");
+					isClickedOnNextBtn = ruae.clickOnBtnNext_RU();
+					Thread.sleep(2000);
+				} catch (Exception e) {
+					logger.info("Exception from Vendor details: " + e.getMessage());
+				}
 
-				// for vendor address
-				setVendorAddress1(vendorAddress1);
-				setVendorAddress2(vendorAddress2);
-				setVendorCity(vendorCity);
-				setVendorPostalCode(vendorPostalCode);
-				setVendorState(vendorState);
-				setVendorCountry(vendorCountry);
-				setVendorOverview(vendoroverview);
-				ruae.clickOnBtnNext_RU();
-				logger.info("Vendor Address added");
-				Thread.sleep(2000);
-
-				// for vendor contacts
-				setVendorContactName(vendorContactName);
-				setVendorContactNumber(vendorContactNumber);
-				//setVendorContactEmail(vendorContactEmail);
-				setVendorContactComment(vendorContactComment);
-				ruae.clickOnBtnPreview_RU();
-				logger.info("Vendor Address added");
-				Thread.sleep(2000);
-				boolean isClickedOnSaveButton = ruae.clickOnBtnSave_1_RU();
-
-				if (isClickedOnSaveButton) {
-					if (driver.getPageSource().contains("Please")
-							|| driver.getPageSource().contains("allow only alphabets")) {
-						clickOnCancelButton_1_RU();
-						logger.info("Asset Configuration not added");
-						softAssert.assertTrue(false, "Vemdpr is emplty");
-						return new PO_VendorsPage(driver);
-					} else {
-
-						String alertMsg = snakeAlertMessagesDisplayedContent_RU();
-						logger.info("Alert Message: " + alertMsg);
-						if (alertMsg.contains("already exists") || alertMsg.contains("error")) {
-							clickOnCancelButton_1_RU();
-						} else {
-							if (callerMethodName.contains("test_Add")) {
-								softAssert.assertEquals(alertMsg, PL_VendorsPage.MESSAGE_VENDOR_CREATEDED,
-										"Check user vendor added or not");
-							} else if (callerMethodName.contains("test_Edit")) {
-								softAssert.assertEquals(alertMsg, PL_VendorsPage.MESSAGE_VENDOR_UPDATED,
-										"Check user vendor updated or not");
-							}
-						}
-
+				if (isClickedOnNextBtn) {
+					try {
+						// for vendor address
+						isClickedOnNextBtn = false;
+						setVendorAddress1(vendorAddress1);
+						setVendorAddress2(vendorAddress2);
+						setVendorCity(vendorCity);
+						setVendorPostalCode(vendorPostalCode);
+						setVendorState(vendorState);
+						setVendorCountry(vendorCountry);
+						setVendorOverview(vendoroverview);
+						isClickedOnNextBtn = ruae.clickOnBtnNext_RU();
+						logger.info("Vendor Address details");
+						Thread.sleep(2000);
+					} catch (Exception e) {
+						logger.info("Exception from Vendor address: " + e.getMessage());
 					}
 				}
+
+				if (isClickedOnNextBtn) {
+					try {
+						isClickedOnNextBtn = false;
+						// for vendor contacts
+						setVendorContactName(vendorContactName);
+						setVendorContactNumber(vendorContactNumber);
+						// setVendorContactEmail(vendorContactEmail);
+						setVendorContactComment(vendorContactComment);
+						isClickedOnNextBtn = ruae.clickOnBtnPreview_RU();
+						logger.info("Vendor Address contact");
+						Thread.sleep(2000);
+					} catch (Exception e) {
+						logger.info("Exception from Vendor contact: " + e.getMessage());
+					}
+				}
+
+				if (isClickedOnNextBtn) {
+					boolean isClickedOnSaveButton = ruae.clickOnBtnSave_1_RU();
+					if (isClickedOnSaveButton) {
+						if (driver.getPageSource().contains("Please")
+								|| driver.getPageSource().contains("allow only alphabets")) {
+							clickOnCancelButton_1_RU();
+							logger.info("Asset Configuration not added");
+							softAssert.assertTrue(false, "Vemdpr is emplty");
+							return new PO_VendorsPage(driver);
+						} else {
+
+							String alertMsg = snakeAlertMessagesDisplayedContent_RU();
+							logger.info("Alert Message: " + alertMsg);
+							if (alertMsg.contains("already exists") || alertMsg.contains("error")) {
+								clickOnCancelButton_1_RU();
+							} else {
+								if (callerMethodName.contains("test_Add")) {
+									softAssert.assertEquals(alertMsg, PL_VendorsPage.MESSAGE_VENDOR_CREATEDED,
+											"Check user vendor added or not");
+								} else if (callerMethodName.contains("test_Edit")) {
+									softAssert.assertEquals(alertMsg, PL_VendorsPage.MESSAGE_VENDOR_UPDATED,
+											"Check user vendor updated or not");
+								}
+							}
+
+						}
+					}
+				}
+
 			}
 		} catch (Exception e) {
 			logger.warn("Exceptino form : addOrEditVendor >>" + e.getMessage());
 		}
 
-		softAssert.assertAll();
-		return new PO_VendorsPage(driver);
-	}
-
-	// TO ARCHIVE
-	public PO_VendorsPage archiveVendor() throws InterruptedException {
-		Action_Archive.archive(driver, PL_VendorsPage.MESSAGE_ASSET_CONFIGURATION_ARCHIVED);
-		softAssert.assertAll();
-		return new PO_VendorsPage(driver);
-	}
-
-	// TO RESTORE
-	public PO_VendorsPage restoreVendor() throws InterruptedException {
-		Action_Restore.restore(driver, PL_VendorsPage.MESSAGE_ASSET_CONFIGURATION_RESTORED);
 		softAssert.assertAll();
 		return new PO_VendorsPage(driver);
 	}
