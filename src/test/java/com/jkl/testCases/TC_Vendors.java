@@ -4,13 +4,12 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import com.jkl.ReUseAble.PageObject.ReUseAbleElement;
-import com.jkl.pageObject.PO_AssetConfigurationsPage;
-import com.jkl.pageObject.PO_CustomersPage;
 import com.jkl.pageObject.PO_HomePage;
 import com.jkl.pageObject.PO_Inner_DashboardPage;
 import com.jkl.pageObject.PO_LoginPage;
-import com.jkl.pageObject.PO_TenantsPage;
 import com.jkl.pageObject.PO_VendorsPage;
+import com.jkl.pageObject.pageLocators.PL_Inner_DashboardPage;
+import com.jkl.utilities.ClickOnAnyButton;
 
 public class TC_Vendors extends BaseClass {
 	// HOME PAGE CONSTRUCTOR
@@ -24,6 +23,7 @@ public class TC_Vendors extends BaseClass {
 	public Faker faker = new Faker();
 	public PO_VendorsPage po_vendor;
 	public PO_Inner_DashboardPage innerDashboard;
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
 
 	// VARIABLE VENDOR DETAILS
 	String vendorName = "Tata Croma Product";
@@ -31,7 +31,7 @@ public class TC_Vendors extends BaseClass {
 	String vendorPhoneNumber = "917894654123";
 	String vendorWhatsAppNumber = "917894560123";
 	String vendorWebsite = "https://www.google.com/";
-	String vendorType = "Individual"; //"Agency"
+	String vendorType = "Individual"; // "Agency"
 
 	// VARIABLE VENDOR ADDRESS
 	String vendorAddress1 = faker.address().streetAddress();
@@ -50,66 +50,89 @@ public class TC_Vendors extends BaseClass {
 
 	String vendorName_Update = vendorName + " Updated";
 
+	// VARIABLES FOR SEARCHING
 	String searchKey = vendorName;
 	int searchKeyColumnIndex = 1;
-	boolean wantToClickOnThreeDot = true;
+	boolean wantToClickOnThreeDot = false;
 	boolean wantToclickOnFindSearckKey = false;
 	String searchKey_assetConfiguration = null;
+	String searchKey_Vendor = "Tata Croma Product Updated";
+	boolean wantToclickOnFindSearckKey_Vendor = true;
+	int searchKeyColumnIndex_Vendor = 1;
+	boolean wantToClickOnThreeDot_Vendor = false;
 
 	// TO ADD
-	@Test(priority = 1)
+	// @Test(priority = 1)
 	public void test_AddVendor() throws Throwable {
 		po_vendor = callMeBeforePerformAnyAction();
-		po_vendor.addOrEditVendor(vendorName, vendorEmail, vendorPhoneNumber, vendorWhatsAppNumber, vendorWebsite,vendorType,
-				vendorAddress1, vendorAddress2, vendorCity, vendorPostalCode, vendorState, vendorCountry,
+		po_vendor.addOrEditVendor(vendorName, vendorEmail, vendorPhoneNumber, vendorWhatsAppNumber, vendorWebsite,
+				vendorType, vendorAddress1, vendorAddress2, vendorCity, vendorPostalCode, vendorState, vendorCountry,
 				vendoroverview, vendorContactName, vendorContactNumber, vendorContactEmail, vendorContactComment,
 				searchKey, searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
 	}
 
 	// TO EDIT
-	@Test(priority = 2)
+	// @Test(priority = 2)
 	public void test_EditVendor() throws Throwable {
 		po_vendor = callMeBeforePerformAnyAction();
-		po_vendor.addOrEditVendor(vendorName_Update, vendorEmail, vendorPhoneNumber, vendorWhatsAppNumber, vendorWebsite,vendorType,
-				vendorAddress1, vendorAddress2, vendorCity, vendorPostalCode, vendorState, vendorCountry,
-				vendoroverview, vendorContactName, vendorContactNumber, vendorContactEmail, vendorContactComment,
-				searchKey, searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+		po_vendor.addOrEditVendor(vendorName_Update, vendorEmail, vendorPhoneNumber, vendorWhatsAppNumber,
+				vendorWebsite, vendorType, vendorAddress1, vendorAddress2, vendorCity, vendorPostalCode, vendorState,
+				vendorCountry, vendoroverview, vendorContactName, vendorContactNumber, vendorContactEmail,
+				vendorContactComment, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
+				wantToclickOnFindSearckKey);
 		searchKey = vendorName_Update;
 	}
 
-//	// TO ARCHIVE
-//	@Test(priority = 3)
-//	public void test_ArchiveAssetConfiguration() throws Throwable {
-//		test_FindDataFromListAndClickOnThreeDotButton();
-//		assetConfiration.archiveAssetConfiguration();
-//	}
-//
-//	// TO RESTORE
-//	@Test(priority = 4)
-//	public void test_RestoreAssetConfiguration() throws Throwable {
-//		test_FindDataFromListAndClickOnThreeDotButton();
-//		assetConfiration.restoreAssetConfiguration();
-//	}
+	// TO ADD VENDOR CONTACT
+	//@Test(priority = 3)
+	public void test_AddVendorContact() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		po_vendor.addOrEditVendorContact(vendorContactName, vendorContactNumber, vendorContactEmail,
+				vendorContactComment,searchKey, searchKeyColumnIndex, wantToClickOnThreeDot,
+				wantToclickOnFindSearckKey);
+	}
+
+	// TO EDIT VENDOR CONTACT
+	//@Test(priority = 4)
+	public void test_EditVendorContact() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		vendorContactEmail = "viva.beer@gmail.com";
+		searchKey = vendorContactEmail;
+		po_vendor.addOrEditVendorContact(vendorContactName, vendorContactNumber, vendorContactEmail,
+				vendorContactComment,searchKey, 4, false,false);
+	}
+
+	// TO DEACTIVATE
+	@Test(priority = 5)
+	public void test_DeactivateVendorContact() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		vendorContactEmail = "viva.beer@gmail.com";
+		searchKey = vendorContactEmail;
+		po_vendor.deactivateVendorContact(vendorContactEmail, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+	}
+
+	// TO ACTIVATE
+	@Test(priority = 6)
+	public void test_ActivateVendorContact() throws Throwable {
+		test_FindDataFromListAndClickOnThreeDotButton();
+		vendorContactEmail = "viva.beer@gmail.com";
+		searchKey = vendorContactEmail;
+		po_vendor.activateVendorContact(vendorContactEmail, searchKey, searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+	}
 
 	// TO FIND THE ASSET CATEGORY FROM THE LIST AND CLICK ON THE THREE DOT ACTION
 	// BUTTON
 	// @Test(priority = 10)
 	public void test_FindDataFromListAndClickOnThreeDotButton() throws Throwable {
 		po_vendor = callMeBeforePerformAnyAction();
-		// logger.info("1");
 		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
 		String callerMethodName = stackTraceElement[2].getMethodName();
-		// logger.info("2");
 		if (callerMethodName.contains("test_Restore")) {
-			// logger.info("3");
 			ReUseAbleElement ruae = new ReUseAbleElement(driver);
-			// logger.info("callerMethodName: "+callerMethodName);
 			ruae.clickONBtnTooltip_RU("Show Archived", driver);
-			// logger.info("4");
 		}
-		// logger.info("5");
-		po_vendor.findDataFromRowListAndClickOnThreeDot(vendorName_Update, searchKey_assetConfiguration,
-				searchKeyColumnIndex, wantToClickOnThreeDot, wantToclickOnFindSearckKey);
+		po_vendor.findDataFromRowListAndClickOnThreeDot(vendorName, searchKey_Vendor, searchKeyColumnIndex_Vendor,
+				wantToClickOnThreeDot_Vendor, wantToclickOnFindSearckKey_Vendor);
 	}
 
 	// CALL ME IN EVERY @TEST METHODS EXCEPT LOGIN AND LOGOUT AND ASSUME_ROLE
@@ -117,7 +140,8 @@ public class TC_Vendors extends BaseClass {
 		// TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
 		innerDashboard = new PO_Inner_DashboardPage(driver);
 		Thread.sleep(1000);
-		innerDashboard.clickOnMenuVendors();
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Vendors",
+				PL_Inner_DashboardPage.ADDRESS_VENDORS);
 		Thread.sleep(3000);
 		return new PO_VendorsPage(driver);
 	}

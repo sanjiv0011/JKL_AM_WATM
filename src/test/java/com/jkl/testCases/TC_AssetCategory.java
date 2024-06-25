@@ -11,6 +11,8 @@ import com.jkl.pageObject.PO_HomePage;
 import com.jkl.pageObject.PO_Inner_DashboardPage;
 import com.jkl.pageObject.PO_LoginPage;
 import com.jkl.pageObject.PO_TenantsPage;
+import com.jkl.pageObject.pageLocators.PL_Inner_DashboardPage;
+import com.jkl.utilities.ClickOnAnyButton;
 
 public class TC_AssetCategory extends BaseClass {
 	// HOME PAGE CONSTRUCTOR
@@ -27,6 +29,7 @@ public class TC_AssetCategory extends BaseClass {
 	public TC_AssumeRole assumeRole = new TC_AssumeRole();
 	public PO_AssetCategoriesPage assetCategory;
 	public PO_Inner_DashboardPage innerDashboard;
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
 
 	// VARIABLE
 	String assetCategoryName = "Hard Disc 2";
@@ -37,6 +40,7 @@ public class TC_AssetCategory extends BaseClass {
 	String searchKey_assetCategory = assetCategoryName;
 	String AssetCategoryName_Update = assetCategoryName + " Updated";
 
+	int searchKeyColumnIndex_assetCategory_edit = 1;
 	int searchKeyColumnIndex_assetCategory = 2;
 	boolean wantToclickOnFindSearckKey_assetCategory = false;
 	boolean wantToClickOnThreeDot_assetCategroy = true;
@@ -55,7 +59,7 @@ public class TC_AssetCategory extends BaseClass {
 	public void test_EditAssetCategory() throws Throwable {
 		assetCategory = callMeBeforePerformAnyAction();
 		assetCategory.addOrEditAssetCategory(AssetCategoryName_Update, assetCategoryCode, assetCategoryDescription,
-				assingmentTypesNumber, assetCategoryImage, searchKey_assetCategory, searchKeyColumnIndex_assetCategory,
+				assingmentTypesNumber, assetCategoryImage, searchKey_assetCategory, searchKeyColumnIndex_assetCategory_edit,
 				wantToClickOnThreeDot_assetCategroy, wantToclickOnFindSearckKey_assetCategory);
 		searchKey_assetCategory = AssetCategoryName_Update;
 	}
@@ -123,7 +127,8 @@ public class TC_AssetCategory extends BaseClass {
 		// TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
 		innerDashboard = new PO_Inner_DashboardPage(driver);
 		Thread.sleep(1000);
-		innerDashboard.clickOnMenuAssetCategories();
+//		innerDashboard.clickOnMenuAssetCategories();
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "AssetCategories", PL_Inner_DashboardPage.ADDRESS_ASSET_CATEGORIES);
 		Thread.sleep(3000);
 		return new PO_AssetCategoriesPage(driver);
 	}

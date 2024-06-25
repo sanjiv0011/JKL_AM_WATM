@@ -11,6 +11,8 @@
 	[chrome, firefor, edge]-->
 	<parameter name="loginUserType" value="user"></parameter><!-- value is only
 	[admin, user]-->
+	<parameter name="wantToByPassLoginLogout" value="true"></parameter> <!--
+	value is [true, false]-->
 
 	<test name="JKL Assets Managemant">
 
@@ -18,21 +20,19 @@
 
 			<!-- =======JKL ASSET MANAGEMENT WEBSITE TESTING========= -->
 
-			<!--<class name="com.jkl.testCases.TC_Home"/>-->
+			<!--<class name="com.jkl.testCases.TC_Home" />-->
 
-			<!--	<class name="com.jkl.testCases.TC_Customers"/>-->
+			<!--	<class name="com.jkl.testCases.TC_Customers" />-->
 
 			<!--<class name="com.jkl.testCases.TC_Tenants" />-->
 
-			<!--	<class name="com.jkl.testCases.TC_Inner_Dashboard" />-->
+			<!--<class name="com.jkl.testCases.TC_Inner_Dashboard" />-->
 
-		<!--	<class name="com.jkl.testCases.TC_AssetCategory" />-->
-		
+			<!--<class name="com.jkl.testCases.TC_AssetCategory" />-->
+
 			<!--<class name="com.jkl.testCases.TC_AssetConfigurations" />-->
-			
-			
-			<class name="com.jkl.testCases.TC_Vendors" />
 
+			<class name="com.jkl.testCases.TC_Vendors" />
 
 
 			<!-- =========MAIN P360  WEBSITE TESTING========== -->

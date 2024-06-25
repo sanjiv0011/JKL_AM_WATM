@@ -163,7 +163,7 @@ public class ReUseAbleElement {
 //		@FindBy(xpath= "//input[contains(@placeholder,'Search by')]")
 //		@CacheLookup
 //		public  WebElement searchBox_1_RU;
-	public String searchBox_1_RU_address = "//input[contains(@placeholder,'Search by')]";
+	public String searchBox_1_RU_address = "//input[contains(@placeholder,'Search')]";
 
 	public void searchBox_1_RU(WebDriver driver, String SearchKey) throws InterruptedException {
 		Thread.sleep(200);

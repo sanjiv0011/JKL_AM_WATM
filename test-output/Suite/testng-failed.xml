@@ -3,6 +3,7 @@
 <suite thread-count="1" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="chrome"/>
   <parameter name="loginUserType" value="user"/>
+  <parameter name="wantToByPassLoginLogout" value="true"/>
   <listeners>
     <listener class-name="com.jkl.utilities.ExtentReport"/>
   </listeners>
@@ -11,11 +12,11 @@
       <class name="com.jkl.testCases.TC_Vendors">
         <methods>
           <include name="Setup"/>
+          <include name="confirmLoginLogoutByPass"/>
           <include name="Logout"/>
+          <include name="test_EditVendorContact"/>
           <include name="Login"/>
-          <include name="test_EditVendor"/>
           <include name="Teardown"/>
-          <include name="test_AddVendor"/>
         </methods>
       </class> <!-- com.jkl.testCases.TC_Vendors -->
     </classes>

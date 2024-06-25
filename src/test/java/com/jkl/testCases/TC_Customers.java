@@ -7,6 +7,8 @@ import com.jkl.ReUseAble.PageObject.ReUseAbleElement;
 import com.jkl.pageObject.PO_CustomersPage;
 import com.jkl.pageObject.PO_HomePage;
 import com.jkl.pageObject.PO_LoginPage;
+import com.jkl.pageObject.pageLocators.PL_HomePage;
+import com.jkl.utilities.ClickOnAnyButton;
 
 public class TC_Customers extends BaseClass {
 	// HOME PAGE CONSTRUCTOR
@@ -19,6 +21,7 @@ public class TC_Customers extends BaseClass {
 	public PO_HomePage hp; // hp = HOME PAGE
 	public Faker faker = new Faker();
 	public PO_CustomersPage cp; // MAIN USER LABLES PAGE
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
 
 	// VARIABLES TO ADD PAYEMNTS
 	String customerName = "Sri Ram Industries 2"; // "WESTWOOD_"+faker.name().firstName();
@@ -104,8 +107,10 @@ public class TC_Customers extends BaseClass {
 	public PO_CustomersPage callMeBeforePerformAnyAction() throws InterruptedException {
 		// TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
 		hp = new PO_HomePage(driver);
-		hp.clickOnMenuDashboard();
-		hp.clickOnMenuCustomer();
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Dashboard Tab", PL_HomePage.add_tab_dashaboard);
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Customer Tab", PL_HomePage.add_tab_customer);
+//		hp.clickOnMenuDashboard();
+//		hp.clickOnMenuCustomer();
 		Thread.sleep(4000);
 		return new PO_CustomersPage(driver);
 	}

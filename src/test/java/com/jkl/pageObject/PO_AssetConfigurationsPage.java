@@ -1,6 +1,5 @@
 package com.jkl.pageObject;
 
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -18,16 +17,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 import com.jkl.ReUseAble.PageObject.ReUseAbleElement;
-import com.jkl.actions.Action_Activate;
 import com.jkl.actions.Action_Archive;
-import com.jkl.actions.Action_ClickOnAnyColumnElementBasedOnSelectedRowItem;
 import com.jkl.actions.Action_Edit;
-import com.jkl.actions.Action_Deactivate;
 import com.jkl.actions.Action_Restore;
-import com.jkl.actions.Action_View;
 import com.jkl.pageObject.pageLocators.PL_AssetConfigurationsPage;
-import com.jkl.pageObject.pageLocators.PL_TenantsPage;
 import com.jkl.projectUtility.FindThreeDotAndClick;
+import com.jkl.utilities.ClickOnAnyButton;
+import com.jkl.utilities.NavigateToNewOpenTab;
+import com.jkl.utilities.SetDataIntoTextInputField;
 
 public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 
@@ -41,6 +38,10 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 	public Actions action;
 	public SoftAssert softAssert = new SoftAssert();
 
+	public SetDataIntoTextInputField setDataIntoTextInputField = new SetDataIntoTextInputField();
+	public NavigateToNewOpenTab navigateToNewTab = new NavigateToNewOpenTab();
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
+	
 	// CONSTRUCTOR CREATION
 	public PO_AssetConfigurationsPage(WebDriver driver) {
 		super(driver);
@@ -54,45 +55,6 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 	}
 
 	// ======START======PAGE OBJECT AND ACTOIN METHODS==========//
-
-	@FindBy(xpath = PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_NAME)
-	@CacheLookup
-	public WebElement fileld_ASSET_CONFIGURATION_NAME;
-
-	public void setAssetConfigurationName(String assetConfigurationName) throws InterruptedException {
-		fileld_ASSET_CONFIGURATION_NAME.sendKeys(Keys.CONTROL, "a");
-		fileld_ASSET_CONFIGURATION_NAME.sendKeys(Keys.DELETE);
-		fileld_ASSET_CONFIGURATION_NAME.sendKeys(assetConfigurationName);
-		Thread.sleep(500);
-		logger.info("Entered assetConfigurationName");
-
-	}
-
-	@FindBy(xpath = PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_DESCRIPTION)
-	@CacheLookup
-	public WebElement field_ASSET_CONFIGURATION_DESCRIPTION;
-
-	public void setAssetConfigurationDescription(String assetConfigurationsDescription) throws InterruptedException {
-		field_ASSET_CONFIGURATION_DESCRIPTION.sendKeys(Keys.CONTROL, "a");
-		field_ASSET_CONFIGURATION_DESCRIPTION.sendKeys(Keys.DELETE);
-		field_ASSET_CONFIGURATION_DESCRIPTION.sendKeys(assetConfigurationsDescription);
-		Thread.sleep(500);
-		logger.info("Entered assetConfigurations");
-
-	}
-
-	@FindBy(xpath = PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_UNIT)
-	@CacheLookup
-	public WebElement field_ASSET_CONFIGURATION_UNIT;
-
-	public void setAssetConfiguratinonUnit(String assetCategoryUnit) throws InterruptedException {
-		field_ASSET_CONFIGURATION_UNIT.sendKeys(Keys.CONTROL, "a");
-		field_ASSET_CONFIGURATION_UNIT.sendKeys(Keys.DELETE);
-		field_ASSET_CONFIGURATION_UNIT.sendKeys(assetCategoryUnit);
-		Thread.sleep(500);
-		logger.info("Entered assetCategoryUnit");
-
-	}
 
 	@FindBy(xpath = PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_DATATYPE_DROPDOWN_IOCN)
 	@CacheLookup
@@ -123,30 +85,6 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 			
 	}
 
-	@FindBy(xpath = PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_PREFIX)
-	@CacheLookup
-	public WebElement field_ASSET_CONFIGURATION_PREFIX;
-
-	public void setAssetConfigurationPrefix(String assetConfigurationsPrefix) throws InterruptedException {
-		field_ASSET_CONFIGURATION_PREFIX.sendKeys(Keys.CONTROL, "a");
-		field_ASSET_CONFIGURATION_PREFIX.sendKeys(Keys.DELETE);
-		field_ASSET_CONFIGURATION_PREFIX.sendKeys(assetConfigurationsPrefix);
-		Thread.sleep(500);
-		logger.info("Entered assetConfigurationsPrefix");
-	}
-	
-	
-	@FindBy(xpath = PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_POSTFIX)
-	@CacheLookup
-	public WebElement field_ASSET_CONFIGURATION_POSTFIX;
-
-	public void setAssetConfigurationPostfix(String assetConfigurationsPostfix) throws InterruptedException {
-		field_ASSET_CONFIGURATION_POSTFIX.sendKeys(Keys.CONTROL, "a");
-		field_ASSET_CONFIGURATION_POSTFIX.sendKeys(Keys.DELETE);
-		field_ASSET_CONFIGURATION_POSTFIX.sendKeys(assetConfigurationsPostfix);
-		Thread.sleep(500);
-		logger.info("Entered assetConfigurationsPostfix");
-	}
 	
 	
 	@FindBy(xpath = PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_VALUES)
@@ -160,7 +98,7 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 		for(String configurationValue : assetConfigurationsValues) {
 			configurationValueCount--;
 			String updatedAddress = ADDRESS_ASSET_CONFIGURATION_VALUES+"["+baseCount+"]"+"//input";
-			logger.info("configurationValue: "+configurationValue);
+			logger.info("configurationValue: "+configurationValue+" And Address: "+updatedAddress);
 			
 			WebElement fieldAssetConfig = driver.findElement(By.xpath(updatedAddress));
 			fieldAssetConfig.sendKeys(Keys.CONTROL, "a");
@@ -171,7 +109,9 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 			if(configurationValueCount>0) {
 				baseCount++;
 				if(!isEditAction) {
+					logger.info("1");
 					clickOnConfigurationsValuesPlusButton();
+					logger.info("2");
 				}
 			}
 			
@@ -182,7 +122,7 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 	public boolean clickOnConfigurationsValuesPlusButton() throws InterruptedException {
 		WebElement btn_ASSET_CONFIGURATION_VALUES_PLUSBUTTON = driver.findElement(By.xpath(PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_VALUES_PLUSBUTTON));
 		action.moveToElement(btn_ASSET_CONFIGURATION_VALUES_PLUSBUTTON).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		action.moveToElement(btn_ASSET_CONFIGURATION_VALUES_PLUSBUTTON).click().build().perform();
 		Thread.sleep(500);
 		return true;
@@ -243,7 +183,8 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 
 		StackTraceElement stackTrace[] = Thread.currentThread().getStackTrace();
 		String callerMethodName = stackTrace[2].getMethodName();
-		logger.info("Caller methods name: " + callerMethodName);
+		logger.info("Method Called: addOrEditAssetConfiguration and Caller methods name: " + callerMethodName);
+		System.out.println("callerMethodName.contains(\"test_Edit\")"+callerMethodName.contains("test_Edit"));
 
 		boolean flag = false;
 		boolean isClickedOnAddOrEditButton = false;
@@ -267,12 +208,18 @@ public class PO_AssetConfigurationsPage extends ReUseAbleElement {
 			
 		if (isClickedOnAddOrEditButton) {
 			Thread.sleep(2000);
-			setAssetConfigurationName(assetConfigurationsName);
-			setAssetConfigurationDescription(assetConfigurationsDescriptionCode);
-			setAssetConfiguratinonUnit(assetConfigurationsUnit);
+			
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Configuration name", PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_NAME, assetConfigurationsName);
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Configuration name", PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_DESCRIPTION, assetConfigurationsDescriptionCode);
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Configuration name", PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_UNIT, assetConfigurationsUnit);
+
+			
 			selectAssetConfigurationsTypes(assetConfigurationDataType);
-			setAssetConfigurationPrefix(assetConfigurationPrefix);
-			setAssetConfigurationPostfix(assetConfigurationPostfix);
+			
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Configuration Prifix", PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_PREFIX, assetConfigurationPrefix);
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Configuration Postfix", PL_AssetConfigurationsPage.ADDRESS_ASSET_CONFIGURATION_POSTFIX, assetConfigurationPostfix);
+;
+			
 			setAssetConfigurationValues(assetConfiguratinValues,callerMethodName.contains("test_Edit"));
 
 			if (callerMethodName.contains("test_Edit")) {

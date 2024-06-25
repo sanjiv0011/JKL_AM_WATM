@@ -10,6 +10,8 @@ import com.jkl.pageObject.PO_HomePage;
 import com.jkl.pageObject.PO_Inner_DashboardPage;
 import com.jkl.pageObject.PO_LoginPage;
 import com.jkl.pageObject.PO_TenantsPage;
+import com.jkl.pageObject.pageLocators.PL_Inner_DashboardPage;
+import com.jkl.utilities.ClickOnAnyButton;
 
 public class TC_AssetConfigurations extends BaseClass {
 	// HOME PAGE CONSTRUCTOR
@@ -26,6 +28,7 @@ public class TC_AssetConfigurations extends BaseClass {
 	public TC_AssumeRole assumeRole = new TC_AssumeRole();
 	public PO_AssetConfigurationsPage assetConfiration;
 	public PO_Inner_DashboardPage innerDashboard;
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
 
 	// VARIABLE
 	String assetConfigurationsName = "RAM Size";
@@ -106,7 +109,7 @@ public class TC_AssetConfigurations extends BaseClass {
 		// TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
 		innerDashboard = new PO_Inner_DashboardPage(driver);
 		Thread.sleep(1000);
-		innerDashboard.clickOnMenuAssetConfigurations();
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Asset Configurations", PL_Inner_DashboardPage.ADDRESS_ASSET_CONFIGURATIONS);
 		Thread.sleep(3000);
 		return new PO_AssetConfigurationsPage(driver);
 	}

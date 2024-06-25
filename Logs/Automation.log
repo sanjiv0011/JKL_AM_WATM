@@ -1,257 +1,31 @@
-18:24:32.821 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:24:35.912 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_EditVendor
-18:24:36.373 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Croma Product
-18:24:38.409 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findDataFromRowListAndClickOnThreeDot
-18:24:38.409 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-18:24:38.409 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-18:24:38.941 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Tata Croma Product
-18:24:39.152 [main] INFO  com.jkl.pageObject.PO_VendorsPage - listRowCount: -1
-18:24:39.154 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Item found in row number: -1
-18:24:39.155 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: false
-18:24:39.176 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-18:26:43.595 [main] INFO  com.jkl.testCases.TC_Vendors - Base class started...
-18:26:43.636 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-18:26:43.638 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-18:26:45.793 [main] INFO  com.jkl.testCases.TC_Vendors - Chrome driver selected
-18:26:46.346 [main] INFO  com.jkl.testCases.TC_Vendors - Login page started
-18:26:46.367 [main] INFO  com.jkl.testCases.TC_Vendors - Maximize the window
-18:26:46.449 [main] INFO  com.jkl.testCases.TC_Vendors - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-18:26:46.450 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-18:26:49.633 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:26:52.665 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_AddVendor
-18:26:52.816 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
-18:26:53.831 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: true
-18:26:56.611 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorName
-18:26:56.648 [main] WARN  com.jkl.pageObject.PO_VendorsPage - Exceptino form : addOrEditVendor >>no such element: Unable to locate element: {"method":"xpath","selector":"(//div[starts-with(@class,'Input_input')])[2]//input"}
-  (Session info: chrome=126.0.6478.62)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+19:29:22.425 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Exception from FindThreeDotBasedOnSearchKeyAndClick: stale element reference: stale element not found in the current frame
+  (Session info: chrome=126.0.6478.114)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [93dfb0797c413a8d0b80043af69aae38, findElement {using=xpath, value=(//div[starts-with(@class,'Input_input')])[2]//input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.63 (df799988fdc9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 93dfb0797c413a8d0b80043af69aae38
-18:26:59.736 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:27:02.757 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_EditVendor
-18:27:03.008 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-18:27:05.022 [main] INFO  com.jkl.pageObject.PO_HomePage - Logout Exception: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=126.0.6478.62)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [93dfb0797c413a8d0b80043af69aae38, findElement {using=xpath, value=//div[@class='flex items-center gap-2']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.63 (df799988fdc9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 93dfb0797c413a8d0b80043af69aae38
-18:27:18.793 [main] INFO  com.jkl.testCases.TC_Vendors - Base class started...
-18:27:18.836 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-18:27:18.837 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-18:27:21.044 [main] INFO  com.jkl.testCases.TC_Vendors - Chrome driver selected
-18:27:21.351 [main] INFO  com.jkl.testCases.TC_Vendors - Login page started
-18:27:21.372 [main] INFO  com.jkl.testCases.TC_Vendors - Maximize the window
-18:27:21.496 [main] INFO  com.jkl.testCases.TC_Vendors - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-18:27:21.496 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-18:27:24.635 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:27:27.663 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_AddVendor
-18:27:27.814 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
-18:27:28.816 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: true
-18:27:31.515 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorName
-18:27:32.230 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorEmail
-18:27:32.947 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorPhoneNumber
-18:27:33.636 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorWhatsappNumber
-18:27:34.366 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorWebsite
-18:27:34.483 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the radio button 2
-18:27:35.087 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the nextbutton
-18:27:35.391 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Vendor Details added
-18:27:38.087 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorAddress1
-18:27:38.806 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorAddress2
-18:27:39.447 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorCity
-18:27:40.082 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorPostalCode
-18:27:40.748 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorState
-18:27:41.420 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorCountry
-18:27:42.830 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorOverview
-18:27:42.933 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the nextbutton
-18:27:43.235 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Vendor Address added
-18:27:45.927 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered contactName
-18:27:46.596 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered contactNumber
-18:27:47.299 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered contactNumber
-18:27:47.349 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the btnPreview_RU
-18:27:47.655 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Vendor Address added
-18:27:49.692 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnBtnSave_1_RU: no such element: Unable to locate element: {"method":"xpath","selector":"(//button[normalize-space()='Save'])[1]"}
-  (Session info: chrome=126.0.6478.62)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b6fbeea20aeb54e848f8f9ff1fab5c66, findElement {using=xpath, value=(//button[normalize-space()='Save'])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.63 (df799988fdc9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b6fbeea20aeb54e848f8f9ff1fab5c66
-18:27:52.841 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:27:55.864 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_EditVendor
-18:27:56.350 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Croma Product
-18:27:58.383 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findDataFromRowListAndClickOnThreeDot
-18:27:58.384 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-18:27:58.385 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-18:27:58.918 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Tata Croma Product
-18:27:59.120 [main] INFO  com.jkl.pageObject.PO_VendorsPage - listRowCount: -1
-18:27:59.122 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Item found in row number: -1
-18:27:59.123 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: false
-18:27:59.141 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-18:28:03.233 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
-18:28:05.353 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
-18:28:07.432 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
-18:28:08.072 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
-18:28:08.135 [main] INFO  com.jkl.testCases.TC_Vendors - Driver shutdown
-18:30:08.942 [main] INFO  com.jkl.testCases.TC_Vendors - Base class started...
-18:30:08.995 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-18:30:08.996 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-18:30:11.108 [main] INFO  com.jkl.testCases.TC_Vendors - Chrome driver selected
-18:30:11.697 [main] INFO  com.jkl.testCases.TC_Vendors - Login page started
-18:30:11.741 [main] INFO  com.jkl.testCases.TC_Vendors - Maximize the window
-18:30:11.854 [main] INFO  com.jkl.testCases.TC_Vendors - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-18:30:11.855 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-18:30:12.106 [main] INFO  com.jkl.pageObject.PO_LoginPage - clicked on Sign in with google
-18:30:40.101 [main] INFO  com.jkl.testCases.TC_Vendors - Base class started...
-18:30:40.137 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-18:30:40.137 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-18:30:42.273 [main] INFO  com.jkl.testCases.TC_Vendors - Chrome driver selected
-18:30:42.597 [main] INFO  com.jkl.testCases.TC_Vendors - Login page started
-18:30:42.674 [main] INFO  com.jkl.testCases.TC_Vendors - Maximize the window
-18:30:42.831 [main] INFO  com.jkl.testCases.TC_Vendors - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-18:30:42.833 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-18:30:46.068 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:30:46.396 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:30:49.094 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_AddVendor
-18:30:49.238 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
-18:30:49.414 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_AddVendor
-18:30:50.251 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: true
-18:30:52.976 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorName
-18:30:53.663 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorEmail
-18:30:54.335 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorPhoneNumber
-18:30:55.065 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorWhatsappNumber
-18:30:55.785 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorWebsite
-18:30:55.859 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the radio button 2
-18:30:56.529 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the nextbutton
-18:30:56.835 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Vendor Details added
-18:30:59.497 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Exception from clickOnAdd_RU : Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: (//button[normalize-space()='Add'])[1]' (tried for 10 second(s) with 500 milliseconds interval)
-18:30:59.498 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Not clicked on the ADD button
-18:30:59.575 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorAddress1
-18:31:00.328 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorAddress2
-18:31:00.502 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: false
-18:31:00.957 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorCity
-18:31:01.648 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorPostalCode
-18:31:01.728 [main] WARN  com.jkl.pageObject.PO_VendorsPage - Exceptino form : addOrEditVendor >>no such element: Unable to locate element: {"method":"xpath","selector":"(//div[starts-with(@class,'Input_input')])[5]//input"}
-  (Session info: chrome=126.0.6478.62)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [aa702a981475efef9c4ed8f58a217507, findElement {using=xpath, value=(//div[starts-with(@class,'Input_input')])[5]//input}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.63 (df799988fdc9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: aa702a981475efef9c4ed8f58a217507
-18:31:03.675 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:31:04.826 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:31:06.699 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_EditVendor
-18:31:07.117 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Croma Product
-18:31:07.849 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_EditVendor
-18:31:08.356 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Croma Product
-18:31:08.380 [main] INFO  com.jkl.pageObject.PO_VendorsPage - No vendors found
-18:31:08.380 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Item found in row number: -1
-18:31:08.381 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: false
-18:31:08.389 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-18:31:09.168 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findDataFromRowListAndClickOnThreeDot
-18:31:09.170 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-18:31:09.172 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-18:31:09.723 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Tata Croma Product
-18:31:09.928 [main] INFO  com.jkl.pageObject.PO_VendorsPage - listRowCount: -1
-18:31:09.928 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Item found in row number: -1
-18:31:09.929 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: false
-18:31:09.945 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-18:31:12.476 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
-18:31:14.547 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
-18:31:16.683 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the btnYes
-18:31:17.257 [main] INFO  com.jkl.pageObject.PO_HomePage - ... LOGOUT DONE ...
-18:31:17.320 [main] INFO  com.jkl.testCases.TC_Vendors - Driver shutdown
-18:31:47.367 [main] INFO  com.jkl.testCases.TC_Vendors - Base class started...
-18:31:47.406 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-18:31:47.407 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-18:31:49.568 [main] INFO  com.jkl.testCases.TC_Vendors - Chrome driver selected
-18:31:50.128 [main] INFO  com.jkl.testCases.TC_Vendors - Login page started
-18:31:50.163 [main] INFO  com.jkl.testCases.TC_Vendors - Maximize the window
-18:31:50.258 [main] INFO  com.jkl.testCases.TC_Vendors - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-18:31:50.258 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-18:31:50.412 [main] INFO  com.jkl.pageObject.PO_LoginPage - clicked on Sign in with google
-18:32:25.397 [main] INFO  com.jkl.testCases.TC_Vendors - Base class started...
-18:32:25.438 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Disabled Ads and Notifications
-18:32:25.438 [main] INFO  com.jkl.utilities.CustomizedChromeOptions - Entered into Debugging mode with port:9222
-18:32:27.513 [main] INFO  com.jkl.testCases.TC_Vendors - Chrome driver selected
-18:32:27.981 [main] INFO  com.jkl.testCases.TC_Vendors - Login page started
-18:32:28.020 [main] INFO  com.jkl.testCases.TC_Vendors - Maximize the window
-18:32:28.181 [main] INFO  com.jkl.testCases.TC_Vendors - Login user Email: sanjiv.koiri@jklgroup.in and Password: Sanjiv@123456
-18:32:28.182 [main] INFO  com.jkl.pageObject.PO_LoginPage - Method called Login: Login
-18:32:31.375 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:32:34.397 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_AddVendor
-18:32:34.522 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Is Displeyed and Clicked on the button add : true
-18:32:35.524 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: true
-18:32:38.233 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorName
-18:32:38.971 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorEmail
-18:32:39.702 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorPhoneNumber
-18:32:40.359 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorWhatsappNumber
-18:32:41.060 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorWebsite
-18:32:41.159 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the radio button 2
-18:32:41.736 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the nextbutton
-18:32:42.043 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Vendor Details added
-18:32:44.732 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorAddress1
-18:32:45.498 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorAddress2
-18:32:46.202 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorCity
-18:32:46.935 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorPostalCode
-18:32:47.613 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorState
-18:32:48.316 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorCountry
-18:32:49.586 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered vendorOverview
-18:32:49.730 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the nextbutton
-18:32:50.035 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Vendor Address added
-18:32:52.684 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered contactName
-18:32:53.319 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered contactNumber
-18:32:54.132 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Entered contactNumber
-18:32:54.223 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the btnPreview_RU
-18:32:54.536 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Vendor Address added
-18:32:56.653 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the button save
-18:32:57.205 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 2
-18:32:57.206 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
-18:32:57.223 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Vendor created successfully.
-18:32:57.223 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Alert Message: Vendor created successfully.
-18:33:00.398 [main] INFO  com.jkl.pageObject.PO_Inner_DashboardPage - Clicked on the menuVendors
-18:33:03.408 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Caller methods name: test_EditVendor
-18:33:03.921 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: Tata Croma Product
-18:33:05.976 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - findThreedActionButtonAndClick method called and Caller method name: findDataFromRowListAndClickOnThreeDot
-18:33:05.977 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToClickOnThreeDot: true
-18:33:05.978 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - wantToclickOnFindSearckKey: false
-18:33:06.555 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - formatText: Tata Croma Product
-18:33:06.555 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - searchKey: Tata Croma Product
-18:33:06.556 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - isSearchKeyMatched: true
-18:33:06.556 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Pointer_Address: (//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]
-18:33:06.575 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Exception from FindThreeDotBasedOnSearchKeyAndClick: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]"}
-  (Session info: chrome=126.0.6478.62)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4b8365fc453d94317e0c94e02676b8f2, findChildElement {id=f.7FB448BBB47DCD7A2308D24A15BFCC66.d.969C9A40C83C64537C78C3188D720875.e.15996, using=xpath, value=(//div[contains(@class,'flex flex-col gap-2 items-center')]//div[contains(@class,'neu-more-v')])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.63 (df799988fdc9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4b8365fc453d94317e0c94e02676b8f2
-18:33:06.577 [main] INFO  com.jkl.projectUtility.FindThreeDotAndClick - Given confirmationGiverValue not matched: Tata Croma Product
-18:33:06.778 [main] INFO  com.jkl.pageObject.PO_VendorsPage - listRowCount: -1
-18:33:06.778 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Item found in row number: -1
-18:33:06.778 [main] INFO  com.jkl.pageObject.PO_VendorsPage - isClickedOnAddOrEditButton: false
-18:33:06.783 [main] INFO  com.jkl.pageObject.PO_HomePage - Method called: Logout
-18:33:10.846 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the userProfile
-18:33:13.018 [main] INFO  com.jkl.pageObject.PO_HomePage - Clicked on the logout
-18:33:13.051 [main] INFO  com.jkl.pageObject.PO_HomePage - Logout Exception: no such element: Unable to locate element: {"method":"xpath","selector":"//button//div[text()='Yes']"}
-  (Session info: chrome=126.0.6478.62)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4b8365fc453d94317e0c94e02676b8f2, findElement {using=xpath, value=//button//div[text()='Yes']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.63 (df799988fdc9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4b8365fc453d94317e0c94e02676b8f2
+Command: [9723f8b04eab85c60a022b041f59f77c, getElementText {id=f.DC37084BB4D990A1E8A7812985CAFB7E.d.417FDDA08948161B944111B2343DDF3E.e.7961}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.114, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9222}, pageLoadStrategy: normal, platformName: any, proxy: Proxy(), setWindowRect: false, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on any (9723f8b04eab85c60a022b041f59f77c)] -> xpath: (//*[translate(normalize-space(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='tata croma product updated'])[1]]
+Session ID: 9723f8b04eab85c60a022b041f59f77c
+19:29:22.663 [main] INFO  com.jkl.utilities.ClickOnAnyColumnElementBasedOnSelectedRowItem - clickOnSelectedColumnElementBasedOnGivenRowCount called and caller method name: findDataFromRowListAndClickOnThreeDot
+19:29:22.664 [main] INFO  com.jkl.utilities.ClickOnAnyColumnElementBasedOnSelectedRowItem - columnElementAddress that you want to clck: (//div[contains(@class,'flex flex-col gap-2 items-center')])[-1]//div[6]
+19:29:22.680 [main] INFO  com.jkl.pageObject.PO_VendorsPage - listRowCount: -1
+19:29:23.247 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Searched the search keys in the search box: viva.beer@gmail.com
+19:29:25.361 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Matched recored: viva.beer@gmail.com and matched records list count: 1
+19:29:25.362 [main] INFO  com.jkl.utilities.ClickOnAnyColumnElementBasedOnSelectedRowItem - clickOnSelectedColumnElementBasedOnGivenRowCount called and caller method name: findVendorConatctFromGridListAndClickOnThreeDot
+19:29:25.363 [main] INFO  com.jkl.utilities.ClickOnAnyColumnElementBasedOnSelectedRowItem - columnElementAddress that you want to clck: (//div[@class='absolute top-[4px] right-1'])[1]//div[1]
+19:29:25.810 [main] INFO  com.jkl.utilities.ClickOnAnyColumnElementBasedOnSelectedRowItem - Click on the given row and column matched element: Rowcount: 1 ColumnCount: 1
+19:29:26.820 [main] INFO  com.jkl.pageObject.PO_VendorsPage - listRowCount: 1
+19:29:26.821 [main] INFO  com.jkl.pageObject.PO_VendorsPage - Item found in row number: 1
+19:29:26.840 [main] INFO  com.jkl.actions.Action_Activate - Action_Activate caller method name: activateVendorContact
+19:29:26.919 [main] INFO  com.jkl.actions.Action_Activate - Is Activate button displayed and enabled: true
+19:29:26.919 [main] INFO  com.jkl.actions.Action_Activate - btnActivate_address:- (//*[normalize-space(text())='Activate'])[1]
+19:29:26.920 [main] INFO  com.jkl.actions.Action_Activate - rowListCount: 1
+19:29:27.407 [main] INFO  com.jkl.actions.Action_Activate - Clicked on Activate action button present under three dot
+19:29:28.543 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Clicked on the Yes button
+19:29:28.884 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Checking alert on intervel of 150 milliSeconds and loop count is: 4
+19:29:28.885 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - Alert message is displayed: true
+19:29:28.900 [main] INFO  com.jkl.ReUseAble.PageObject.ReUseAbleElement - ===>>> Alert Message Content: Vendor Contact activated successfully.
+19:29:28.901 [main] INFO  com.jkl.actions.Action_Activate - ===>>> Vendor Contact activated successfully.
+19:29:28.966 [main] INFO  com.jkl.testCases.TC_Vendors - Driver shutdown

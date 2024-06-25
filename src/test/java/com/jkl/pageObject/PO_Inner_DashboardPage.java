@@ -1,26 +1,23 @@
 package com.jkl.pageObject;
 
 import java.time.Duration;
-import java.util.Iterator;
-import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.jkl.ReUseAble.PageObject.ReUseAbleElement;
-import com.jkl.dataBaseTesting.DBT_User_Membership;
 import com.jkl.pageObject.pageLocators.PL_Inner_DashboardPage;
+import com.jkl.utilities.ClickOnAnyButton;
+import com.jkl.utilities.NavigateToNewOpenTab;
+import com.jkl.utilities.SetDataIntoTextInputField;
 
 public class PO_Inner_DashboardPage extends ReUseAbleElement {
 
@@ -33,6 +30,10 @@ public class PO_Inner_DashboardPage extends ReUseAbleElement {
 	public PO_LoginPage lp;
 	public Actions action;
 	public SoftAssert softAssert = new SoftAssert();
+	
+	public SetDataIntoTextInputField setDataIntoTextInputField = new SetDataIntoTextInputField();
+	public NavigateToNewOpenTab navigateToNewTab = new NavigateToNewOpenTab();
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
 
 	// HOMEPAGE CONSTRUCTOR CREATION
 	public PO_Inner_DashboardPage(WebDriver driver) {
@@ -72,49 +73,6 @@ public class PO_Inner_DashboardPage extends ReUseAbleElement {
 	@CacheLookup
 	WebElement menuDashboard;
 
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_ASSETS)
-	@CacheLookup
-	WebElement menuAssets;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_ASSET_CATEGORIES)
-	@CacheLookup
-	WebElement menuAssetCategories;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_REPORTS)
-	@CacheLookup
-	WebElement menuReports;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_ASSET_CONFIGURATIONS)
-	@CacheLookup
-	WebElement menuAssetConfigurations;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_VENDORS)
-	@CacheLookup
-	WebElement menuVendors;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_USERS)
-	@CacheLookup
-	WebElement menuUsers;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_INVOICES)
-	@CacheLookup
-	WebElement menuInvoices;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_SERVICES)
-	@CacheLookup
-	WebElement menuServices;
-
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_SETTINGS)
-	@CacheLookup
-	WebElement menuSettings;
-	
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_DEPARTMENTS)
-	@CacheLookup
-	WebElement menuDepartments;
-	
-	@FindBy(xpath = PL_Inner_DashboardPage.ADDRESS_LOCATIONS)
-	@CacheLookup
-	WebElement menuLocations;
 
 	// =========END========HOME PAGE OBJECTS=============//
 
@@ -153,72 +111,13 @@ public class PO_Inner_DashboardPage extends ReUseAbleElement {
 		logger.info("Clicked on the menuDashboard");
 	}
 
-	public void clickOnMenuAssets() throws InterruptedException {
-		menuAssets.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuAssets");
-	}
-
-	public void clickOnMenuAssetCategories() throws InterruptedException {
-		menuAssetCategories.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuAssetCategories");
-	}
-
-	public void clickOnMenuReports() throws InterruptedException {
-		menuReports.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuReports");
-	}
-
-	public void clickOnMenuAssetConfigurations() throws InterruptedException {
-		menuAssetConfigurations.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuAssetConfigurations");
-	}
-
-	public void clickOnMenuVendors() throws InterruptedException {
-		menuVendors.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuVendors");
-	}
-
-	public void clickOnMenuUsers() throws InterruptedException {
-		menuUsers.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuUsers");
-	}
-
-	public void clickOnMenuInvoices() throws InterruptedException {
-		menuInvoices.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuInvoices");
-	}
-
-	public void clickOnMenuServices() throws InterruptedException {
-		menuServices.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuServices");
-	}
 
 	public boolean clickOnMenuSettings() throws InterruptedException {
-		menuSettings.click();
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Settings", PL_Inner_DashboardPage.ADDRESS_SETTINGS);
 		boolean flag = true;
 		Thread.sleep(2000);
 		logger.info("Clicked on the menuSettings");
 		return flag;
-	}
-	
-	public void clickOnMenuLocations() throws InterruptedException {
-		menuLocations.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuLocations");
-	}
-	
-	public void clickOnMenuDepartments() throws InterruptedException {
-		menuDepartments.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuDepartments");
 	}
 
 	// =========END========ACTION METHODS FOR HOME PAGE OBJECTS=============//
@@ -237,20 +136,17 @@ public class PO_Inner_DashboardPage extends ReUseAbleElement {
 
 	// TO CHECK THE MENUS
 	public PO_Inner_DashboardPage checkDashboardInnerMenus() throws InterruptedException {
-		clickOnMenuAssets();
-		clickOnMenuAssetCategories();
-		clickOnMenuReports();
-		clickOnMenuAssetConfigurations();
-		clickOnMenuVendors();
-		clickOnMenuInvoices();
-		clickOnMenuUsers();
-		clickOnMenuServices();
-		boolean isClickOnSetting  = clickOnMenuSettings();
-		if(isClickOnSetting) {
-			clickOnMenuLocations();
-			clickOnMenuDepartments();
+		//USE THIS ONLY FOR BACK TO BACK ENTRY
+		String[] buttonNames = {"Assets","AssetCategories","Reports","AssetConfigurations","Vendors","Invoices","Users","Services"};
+		String[] buttonAddresses = {PL_Inner_DashboardPage.ADDRESS_ASSETS,PL_Inner_DashboardPage.ADDRESS_ASSET_CATEGORIES, PL_Inner_DashboardPage.ADDRESS_REPORTS, PL_Inner_DashboardPage.ADDRESS_ASSET_CONFIGURATIONS,PL_Inner_DashboardPage.ADDRESS_VENDORS,PL_Inner_DashboardPage.ADDRESS_INVOICES,PL_Inner_DashboardPage.ADDRESS_USERS,PL_Inner_DashboardPage.ADDRESS_SERVICES};
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, buttonNames, buttonAddresses);
+
+		boolean isClickOnSetting = clickOnMenuSettings();
+		if (isClickOnSetting) {
+			clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Locations", PL_Inner_DashboardPage.ADDRESS_LOCATIONS);
+			clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Departments", PL_Inner_DashboardPage.ADDRESS_DEPARTMENTS);
 		}
-		
+
 		return new PO_Inner_DashboardPage(driver);
 	}
 }

@@ -29,6 +29,8 @@ public class FindThreeDotAndClick {
 		logger.info("findThreedActionButtonAndClick method called and Caller method name: " + callerMethodName);
 		logger.info("wantToClickOnThreeDot: " + wantToClickOnThreeDot);
 		logger.info("wantToclickOnFindSearckKey: " + wantToclickOnFindSearckKey);
+		
+		List<WebElement> listElement_Inner = driver.findElements(By.xpath(list_Address));
 
 		// List_address: //div[contains(@class,'flex flex-col gap-2 items-center')]
 		// Pointer_address: //div[contains(@class,'neu-more-v')]
@@ -36,7 +38,7 @@ public class FindThreeDotAndClick {
 		// COMMAN POINTER ADDRESS
 		String pointer_Address = "//div[contains(@class,'neu-more-v')]";
 		String pointerList_Address = "(" + list_Address + pointer_Address + ")";
-		for (WebElement item : listElement) {
+		for (WebElement item : listElement_Inner) {
 			// logger.info("List items: "+item.getText());
 		}
 
@@ -72,7 +74,7 @@ public class FindThreeDotAndClick {
 		boolean isClickedOnThreeDotButton = false;
 		boolean isSearchKeyMatched = false;
 
-		for (WebElement element : listElement) {
+		for (WebElement element : listElement_Inner) {
 			listRowCount++;
 			String[] text = element.getText().split("\\n");
 			String firstColumnText = text[0];

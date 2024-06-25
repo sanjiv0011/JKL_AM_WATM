@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -50,7 +51,17 @@ public class BaseClass {
 	// FAKER LIBRARY TO GENERATE RADOM DATA FOR THE TEST
 	public Faker faker = new Faker();
 
-	// to select the driver
+	// TO CONFIRM LOGIN AND LOGOUT ACTIVITY
+	private boolean wantToByPassLoginLogout;
+
+	@BeforeClass
+	public void confirmLoginLogoutByPass(ITestContext context) {
+		String param = context.getCurrentXmlTest().getParameter("wantToByPassLoginLogout");
+		wantToByPassLoginLogout = Boolean.parseBoolean(param);
+		logger.info("wantToByPassLoginLogout: " + wantToByPassLoginLogout);
+	}
+
+	// TO SELECT THE BROWSER AND DRIVER
 	@Parameters("browser")
 	@BeforeTest
 	public void Setup(String br) throws InterruptedException {
@@ -59,13 +70,11 @@ public class BaseClass {
 		logger.info("Base class started...");
 
 		if (br.equalsIgnoreCase("chrome")) {
-			// logger.info("1");
 			// USE THIS LINE IF YOU WANT USE DRIVER FROM THE DRIVER FOLDER
 			System.setProperty("webdriver.chromedriver", rcf.getChromePath());
 
 			// OTHER WISE USE BELOW LINE IT WILL TAKES DRIVER FROM THE POM.XML FILES
 			// WebDriverManager.chromedriver().setup();
-			// logger.info("2");
 
 			// TO INITIALIZE CHROME DRIVER
 			driver = new ChromeDriver(cco.customizedChromeOptions(true, false, false, true, 9222));
@@ -94,17 +103,19 @@ public class BaseClass {
 
 	// TO LOGIN
 	@Parameters("loginUserType")
-	@BeforeClass()
+	@BeforeClass(dependsOnMethods = "confirmLoginLogoutByPass")
 	public void Login(String loginUserType) throws InterruptedException {
-		System.out.println("loginUserType: "+loginUserType);
-		if (loginUserType.equalsIgnoreCase("admin")) {
-			lp = new PO_LoginPage(driver);
-			logger.info("Login user Email: " + adminEmail + " and Password: " + adminPassword);
-			m_hp = lp.AdminLogin(adminEmail, adminPassword);
-		} else if (loginUserType.equalsIgnoreCase("user")) {
-			lp = new PO_LoginPage(driver);
-			logger.info("Login user Email: " + userEmail + " and Password: " + userPassword);
-			hp = lp.Login(userEmail, userPassword);
+		logger.info("loginUserType: " + loginUserType);
+		if(!wantToByPassLoginLogout) {
+			if (loginUserType.equalsIgnoreCase("admin")) {
+				lp = new PO_LoginPage(driver);
+				logger.info("Login user Email: " + adminEmail + " and Password: " + adminPassword);
+				m_hp = lp.AdminLogin(adminEmail, adminPassword);
+			} else if (loginUserType.equalsIgnoreCase("user")) {
+				lp = new PO_LoginPage(driver);
+				logger.info("Login user Email: " + userEmail + " and Password: " + userPassword);
+				hp = lp.Login(userEmail, userPassword);
+			}
 		}
 	}
 
@@ -112,10 +123,12 @@ public class BaseClass {
 	@Parameters("loginUserType")
 	@AfterTest()
 	public void Logout(String loginUserType) throws InterruptedException {
-		if (loginUserType.equalsIgnoreCase("admin")) {
-			m_hp.AdminLogout();
-		} else if (loginUserType.equalsIgnoreCase("user")) {
-			hp.UserLogout();
+		if(!wantToByPassLoginLogout) {
+			if (loginUserType.equalsIgnoreCase("admin")) {
+				m_hp.AdminLogout();
+			} else if (loginUserType.equalsIgnoreCase("user")) {
+				hp.UserLogout();
+			}
 		}
 	}
 

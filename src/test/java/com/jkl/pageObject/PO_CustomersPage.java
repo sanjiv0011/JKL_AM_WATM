@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,6 +23,9 @@ import com.jkl.actions.Action_Restore;
 import com.jkl.actions.Action_View;
 import com.jkl.pageObject.pageLocators.PL_CustomersPage;
 import com.jkl.projectUtility.FindThreeDotAndClick;
+import com.jkl.utilities.ClickOnAnyButton;
+import com.jkl.utilities.NavigateToNewOpenTab;
+import com.jkl.utilities.SetDataIntoTextInputField;
 
 public class PO_CustomersPage extends ReUseAbleElement {
 
@@ -36,6 +38,10 @@ public class PO_CustomersPage extends ReUseAbleElement {
 	public PO_LoginPage lp;
 	public Actions action;
 	public SoftAssert softAssert = new SoftAssert();
+	
+	public SetDataIntoTextInputField setDataIntoTextInputField = new SetDataIntoTextInputField();
+	public NavigateToNewOpenTab navigateToNewTab = new NavigateToNewOpenTab();
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
 
 	// CONSTRUCTOR CREATION
 	public PO_CustomersPage(WebDriver driver) {
@@ -48,33 +54,9 @@ public class PO_CustomersPage extends ReUseAbleElement {
 		action = new Actions(driver);
 
 	}
-
-	// ALERT MESSAGES
-	public String pleaseEnterLabelName = "Please enter label.";
-	public String customersAdded = "Customer created successfully.";
-	public String customersUpdated = "Customer updated successfully.";
-	public String customerDeactivate = "Customer deactivated successfully.";
-	public String customerArchived = "Customer archived successfully.";
-	public String customerRestored = "Customer restored successfully.";
-	public String customerActivated = "Customer activated successfully.";
-
-	// USER | SUGGEGETIONS MESSAGES
-	public String customeNotFound = "No customers found";
+	
 
 	// ======START======PAGE OBJECT FOR USER LEBELS AND ACTOIN METHODS==========//
-
-	@FindBy(xpath = PL_CustomersPage.ADD_CUSTOMER_NAME)
-	@CacheLookup
-	public WebElement field_customerName;
-
-	public void setLablesName(String customerName) throws InterruptedException {
-		field_customerName.sendKeys(Keys.CONTROL, "a");
-		field_customerName.sendKeys(Keys.DELETE);
-		field_customerName.sendKeys(customerName);
-		Thread.sleep(3000);
-		logger.info("Entered customerName");
-
-	}
 
 	// CUSTOMERS LIST
 	@FindBy(xpath = PL_CustomersPage.ADD_CUSTOMERS_LIST)
@@ -105,7 +87,7 @@ public class PO_CustomersPage extends ReUseAbleElement {
 			logger.info("listRowCount: " + listRowCount);
 			return listRowCount;
 		} else {
-			logger.info(customeNotFound);
+			logger.info(PL_CustomersPage.customeNotFound);
 			return -1;
 		}
 
@@ -130,8 +112,9 @@ public class PO_CustomersPage extends ReUseAbleElement {
 				Action_Edit.edit(driver);
 			}
 		}
-
-		setLablesName(customersName);
+		
+		setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Customer Name", PL_CustomersPage.ADD_CUSTOMER_NAME, customersName);
+		//setLablesName(customersName);
 
 		flag = clickOnBtnSave_1_RU();
 
@@ -148,9 +131,9 @@ public class PO_CustomersPage extends ReUseAbleElement {
 				logger.info("Alert Message: " + alertMsg);
 
 				if (callerMethodName.equals("test_AddCustomer")) {
-					softAssert.assertEquals(alertMsg, customersAdded, "Check user customers added or not");
+					softAssert.assertEquals(alertMsg, PL_CustomersPage.customersAdded, "Check user customers added or not");
 				} else if (callerMethodName.equals("test_EditCustomer")) {
-					softAssert.assertEquals(alertMsg, customersUpdated, "Check user customers updated or not");
+					softAssert.assertEquals(alertMsg, PL_CustomersPage.customersUpdated, "Check user customers updated or not");
 				}
 
 			}
@@ -176,28 +159,28 @@ public class PO_CustomersPage extends ReUseAbleElement {
 
 	// TO DEACTIVATE THE CUSTOMERS
 	public PO_HomePage deactivateCustomer() throws InterruptedException {
-		Action_Deactivate.deactivate(driver, customerDeactivate);
+		Action_Deactivate.deactivate(driver, PL_CustomersPage.customerDeactivate);
 		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
 
 	// TO ACTIVATE THE CUSTOMERS
 	public PO_HomePage activateCustomer() throws InterruptedException {
-		Action_Activate.activate(driver, customerActivated);
+		Action_Activate.activate(driver, PL_CustomersPage.customerActivated);
 		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
 
 	// TO ARCHIVE THE CUSTOMERS
 	public PO_HomePage archiveCustomer() throws InterruptedException {
-		Action_Archive.archive(driver, customerArchived);
+		Action_Archive.archive(driver, PL_CustomersPage.customerArchived);
 		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}
 
 	// TO RESTORE THE CUSTOMERS
 	public PO_HomePage restoreCustomer() throws InterruptedException {
-		Action_Restore.restore(driver, customerRestored);
+		Action_Restore.restore(driver, PL_CustomersPage.customerRestored);
 		softAssert.assertAll();
 		return new PO_HomePage(driver);
 	}

@@ -11,6 +11,8 @@ import com.jkl.pageObject.PO_CustomersPage;
 import com.jkl.pageObject.PO_HomePage;
 import com.jkl.pageObject.PO_LoginPage;
 import com.jkl.pageObject.PO_TenantsPage;
+import com.jkl.pageObject.pageLocators.PL_HomePage;
+import com.jkl.utilities.ClickOnAnyButton;
 
 public class TC_Tenants extends BaseClass {
 	// HOME PAGE CONSTRUCTOR
@@ -24,6 +26,7 @@ public class TC_Tenants extends BaseClass {
 	public Faker faker = new Faker();
 	public PO_CustomersPage cp;
 	public PO_TenantsPage tp;
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
 
 	// VARIABLES
 	String tenantName = "Tata Steel 4"; // "WESTWOOD_"+faker.name().firstName();
@@ -34,21 +37,13 @@ public class TC_Tenants extends BaseClass {
 	String edit_tenantName = tenantName + " Updated";
 	String customerName = "Tata Groups";
 
-	String searchKey = edit_tenantName; // "WESTWOOD READY 2";
+	String searchKey = tenantName; // "WESTWOOD READY 2";
 	String assureRoleAsTenant = searchKey;
 	boolean wantToClickOnThreeDot = true;
 	int searchKeyColumnIndex = 1;
 	boolean wantToClickOnSearchKey = false;
 
-	// TO ACCESS CUSTOMERS PAGE OBJECTS
-	public PO_CustomersPage customerPageAccess() throws InterruptedException {
-		// TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
-		hp = new PO_HomePage(driver);
-		hp.clickOnMenuDashboard();
-		hp.clickOnMenuCustomer();
-		Thread.sleep(4000);
-		return new PO_CustomersPage(driver);
-	}
+
 
 	// TO VIEW SPECIFIC CUSTOMERS
 	@Test(priority = 1)
@@ -60,7 +55,7 @@ public class TC_Tenants extends BaseClass {
 	}
 
 	// TO ADD
-	// @Test(priority = 2)
+	@Test(priority = 2)
 	public void test_AddTenant() throws Throwable {
 
 		tp.addOrEditTenant(tenantName, tenantAssetCode, tenantDescription, tenantImage, searchKey, searchKeyColumnIndex,
@@ -68,7 +63,7 @@ public class TC_Tenants extends BaseClass {
 	}
 
 	// TO EDIT
-	// @Test(priority = 3)
+	@Test(priority = 3)
 	public void test_EditTenant() throws Throwable {
 		tp.addOrEditTenant(edit_tenantName, tenantAssetCode, tenantDescription, tenantImage, searchKey,
 				searchKeyColumnIndex, wantToClickOnThreeDot, wantToClickOnSearchKey);
@@ -76,28 +71,28 @@ public class TC_Tenants extends BaseClass {
 	}
 
 	// TO DEACTIVATE
-	// @Test(priority = 4)
+	@Test(priority = 4)
 	public void test_DeactivateTenant() throws Throwable {
 		test_FindDataFromListAndClickOnThreeDotButton();
 		tp.deactivateTenant();
 	}
 
 	// TO ACTIVATE
-	// @Test(priority = 5)
+	@Test(priority = 5)
 	public void test_ActivateTenant() throws Throwable {
 		test_FindDataFromListAndClickOnThreeDotButton();
 		tp.activateTenant();
 	}
 
 	// TO ARCHIVE
-	// @Test(priority = 6)
+	@Test(priority = 6)
 	public void test_ArchiveTenant() throws Throwable {
 		test_FindDataFromListAndClickOnThreeDotButton();
 		tp.archiveTenant();
 	}
 
 	// TO RESTORE
-	//@Test(priority = 7)
+	@Test(priority = 7)
 	public void test_RestoreTenant() throws Throwable {
 		test_FindDataFromListAndClickOnThreeDotButton();
 		tp.restoreTenant();
@@ -116,15 +111,12 @@ public class TC_Tenants extends BaseClass {
 	// TO FIND FROM THE LIST AND CLICK ON THE THREE DOT ACTION BUTTON
 	// @Test(priority = 10)
 	public void test_FindDataFromListAndClickOnThreeDotButton() throws Throwable {
-		// logger.info("1");
 		StackTraceElement stackTraceElement[] = Thread.currentThread().getStackTrace();
 		String callerMethodName = stackTraceElement[2].getMethodName();
 //		if(!callerMethodName.equals("test_ViewCustomers")) {
-//			//logger.info("2");
 //			//callMeBeforePerformAnyAction();
 //		}
 		if (callerMethodName.contains("test_Restore")) {
-			// logger.info("4");
 			ReUseAbleElement ruae = new ReUseAbleElement(driver);
 			logger.info("callerMethodName: " + callerMethodName);
 			ruae.clickONBtnTooltip_RU("Show Archived", driver);
@@ -132,16 +124,23 @@ public class TC_Tenants extends BaseClass {
 		}
 
 		if (callerMethodName.equals("test_ViewCustomers")) {
-			// logger.info("6: "+cp);
 			cp.findCustomerFromRowListAndClickOnThreeDot(customerName, customerName, searchKeyColumnIndex,
 					wantToClickOnThreeDot, wantToClickOnSearchKey);
-			// logger.info("7");
 		} else {
-			// logger.info("8");
 			tp.findTenantFromRowListAndClickOnThreeDot(tenantName, searchKey, searchKeyColumnIndex,
 					wantToClickOnThreeDot, wantToClickOnSearchKey);
 		}
 
+	}
+	
+	// TO ACCESS CUSTOMERS PAGE OBJECTS
+	public PO_CustomersPage customerPageAccess() throws InterruptedException {
+		// TO ACCESS ANY ELEMENT IT CHECK IT IS COME BACK ON THE HOME PAGE FIRST
+		hp = new PO_HomePage(driver);
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Dashboard Tab", PL_HomePage.add_tab_dashaboard);
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Customer Tab", PL_HomePage.add_tab_customer);
+		Thread.sleep(4000);
+		return new PO_CustomersPage(driver);
 	}
 
 }

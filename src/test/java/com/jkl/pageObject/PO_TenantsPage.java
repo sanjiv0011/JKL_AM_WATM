@@ -26,6 +26,9 @@ import com.jkl.actions.Action_Deactivate;
 import com.jkl.actions.Action_Restore;
 import com.jkl.pageObject.pageLocators.PL_TenantsPage;
 import com.jkl.projectUtility.FindThreeDotAndClick;
+import com.jkl.utilities.ClickOnAnyButton;
+import com.jkl.utilities.NavigateToNewOpenTab;
+import com.jkl.utilities.SetDataIntoTextInputField;
 
 public class PO_TenantsPage extends ReUseAbleElement {
 
@@ -39,6 +42,10 @@ public class PO_TenantsPage extends ReUseAbleElement {
 	public Actions action;
 	public SoftAssert softAssert = new SoftAssert();
 
+	public SetDataIntoTextInputField setDataIntoTextInputField = new SetDataIntoTextInputField();
+	public NavigateToNewOpenTab navigateToNewTab = new NavigateToNewOpenTab();
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
+	
 	// CONSTRUCTOR CREATION
 	public PO_TenantsPage(WebDriver driver) {
 		super(driver);
@@ -51,14 +58,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 
 	}
 
-	// ALERT MESSAGES
-	public String tenantsAdded = "Tenant created successfully.";
-	public String tenantsUpdated = "Tenant updated successfully.";
-	public String tenantDeactivated = "Tenant deactivated successfully.";
-	public String tenantArchived = "Tenant archived successfully.";
-	public String tenantRestored = "Tenant restored successfully.";
-	public String tenantActivated = "Tenant activated successfully.";
-	public String tenantNotFound = "No tenants found";
+	
 
 	// ======START======PAGE OBJECT AND ACTOIN METHODS==========//
 
@@ -99,44 +99,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 	}
 
 	
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_NAME)
-	@CacheLookup
-	public WebElement field_tenantName;
 
-	public void setTenantName(String tenantName) throws InterruptedException {
-		field_tenantName.sendKeys(Keys.CONTROL, "a");
-		field_tenantName.sendKeys(Keys.DELETE);
-		field_tenantName.sendKeys(tenantName);
-		Thread.sleep(500);
-		logger.info("Entered tenantName");
-
-	}
-
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_ASSET_CODE)
-	@CacheLookup
-	public WebElement field_tenantAssetCode;
-
-	public void setTenantAssetCode(String tenantAssetCode) throws InterruptedException {
-		field_tenantAssetCode.sendKeys(Keys.CONTROL, "a");
-		field_tenantAssetCode.sendKeys(Keys.DELETE);
-		field_tenantAssetCode.sendKeys(tenantAssetCode);
-		Thread.sleep(500);
-		logger.info("Entered field_tenantAssetCode");
-
-	}
-
-	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_DESCRIPTION)
-	@CacheLookup
-	public WebElement field_tenantDescription;
-
-	public void setTenantDescription(String tenantDescription) throws InterruptedException {
-		field_tenantDescription.sendKeys(Keys.CONTROL, "a");
-		field_tenantDescription.sendKeys(Keys.DELETE);
-		field_tenantDescription.sendKeys(tenantDescription);
-		Thread.sleep(500);
-		logger.info("Entered field_tenantDescription");
-
-	}
 
 	@FindBy(xpath = PL_TenantsPage.ADD_TENANT_IMAGE)
 	@CacheLookup
@@ -183,7 +146,7 @@ public class PO_TenantsPage extends ReUseAbleElement {
 			logger.info("listRowCount: " + listRowCount);
 			return listRowCount;
 		} else {
-			logger.info(tenantNotFound);
+			logger.info(PL_TenantsPage.tenantNotFound);
 			return -1;
 		}
 
@@ -214,10 +177,10 @@ public class PO_TenantsPage extends ReUseAbleElement {
 			}
 		}
 
-		
-		setTenantName(tenantsName);
-		setTenantAssetCode(tenantAssetCode);
-		setTenantDescription(tenantDescription);
+		setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Tenant Name", PL_TenantsPage.ADD_TENANT_NAME, tenantsName);
+		setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Tenant Name", PL_TenantsPage.ADD_TENANT_ASSET_CODE, tenantAssetCode);
+		setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Tenant Name", PL_TenantsPage.ADD_TENANT_DESCRIPTION, tenantDescription);
+				
 		setTenantImage(tenantImage);
 		
 		if(callerMethodName.equals("test_EditTenant")) {
@@ -240,9 +203,9 @@ public class PO_TenantsPage extends ReUseAbleElement {
 				logger.info("Alert Message: " + alertMsg);
 
 				if (callerMethodName.equals("test_AddTenant")) {
-					softAssert.assertEquals(alertMsg, tenantsAdded, "Check user tenants added or not");
+					softAssert.assertEquals(alertMsg, PL_TenantsPage.tenantsAdded, "Check user tenants added or not");
 				} else if (callerMethodName.equals("test_EditTenant")) {
-					softAssert.assertEquals(alertMsg, tenantsUpdated, "Check user tenants updated or not");
+					softAssert.assertEquals(alertMsg, PL_TenantsPage.tenantsUpdated, "Check user tenants updated or not");
 				}
 
 			}
@@ -266,28 +229,28 @@ public class PO_TenantsPage extends ReUseAbleElement {
 
 	// TO DEACTIVATE THE TENANTS
 	public PO_TenantsPage deactivateTenant() throws InterruptedException {
-		Action_Deactivate.deactivate(driver,tenantDeactivated);
+		Action_Deactivate.deactivate(driver,PL_TenantsPage.tenantDeactivated);
 		softAssert.assertAll();
 		return new PO_TenantsPage(driver);
 	}
 
 	// TO ACTIVATE THE TENANTS
 	public PO_TenantsPage activateTenant() throws InterruptedException {
-		Action_Activate.activate(driver, tenantActivated);
+		Action_Activate.activate(driver, PL_TenantsPage.tenantActivated);
 		softAssert.assertAll();
 		return new PO_TenantsPage(driver);
 	}
 
 	// TO ARCHIVE THE TENANTS
 	public PO_TenantsPage archiveTenant() throws InterruptedException {
-		Action_Archive.archive(driver, tenantArchived);
+		Action_Archive.archive(driver, PL_TenantsPage.tenantArchived);
 		softAssert.assertAll();
 		return new PO_TenantsPage(driver);
 	}
 
 	// TO RESTORE THE TENANTS
 	public PO_TenantsPage restoreTenant() throws InterruptedException {
-		Action_Restore.restore(driver, tenantRestored);
+		Action_Restore.restore(driver, PL_TenantsPage.tenantRestored);
 		softAssert.assertAll();
 		return new PO_TenantsPage(driver);
 	}

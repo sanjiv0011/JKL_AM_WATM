@@ -20,7 +20,7 @@ public class PL_AssetConfigurationsPage {
 	public static final String ADDRESS_ASSET_CONFIGURATION_POSTFIX = "(//div[starts-with(@class,'Input_input')])[7]//input";
 	
 	public static final String ADDRESS_ASSET_CONFIGURATION_VALUES = "(//div[starts-with(@class,'Input_input')])";	//[8]//input
-	public static final String ADDRESS_ASSET_CONFIGURATION_VALUES_PLUSBUTTON = "(//*[name()='svg'][starts-with(@class,'Icon_adminIcon')])[3]";
+	public static final String ADDRESS_ASSET_CONFIGURATION_VALUES_PLUSBUTTON = "(//*[name()='svg'][starts-with(@class,'Icon_adminIcon')])[4]";
 	
 
 	public static final String ADDRESS_ASSET_CONFIGURATION_LIST = "//div[contains(@class,'flex flex-col gap-2 items-center')]";

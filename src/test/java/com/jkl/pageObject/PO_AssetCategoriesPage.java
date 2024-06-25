@@ -28,6 +28,9 @@ import com.jkl.actions.Action_View;
 import com.jkl.pageObject.pageLocators.PL_AssetCategoriesPage;
 import com.jkl.pageObject.pageLocators.PL_TenantsPage;
 import com.jkl.projectUtility.FindThreeDotAndClick;
+import com.jkl.utilities.ClickOnAnyButton;
+import com.jkl.utilities.NavigateToNewOpenTab;
+import com.jkl.utilities.SetDataIntoTextInputField;
 
 public class PO_AssetCategoriesPage extends ReUseAbleElement {
 
@@ -40,7 +43,11 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 	public PO_LoginPage lp;
 	public Actions action;
 	public SoftAssert softAssert = new SoftAssert();
-
+	
+	public SetDataIntoTextInputField setDataIntoTextInputField = new SetDataIntoTextInputField();
+	public NavigateToNewOpenTab navigateToNewTab = new NavigateToNewOpenTab();
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
+	
 	// CONSTRUCTOR CREATION
 	public PO_AssetCategoriesPage(WebDriver driver) {
 		super(driver);
@@ -54,47 +61,6 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 	}
 
 	// ======START======PAGE OBJECT AND ACTOIN METHODS==========//
-
-	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_NAME)
-	@CacheLookup
-	public WebElement field_assetCategoryName;
-
-	public void setAssetCategoryName(String assetCategoryName) throws InterruptedException {
-		field_assetCategoryName.sendKeys(Keys.CONTROL, "a");
-		field_assetCategoryName.sendKeys(Keys.DELETE);
-		field_assetCategoryName.sendKeys(assetCategoryName);
-		Thread.sleep(500);
-		logger.info("Entered assetCategoryName");
-
-	}
-
-	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_CODE)
-	@CacheLookup
-	public WebElement field_assetCategoryCode;
-
-	public void setAssetCategoryCode(String assetCategoryCode) throws InterruptedException {
-		field_assetCategoryCode.sendKeys(Keys.CONTROL, "a");
-		field_assetCategoryCode.sendKeys(Keys.DELETE);
-		field_assetCategoryCode.sendKeys(assetCategoryCode);
-		Thread.sleep(500);
-		logger.info("Entered assetCategoryCode");
-
-	}
-
-	@FindBy(xpath = PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_DESCRIPTION)
-	@CacheLookup
-	public WebElement field_assetCategoryDescription;
-
-	public void setAssetCategoryDescription(String assetCategoryDescription) throws InterruptedException {
-		field_assetCategoryDescription.sendKeys(Keys.CONTROL, "a");
-		field_assetCategoryDescription.sendKeys(Keys.DELETE);
-		field_assetCategoryDescription.sendKeys(assetCategoryDescription);
-		Thread.sleep(500);
-		logger.info("Entered assetCategoryDescription");
-
-	}
-
-
 	public void selectAssignmentTypes(int[] assingmentTypesNumber) throws InterruptedException {
 		int checkboxNumber = 0;
 		logger.info("assingmentTypesNumber: " + assingmentTypesNumber);
@@ -209,9 +175,11 @@ public class PO_AssetCategoriesPage extends ReUseAbleElement {
 
 		logger.info("isClickedOnAddOrEditButton: " + isClickedOnAddOrEditButton);
 		if (isClickedOnAddOrEditButton) {
-			setAssetCategoryName(assetCategoryName);
-			setAssetCategoryCode(assetCategoryCode);
-			setAssetCategoryDescription(assetCategoryDescription);
+			
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Category Name", PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_NAME, assetCategoryName);
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Category Code", PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_CODE, assetCategoryCode);
+			setDataIntoTextInputField.callMeToFillDataIntoTextInputFieldWithNameAndXpathAndValue(driver, "Asset Category Description", PL_AssetCategoriesPage.ADDRESS_ASSET_CATEGORY_DESCRIPTION, assetCategoryDescription);
+						
 			selectAssignmentTypes(assingmentTypesNumber);
 			setAssetCategoryImage(assetCategoryImage);
 

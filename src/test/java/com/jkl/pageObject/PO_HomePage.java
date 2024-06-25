@@ -20,6 +20,10 @@ import org.testng.asserts.SoftAssert;
 
 import com.jkl.ReUseAble.PageObject.ReUseAbleElement;
 import com.jkl.dataBaseTesting.DBT_User_Membership;
+import com.jkl.pageObject.pageLocators.PL_HomePage;
+import com.jkl.utilities.ClickOnAnyButton;
+import com.jkl.utilities.NavigateToNewOpenTab;
+import com.jkl.utilities.SetDataIntoTextInputField;
 
 
 public class PO_HomePage extends ReUseAbleElement{
@@ -34,6 +38,11 @@ public class PO_HomePage extends ReUseAbleElement{
 	public Actions action;
 	public SoftAssert softAssert = new SoftAssert();
 	
+	public SetDataIntoTextInputField setDataIntoTextInputField = new SetDataIntoTextInputField();
+	public NavigateToNewOpenTab navigateToNewTab = new NavigateToNewOpenTab();
+	public ClickOnAnyButton clickOnAnyButton = new ClickOnAnyButton();
+	
+	
 	//HOMEPAGE CONSTRUCTOR CREATION
 	public PO_HomePage(WebDriver driver) {	
 		super(driver);
@@ -45,114 +54,17 @@ public class PO_HomePage extends ReUseAbleElement{
 		action = new Actions(driver);
 
 	}
-	
-	
-	//ALERT MESSAGES
-	public String alertMsgCardAddedSuccesfully = "Card Added Successfully.";
-	
-	//=========START========HOME PAGE OBJECTS=============//
-	final String add_tab_dashaboard = "//div[contains(@class,'sidebarCategory')]//span[contains(text(),'Dashboard')]";
-	final String add_tab_customer = "//div[contains(@class,'sidebarCategory')]//span[contains(text(),'Customers')]";
-	final String add_userlogo = "//div[@class='flex items-center gap-2']";
-	final String add_bnt_profile = "//li[contains(@role,'menuitem')]//div[contains(text(),'Profile')]";
-	final String add_bnt_settings = "//li[contains(@role,'menuitem')]//div[contains(text(),'Settings')]";
-	final String add_bnt_lockScreen = "//li[contains(@role,'menuitem')]//div[contains(text(),'Lock Screen')]";
-	final String add_bnt_logout = "//li[contains(@role,'menuitem')]//div[contains(text(),'Logout')]";
-	final String add_btn_yes = "//button//div[text()='Yes']";
-	final String add_btn_no = "//button//div[text()='No']";
-	
-	
-	@FindBy(xpath = add_tab_dashaboard)
-	@CacheLookup
-	WebElement menuDashboard;
-	
-	@FindBy(xpath = add_tab_customer)
-	@CacheLookup
-	WebElement menuCustomer;
-	
-	@FindBy(xpath = add_userlogo)
-	@CacheLookup
-	WebElement userLogo;
-	
-	@FindBy(xpath = add_bnt_profile)
-	@CacheLookup
-	WebElement userProfile;
-	
-	
-	@FindBy(xpath = add_bnt_settings)
-	@CacheLookup
-	WebElement userSettings;
-	
-	@FindBy(xpath = add_bnt_lockScreen)
-	@CacheLookup
-	WebElement userLockScreen;
-	
-	@FindBy(xpath = add_bnt_logout)
-	@CacheLookup
-	WebElement userLogout;
-	
-	@FindBy(xpath = add_btn_no)
-	@CacheLookup
-	WebElement btnNo;
-	
-	@FindBy(xpath = add_btn_yes)
-	@CacheLookup
-	WebElement btnYes;
-
-	//=========END========HOME PAGE OBJECTS=============//
-	
-	
+		
 	//=========START========ACTION METHODS FOR HOME PAGE OBJECTS=============//
-	
-	public void clickOnMenuDashboard() throws InterruptedException {
-		menuDashboard.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuDashboard");
-	}
-	
-	public void clickOnMenuCustomer() throws InterruptedException {
-		menuCustomer.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the menuCustomer");
-	}
-	
-	public void clickOnUserProfile() throws InterruptedException {
-		userLogo.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the userProfile");
-	}
-	
-	
-	public void clickOnLogout() throws InterruptedException {
-		userLogout.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the logout");
-	}
-	
-	public void clickOnYes() throws InterruptedException {
-		btnYes.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the btnYes");
-	}
-	
-	public void clickOnNo() throws InterruptedException {
-		btnNo.click();
-		Thread.sleep(2000);
-		logger.info("Clicked on the btnNo");
-	}
-	
-	
-	//=========END========ACTION METHODS FOR HOME PAGE OBJECTS=============//
-	
 		
 	// TO LOGOUT
 	public PO_LoginPage UserLogout() throws InterruptedException
 	{	logger.info("Method called: Logout");
 		try {
 			Thread.sleep(2000);
-			clickOnUserProfile();
-			clickOnLogout();
-			clickOnYes();
+			clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "User Profile", PL_HomePage.add_userlogo);
+			clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Logout", PL_HomePage.add_bnt_logout);
+			clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Yes", PL_HomePage.add_btn_yes);
 			Thread.sleep(500);
 			if(driver.getPageSource().contains("Login with Google")){
 				softAssert.assertTrue(true);
@@ -171,8 +83,8 @@ public class PO_HomePage extends ReUseAbleElement{
 	
 	//TO CHECK THE MENUS
 	public PO_HomePage checkMenus() throws InterruptedException{
-		clickOnMenuDashboard();
-		clickOnMenuCustomer();
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Dashboard Tab", PL_HomePage.add_tab_dashaboard);
+		clickOnAnyButton.callMeToClickOnAnyButtonWithNameAndXpath(driver, "Customer Tab", PL_HomePage.add_tab_customer);
 		return new PO_HomePage(driver);
 	}
 }

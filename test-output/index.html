@@ -104,12 +104,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.jkl.testCases.TC_Vendors" class="method navigator-link" hash-for-method="test_AddVendor">test_AddVendor</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.jkl.testCases.TC_Vendors" class="method navigator-link" hash-for-method="test_ActivateVendorContact">test_ActivateVendorContact</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.jkl.testCases.TC_Vendors" class="method navigator-link" hash-for-method="test_EditVendor">test_EditVendor</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.jkl.testCases.TC_Vendors" class="method navigator-link" hash-for-method="test_DeactivateVendorContact">test_DeactivateVendorContact</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -132,16 +132,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_AddVendor">
-                  </a> <!-- test_AddVendor -->
-                  <span class="method-name">test_AddVendor</span>
+                  <a name="test_ActivateVendorContact">
+                  </a> <!-- test_ActivateVendorContact -->
+                  <span class="method-name">test_ActivateVendorContact</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="test_EditVendor">
-                  </a> <!-- test_EditVendor -->
-                  <span class="method-name">test_EditVendor</span>
+                  <a name="test_DeactivateVendorContact">
+                  </a> <!-- test_DeactivateVendorContact -->
+                  <span class="method-name">test_DeactivateVendorContact</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,6 +158,7 @@
 &lt;suite thread-count=&quot;1&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;parameter name=&quot;loginUserType&quot; value=&quot;user&quot;/&gt;
+  &lt;parameter name=&quot;wantToByPassLoginLogout&quot; value=&quot;true&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.jkl.utilities.ExtentReport&quot;/&gt;
   &lt;/listeners&gt;
@@ -205,18 +206,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_AddVendor')
+data.setCell(0, 1, 'test_DeactivateVendorContact')
 data.setCell(0, 2, 'com.jkl.testCases.TC_Vendors')
-data.setCell(0, 3, 28954);
+data.setCell(0, 3, 17195);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test_EditVendor')
+data.setCell(1, 1, 'test_ActivateVendorContact')
 data.setCell(1, 2, 'com.jkl.testCases.TC_Vendors')
-data.setCell(1, 3, 9527);
+data.setCell(1, 3, 16957);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 38 seconds</span>
+              <span class="suite-total-time">Total running time: 34 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -248,26 +249,28 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
+                <span class="method-name">confirmLoginLogoutByPass(org.testng.TestRunner@6b03c35c)</span>
+                <span class="method-start">4170 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
                 <span class="method-name">Login(user)</span>
-                <span class="method-start">2679 ms</span>
+                <span class="method-start">4173 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">test_AddVendor</span>
-                <span class="method-start">2897 ms</span>
+                <span class="method-name">test_DeactivateVendorContact</span>
+                <span class="method-start">4200 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">test_EditVendor</span>
-                <span class="method-start">31876 ms</span>
+                <span class="method-name">test_ActivateVendorContact</span>
+                <span class="method-start">21417 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">Logout(user)</span>
-                <span class="method-start">41405 ms</span>
+                <span class="method-start">38375 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-test after">
                 <span class="method-name">Teardown</span>
-                <span class="method-start">47677 ms</span>
+                <span class="method-start">38376 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
